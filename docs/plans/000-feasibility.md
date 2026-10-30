@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 2
-- Status: ready (F0 only; stage execution not started)
+- Revision: 4
+- Status: in_progress (F0 documentation-only audit reviewed and done; F1-F4 remain draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-10-28
-- Selected task: F0
-- Execution: planning complete; F0 awaits a separate execution request
+- Updated: 2026-10-30
+- Selected task: bounded local sample inspection after accepted F0
+- Execution: acquisition and structural inspection complete; semantic review pending; rights unresolved; F0 remains done; F1-F4 draft
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -26,7 +26,7 @@ Do not initialize Git, install production dependencies, download large corpora/m
 ## Tasks
 | ID | Status | Outcome | Dependency |
 | --- | --- | --- | --- |
-| F0 | ready | Bounded source/terms/sample audit and an evidence-based F1 recommendation | Separate execution request |
+| F0 | done | [Documentation-only audit](../data-audit.md) reviewed; `needs_targeted_followup` | Documentation-only acceptance; source rights unresolved |
 | F1 | draft | Identity policy, reviewed diagnostic data and split design | F0 |
 | F2 | draft | Reproducible lexical/rule baseline and error report | F1 |
 | F3 | draft | Comparable LLM baseline with observed cost and failure analysis | F2; explicit API/model budget authorization |
@@ -78,7 +78,7 @@ No data payload was downloaded or inspected during planning. No alternative was 
 
 #### Permissions and unresolved issues
 
-The 2026-10-28 user request authorizes planning/documentation and bounded source research only. It does not execute F0. A later request to execute F0 can authorize the bounded sample inspection above, conditional on terms; `ready` alone grants no permission. Full datasets, dependencies, paid calls, provider uploads, infrastructure, Git mutations and external messages remain outside scope.
+The 2026-10-29 user request explicitly authorized F0 source/terms research and conditional sample inspection within this revision's limits. Source rights remained unresolved, so the documentation-only branch was used. The earlier planning authorization did not execute F0; `ready` alone grants no permission. Full datasets, dependencies, paid calls, provider uploads, infrastructure, Git mutations and external messages remain outside scope.
 
 Open: data-specific rights; sample accessibility and exact schema; exact-variant compatibility; sufficient single-category coverage; reliable identity/supplier metadata; future acquisition size. Escalate only a required scope/identity/evaluation change or new authorization. Otherwise finish the unresolved branch with evidence. Do not silently weaken criteria or make F1 dependent on hidden notes.
 
@@ -114,9 +114,57 @@ Planner self-check only; no independent model or human review. Review F0 artifac
 
 Planning validation: inspected the full relevant diff; `git diff --check` passed (Git emitted only LF/CRLF conversion notices). A standard-library check confirmed relative Markdown links resolve in both changed files and no absolute user paths were added. Inspected public text for personal content and unsupported claims. Git status showed only the plan and STATE modified; `.local/` remained ignored and untracked. Application tests and dataset checks were not run because neither implementation nor data exists.
 
+## F0 execution evidence (2026-10-29)
+
+- Task/revision: F0, revision 2. Output: [data audit](../data-audit.md), recommendation `needs_targeted_followup`. Status `review`; F1-F4 remain `draft`.
+- Changed files: `docs/data-audit.md` (new), this plan, `docs/STATE.md`. No decision/evaluation contract changed.
+- Read root AGENTS, STATE, this revision and all F0 input documents. Inspected actual repository root, tracked inventory and initial clean status. Current base is `1a4292e`, superseding the planning-time base observation. `py -3.12 --version` returned Python 3.12.4. No personal notes read.
+- Source checks: read publisher documentation, repository README/LICENSE, WDC home licensing and earlier corpus documentation; report records exact URLs and dated evidence. Used curl to inspect HTML example links without opening payloads. Initial sandbox curl failed with exit 6 (DNS); identical read outside the sandbox succeeded with exit 0. No sample requests or downloads.
+- Result: no applicable data-specific grant established for local inspection. Documented schema remains unobserved. No category chosen, source rejected or alternative audited. No payload hashes, counts, identity diagnostics, overlap reconciliation or offline parse checks: all explicitly not run due to the rights gate.
+- Deviation: none from the permitted documentation-only branch. Source review was bounded and completed within the 2-3 hour maximum; no exact elapsed-time measurement claimed. The report supplies an unexecuted conditional acquisition recipe, not tested downloader code.
+- Validation: relative Markdown links in all three changed documents resolve; no required local-note links or absolute user paths. Public text inspected for personal context, restricted raw examples and unsupported claims. `git diff --check` passed. Full tracked diff and new report inspected; final status lists only the three intended files. `git ls-files -- .local` returns no tracked files; `git check-ignore -v -- .local/f0/probe` confirms the existing ignore rule. No application tests or dataset checks run.
+- Validation tooling correction: the first ad hoc path check falsely matched `https:/` as a drive path and stopped before link checks. Added a preceding-letter boundary, verified URL/drive examples and reran the complete check successfully. No document content was changed to bypass the check.
+- Review performed: author/model self-check only; no independent or human review. Rights, exact-variant compatibility, sample accessibility, category coverage and supplier provenance remain unresolved.
+
 ## Handoff
-Next: a separately requested execution of **F0, plan revision 2**, in this checkout. Produce the audit and stop at `review`; do not execute F1. The central risk is source clusters not representing exact sellable variants. Unresolved data rights may require a documentation-only audit. No paid budget, dataset archive or dependency approval is recorded.
+
+**F0, accepted at plan revision 2**, remains done. Revision 4 acquired both examples and completed structural inspection under the owner's limited exception to the rights gate. Rights remain unresolved. Next: owner locally reviews the first 10 PW rows for exact-variant evidence as specified in the audit. No larger acquisition or F1 execution is authorized by this handoff.
+
+## F0 artifact review (2026-10-29)
+
+- Verdict: accepted for the explicitly permitted documentation-only branch; no blocking findings. F0 is `done`; F1-F4 remain `draft`, and `needs_targeted_followup` remains the recommendation.
+- Checked the report against revision 2 acceptance criteria, the evaluation contract, decisions, workflow and documentation policy. Reopened primary sources S1-S5; the documented schema, label-origin/noise statements, offer-disjoint protocol and software-license scope support the report's bounded conclusions. No data-specific permission was established in these sources; this is not a finding that use is prohibited.
+- Validation: inspected the tracked diff and full new report; `git diff --check` passed. A Python standard-library check passed for all 14 relative links in the three changed documents and found no absolute drive paths or required local-note links. Git status showed only the intended three documents; `.local/` has no tracked files and its probe path matches the existing ignore rule. Public content was inspected for personal context, raw restricted records and unsupported results.
+- Limits: this is model-assisted artifact review, not human validation or a retrospective verification of all prior actions/time spent. No sample endpoints were requested, no payload acquired and no application or dataset tests run. The conditional acquisition procedure remains unexecuted. Rights, exact-variant compatibility, category coverage and supplier provenance remain open.
+- Review changes: recorded this verdict and updated the state pointer; the audit evidence and evaluation criteria were preserved. Next action is the targeted rights follow-up specified above.
 
 ## Revision notes
+- Revision 3 (2026-10-29): completed the separately requested, documentation-only rights follow-up below; preserved F0's accepted review and F1-F4 draft status. No acquisition authorization or evaluation criteria changed.
 - Revision 2 (2026-10-28): bounded F0 with primary-source leads, observed environment, conditional sample limits, reproducible outputs, negative-result path and explicit acceptance/handoff. Later tasks remain coarse; no feasibility execution claimed.
 - Revision 1: documentation/publication boundary clarified; technical scope unchanged. No feasibility work has been executed.
+
+## Targeted rights follow-up execution (2026-10-29, revision 3)
+
+- Authorization/scope: at most 60 minutes of public documentation/terms research and updates to the existing audit, plan and STATE for the exact `sample_pairwise.json` and `sample_multi.json` URLs. The user prohibited both payload requests even if rights were confirmed, other data/archive downloads, contact, accepting terms, installs, paid calls, Git mutations, F1 and delegation. No personal notes read. One writer throughout.
+- Starting reality: read AGENTS, STATE, the complete active plan, audit and documentation policy. Git HEAD was `1a4292e`; STATE and this plan were already modified, and the audit was already untracked. Inspected their content and tracked diff; preserved these existing F0/review changes. No implementation or dataset artifacts appear in the tracked inventory.
+- Approach: reuse S1-S5; investigate publisher statements, research-purpose scope, the documented upstream chain and official explanations. Assess local inspection independently of later publication, redistribution and provider uploads; do not require a general-purpose license for the narrow activity.
+- Checks/results: audit S6-S11 records publisher sections, exact href confirmation, PDC2020 and structured-data provenance, Common Crawl FAQ/ToU (dated March 7, 2024), authors' release announcement/paper, website repository README/root and benchmark license. Public searches and the issue/group views supplied no sufficient applicable grant. Access failures and limited issue/group coverage are recorded in the audit, not treated as negative proof. Documentation-only curl failed with sandbox DNS exit 6 and succeeded outside it with exit 0; no sample endpoint requests.
+- Outcome: `unresolved` for local acquisition/inspection of both examples. Research invitations are positive evidence; upstream research-only scope and separate owner rights do not establish the needed downstream basis. Recommendation remains `needs_targeted_followup`. No category selected or data suitability established. F0 remains `done`; its historical artifact review is unchanged, and F1-F4 remain `draft`.
+- Boundaries: no data acquired, parsed, hashed or inspected; no application/data tests run. No alternative dataset audit, legal-exception analysis or comprehensive historical-terms review. Existing acquisition recipe remains conditional and unexecuted. Stop after concrete leads rather than fill the timebox with repeated generic searches.
+- One next action: project owner to request written WDC clarification for the two exact URLs, local storage/offline research inspection, applicable conditions and underlying merchant-content rights, using the audit's final next-action scope and existing F0 limits. No agent contact without separate authorization. Record the response in the audit before any separately authorized download task.
+
+- Completion validation (2026-10-30, resumed after usage-limit interruption): inspected the complete audit and relevant tracked diff; 14 relative Markdown links resolve, with no required local-note links or absolute drive paths. Report/plan/STATE agree on unresolved rights, the next action and F0 done/F1-F4 draft. `git diff --check` passed; the untracked audit was also checked for trailing whitespace. Git status contains only the same three intended documents. No application or dataset tests run. Research evidence remains dated 2026-10-29; resumption only completed documentation validation, without new source research. The interruption is not counted as active research time.
+
+## Bounded sample inspection (2026-10-30, revision 4)
+
+User decision: retain WDC and the existing exact-variant project. The user authorized the proposed next step after discussion of unresolved rights: local acquisition and inspection of only the two publisher examples within F0 limits. This supersedes the previous task's payload prohibition and the unresolved-rights stop rule for this bounded inspection only. Rights remain `unresolved`; user authorization is not a data license. Do not publish raw records, send them to a model API, acquire archives or begin F1. Preserve the accepted F0 review.
+
+Approach: verify publisher hrefs; download with standard-library bounded reads (1 MiB per response, 2 MiB total, 5 MiB decoded), reject redirects and compression/archives, record metadata and hashes, then parse locally and inspect at most 50 rows per file. Report structural aggregates without raw text. Reparse saved bytes offline. Update the existing audit and state; no dependency installation.
+
+- Actual result: both HTTP 200 JSONL examples acquired, 55,960 + 33,135 = 89,095 bytes; 50 PW and 50 MC rows, 141 combined unique offers and 127 clusters, six overlapping IDs and no conflicting payloads. Hashes, UTC acquisition times, nullable schema and diagnostic probes are in the audit. Initial sandbox DNS failure consumed zero bytes; approved execution outside the sandbox succeeded.
+- Local artifacts: a new ignored `.local/f0-inspection-20261030/` directory contains the acquisition script, failed zero-byte attempt metadata, successful original payloads/metadata and structural summary. No pre-existing local notes were read. The executed acquisition script is embedded in the public audit for reproduction with an arbitrary work directory; raw records are not versioned.
+- Validation: independent offline reparse verified hashes, byte/row counts, pair-ID uniqueness/composition and combined offer/cluster counts. Inspected relevant diff and complete audit; relative links and whitespace checked. No application tests, fault-injection tests or model calls. No evaluation contract or identity policy changed.
+- Limitation/deviation: the ten diagnostic cases received deterministic evidence probes only; raw-text semantic review and category selection remain pending. No human-reviewed labels or exact-variant correctness claimed. Research-only local inspection does not establish redistribution/provider rights.
+- Next action: owner locally reviews PW rows 1-10 for exact-variant identity and ambiguity, separately from source labels, before a larger diagnostic acquisition is proposed. F1-F4 stay draft. This sample follow-up is ready for review with the semantic limitation explicit; the historical accepted F0 review is unchanged.
+
+- Review support: generated an optional local HTML worksheet with the first 10 pairs, escaped raw values and initially collapsed source labels. It does not save judgments and is not a public artifact. The public procedure can regenerate the same rows from the hash-identified examples.
