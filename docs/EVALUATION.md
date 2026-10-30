@@ -8,6 +8,14 @@ This is a design constraint, not a claim that evaluation has been implemented. R
 - System actions: `auto_match` or `review_required` initially. A proposed `no_match` is distinct from insufficient evidence and requires an explicit catalog-absence protocol before automation.
 - Similarity scores, schema-valid JSON, and model-written explanations are not evidence of correctness by themselves.
 
+## Offer eligibility
+
+Eligibility is assessed separately from pair identity, using input evidence rather than source labels, model scores or matching outcomes. Exclude a record only when the evidence establishes editorial/review content or a family/platform overview without a specific sellable item or defined bundle. Preserve the raw record and record its locator, exclusion reason, evidence, policy version and assessment origin.
+
+Missing price, description, model code or variant attributes alone is not an exclusion reason. Retain incomplete offers and uncertain eligibility cases; when evidence cannot establish pair identity, use `insufficient_evidence` and route unresolved requests to `review_required`. An eligibility exclusion is neither `different_variant` nor proof of catalog absence, and introduces no `no_match` action.
+
+For custom evaluation, report total input records, eligible records, exclusions by reason and unresolved eligibility counts. Keep uncertain cases in the eligible denominator until resolved; report automatic matches over both eligible requests and all input requests. Excluded records do not enter eligible-request matching metrics, but remain in the audit. Do not silently filter ambiguous offers or reinterpret original benchmark results. Freeze the eligibility policy before final testing; version later changes and do not use them to improve an already observed test result.
+
 ## Dataset requirements
 Record source URL/version, acquisition date, license/terms, permitted local use and redistribution, transformation rules, hashes, category coverage, and label origin. Distinguish benchmark labels, human review, model-assisted suggestions, and generated fixtures.
 

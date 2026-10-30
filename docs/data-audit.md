@@ -1,16 +1,16 @@
 # F0: WDC Products data audit
 
-Date: 2026-10-29. Task: F0 accepted at revision 2; documentation-only rights follow-up recorded in [feasibility plan](plans/000-feasibility.md), revision 4. Recommendation: `needs_targeted_followup`.
+Date: 2026-10-29; updated 2026-10-30. Task: F0 accepted at revision 2; bounded semantic follow-up recorded in [feasibility plan](plans/000-feasibility.md), revision 5. Recommendation: `needs_targeted_followup`.
 
 ## Outcome and evidence boundary
 
-The documentation-only F0 branch remains accepted and done. On 2026-10-30 the user authorized bounded local inspection despite unresolved rights, retaining WDC and the exact-variant project. Both examples were acquired and structurally inspected; semantic variant correctness and category suitability remain unverified. Rights remain `unresolved`, not prohibited or newly licensed. F1 remains draft. Historical no-acquisition statements below describe the earlier documentation-only tasks.
+The documentation-only F0 branch remains accepted and done. On 2026-10-30 the user authorized bounded local inspection despite unresolved rights, retaining WDC and the exact-variant project. Both examples were acquired and structurally inspected; model-assisted semantic review of PW rows 1-10 is now complete. Dataset-wide variant correctness and category suitability remain unverified. Rights remain `unresolved`, not prohibited or newly licensed. F1 remains draft. Historical no-acquisition statements below describe the earlier documentation-only tasks.
 
 For the original F0 task, the user authorized source/terms research and conditional inspection of the two publisher examples within the plan limits. That authorization does not resolve source rights. No archives, model weights, dependencies, paid calls, provider uploads, infrastructure, external messages or Git mutations were used. Personal notes were not read. The report is AI-assisted analysis and author self-check, not independent or human review.
 
 ## Bounded local inspection (2026-10-30)
 
-Status: structural inspection complete; semantic review pending. The user approved proceeding after discussion of the unresolved-rights gate. This is a limited project decision, not a publisher grant. No raw text is reproduced here or uploaded to a model API. Local scripts produced metadata and structural aggregates only. F0's accepted review is unchanged. No archives, additional datasets, model calls, installations, Git mutations or F1 execution.
+Status: structural inspection and the separately authorized ten-pair semantic follow-up complete. The user approved proceeding after discussion of the unresolved-rights gate. This is a limited project decision, not a publisher grant. No raw text is reproduced in public documentation. Structural scripts produced metadata and aggregates; the semantic follow-up processed the ten pairs in this chat with explicit authorization, without an additional model or external service. F0's accepted review is unchanged. No archives, additional datasets, separate model API calls, installations, Git mutations or F1 execution.
 
 ### Acquisition evidence
 
@@ -44,7 +44,7 @@ Observed keys: PW has `id`, `cluster_id`, `brand`, `title`, `description`, `pric
 
 Reconciliation: six IDs overlap between PW and MC. Across 150 occurrences there are **141 unique offers and 127 unique clusters**; no same-ID payload conflicts after removing pair/MC supervision fields. All 50 pair IDs are unique and equal the left/right IDs joined by `#`. All pair labels agree with cluster equality; this verifies internal consistency only, not variant correctness. MC `unseen=false` does not establish train membership. Treat all inspected identities as schema discovery only and exclude their identity groups from any future custom frozen test; do not tune prompts or thresholds on them. The exclusion set can be regenerated from the hash-identified files' IDs and cluster IDs; a definitive grouping remains an F1 prerequisite.
 
-### Ten bounded diagnostic probes
+### Ten bounded diagnostic probes (historical mechanical pass)
 
 Only PW rows 1-10 were probed for identity evidence, using local deterministic comparisons of brand availability, descriptions and numeric-unit tokens from title/description. These are mechanical diagnostics, not semantic judgments or human-reviewed labels. Source labels are all 0; hard-negative is true for rows 1-9 and false for row 10. No label was corrected.
 
@@ -61,7 +61,38 @@ Only PW rows 1-10 were probed for identity evidence, using local deterministic c
 | 9 | 0 | 0 / 0 | 0 |
 | 10 | 1 | 0 / 2 | 0 |
 
-No probed pair has both brands present or identical titles. Unit detection used case-insensitive numeric values followed by GB/TB/MB/ml/kg/mm/cm/inch/pack; token sets were lowercased and spaces removed. Different units may describe unrelated attributes, and equal units do not establish identity. Row 9 illustrates limited structured evidence; rows 1/6 are candidates for reviewing possible attribute conflicts, not confirmed mismatches. Semantic label conflicts, model/condition/pack interpretation and category selection remain unassessed. This is an explicit limitation of this local-only inspection, not completion of F0's semantic diagnostic ambition.
+No probed pair has both brands present or identical titles. Unit detection used case-insensitive numeric values followed by GB/TB/MB/ml/kg/mm/cm/inch/pack; token sets were lowercased and spaces removed. Different units may describe unrelated attributes, and equal units do not establish identity. This pass did not assess semantics; the follow-up below supersedes that limitation for these ten rows only.
+
+### Model-assisted semantic review (2026-10-30)
+
+Scope: exactly physical JSONL lines 1-10, in source order, from `sample_pairwise.json`. Locator prefix **H** means SHA-256 `8c023e0f5571a95a833c431cb94d0f909db3c4bc6e0993d01c5b7488e356d90b`; every table locator combines H, a 1-based line and the original `pair_id`. Recomputed SHA-256 and 55,960-byte length match both saved metadata and the acquisition table. No raw titles or descriptions are reproduced below.
+
+Method: first read only brand, title, description, price and currency for each side, masking `label`, `cluster_id` and `is_hard_negative`; fix attribute judgments before reading row-level supervision and pair IDs. This was **not fully blinded**: the required pre-read audit already disclosed that all ten labels were 0 and the flag distribution. Judgments rely on offer evidence, not these fields. Prices/currencies do not establish identity. This is **model-assisted semantic review**, not human-reviewed annotation, independent validation or gold ground truth. Source labels and payloads were not changed. The authorized local data was read into this chat only; no additional model, external service, merchant page, download or installation was used. The optional HTML worksheet was not needed or read.
+
+| Locator: hash / line / pair_id | Attribute judgment | Rationale and decisive or missing attributes | Comparison after judgment |
+| --- | --- | --- | --- |
+| H / 1 / `75937316#38128607` | `different_variant` | USB drives differ in named model family and explicit capacity: 16 versus 64 GB. Capacity alone rules out the same exact variant; incomplete interface evidence does not affect this conflict. | Consistent with source 0 (different). |
+| H / 2 / `81858107#44726488` | `different_variant` | Both are printers, but their explicit manufacturer model numbers differ. Shared brand/product type does not override that distinction; condition and regional configuration are not established. | Consistent with source 0. |
+| H / 3 / `91942249#86779035` | `different_variant` | A camera mounting bracket versus photographic film. The left description lists compatible camera models; these are not the sold product. Product type is decisive even without pack/condition evidence. | Consistent with source 0. |
+| H / 4 / `48329606#25011125` | `different_variant` | Surveillance recorders have different explicit model identifiers and channel counts (8 versus 16). The left title/description also differ in codec wording, but resolving that internal inconsistency is unnecessary for this mismatch. | Consistent with source 0. |
+| H / 5 / `67017951#5303451` | `insufficient_evidence` | Left text describes a security-platform family and points to a review; it identifies no sellable model, bundle or included contents. Right identifies an infrared-extension accessory and its own model code; its compatible camera is not the sold item. Missing left identity prevents an exact-variant comparison. | Potential evidential divergence from source 0: a negative label may be plausible, but is not established from a defined left variant. This is not a demonstrated label error. |
+| H / 6 / `16691545#86650421` | `different_variant` | Micro camera versus bullet camera: distinct named camera variants. Right explicitly sells three units; left unit count is not explicit and is not assumed to be one. Model difference is sufficient without resolving quantity. | Consistent with source 0. |
+| H / 7 / `43900336#13950014` | `different_variant` | Computer-memory kit versus photographic tripod kit. The sold product types differ; shared kit/color wording is not identity evidence. | Consistent with source 0. |
+| H / 8 / `37708089#70265673` | `different_variant` | Equal brand, 4 GB, memory generation and speed do not establish identity. Left explicitly identifies a laptop SO-DIMM; right identifies desktop RAM with a model code. These denote different module types/use; no unstated pin count is inferred. | Consistent with source 0. |
+| H / 9 / `41364196#29165749` | `different_variant` | Caps carry different named team designs and style lines. Those explicit design differences establish distinct sellable products despite missing descriptions, size, color and condition. No size/color values are inferred. | Consistent with source 0. |
+| H / 10 / `21293905#77791574` | `different_variant` | Wristwatch with a reference identifier versus internal SSD. Product type suffices. The SSD title and description disagree on flash-cell type; that unresolved internal conflict does not affect this pair decision. | Consistent with source 0. |
+
+After judgments, all ten source labels were confirmed as 0 with unequal source clusters; hard-negative flags were true for lines 1-9 and false for line 10. These fields supplied no semantic evidence. Descriptively, this pass contains nine `different_variant`, one `insufficient_evidence` and no `same_variant` judgments. This is not an agreement/accuracy estimate. In particular, some flagged hard negatives are different product types; the flag cannot define our exact-variant difficulty slices.
+
+Feasibility implications: explicit model/capacity/form-factor evidence supports useful deterministic conflict checks, but no baseline or normalization rule was implemented or evaluated. Compatibility lists must be separated from sold-item identity, family/editorial records require an eligibility decision, and contradictory attributes must remain visible. Missing condition, size, color or pack evidence must not be imputed; decisive observed differences can still establish a negative pair. None of these ten cases requires inventing a new identity policy to claim a positive match. The records span several product types and do not justify selecting one category or demonstrate enough category coverage. WDC remains a candidate, with recommendation `needs_targeted_followup`.
+
+Limitations: ten consecutive examples are not representative; all source labels are negative, so positive exact-variant evidence has not been assessed. No human judgments, quality metrics, dataset-wide label-noise estimate, retrieval/candidate evaluation or offer-to-catalog result follow. Split membership remains unknown: do not use these identities for prompt, threshold or model tuning, and keep their identity groups excluded from a future custom frozen test. No F1 work, source-label correction or final identity/eligibility policy was performed.
+
+### Accepted eligibility decision (2026-10-30)
+
+The owner authorized adoption of the recommended rule: [D15](DECISIONS.md), policy v1, as specified in the [evaluation contract](EVALUATION.md#offer-eligibility). Exclude confirmed editorial/family records without a sellable item; retain incomplete offers and uncertain eligibility. This resolves the preceding semantic review's open eligibility question without changing category-specific identity rules.
+
+Application: H / line 5 / pair `67017951#5303451`, left offer `67017951`, is excluded from future eligible offer inputs. Reason: `editorial_without_sellable_item`; evidence is a platform/family overview pointing to a review, with no defined sold model or bundle. Assessment origin: AI-assisted analysis under an owner-approved policy, not human annotation. Preserve the raw record, source label 0 and historical pair judgment `insufficient_evidence`; the original ten-pair summary remains nine different and one unresolved. No new sample-wide eligibility measurement is claimed. Future custom evaluation must report exclusions separately and preserve the full-input denominator.
 
 ### Verification and conclusion
 
@@ -116,11 +147,11 @@ Statuses describe the evidence available for this task, not universal legal conc
 
 | Activity | Status | Evidence, scope and consequence |
 | --- | --- | --- |
-| Access to public documentation/download links | supported | S1/S2/S4 expose public documentation and links. This supports discovery only; sample endpoint accessibility was not tested. |
+| Access to public documentation/download links | supported | S1/S2/S4 expose public documentation and links. Both exact example endpoints returned HTTP 200 during the bounded acquisition; accessibility does not establish data-use rights. |
 | Local acquisition and inspection of examples | unresolved | S6-S11 establish intended research/download use and upstream conditions, but not a sufficient applicable content-rights basis for either exact example. The 2026-10-30 owner decision permits bounded local inspection despite this uncertainty; it does not change the rights status. |
-| Publication of derived dataset statistics | unresolved | No applicable data terms identified. No locally derived dataset statistics are published here. Documentation observations are not dataset measurements. |
+| Publication of derived dataset statistics | unresolved | No applicable data terms identified. This audit includes bounded structural aggregates and original semantic summaries under the owner's requested reporting scope; this does not establish broader publication or redistribution rights. |
 | Raw dataset redistribution | unresolved | S3/S4 cover software; applicability to external product records is unestablished. Publish no raw product text. |
-| Future transmission to a model provider | unresolved | Neither inference processing, retention nor provider training rights are established. S1's training-corpus notice adds a constraint to resolve; it is not permission for inference uploads. No data was submitted. |
+| Future transmission to a model provider | unresolved | Neither inference processing, retention nor provider training rights are established. S1's training-corpus notice adds a constraint to resolve; it is not permission for inference uploads. The owner separately authorized analysis of ten local pairs in this chat; no additional provider/service upload was performed or authorized. |
 
 The missing evidence is a publisher/rightsholder statement or applicable data license explicitly covering these hosted examples and their underlying product content, with scope for local research inspection. A software license, download button or repository visibility alone is insufficient under this plan. Broader publication and provider processing rights need separate evidence before those activities.
 
@@ -174,7 +205,7 @@ Exact example targets observed in the page HTML, not fetched:
 - PW: [sample_pairwise.json](https://data.dws.informatik.uni-mannheim.de/largescaleproductcorpus/data/wdc-products/sample_pairwise.json)
 - MC: [sample_multi.json](https://data.dws.informatik.uni-mannheim.de/largescaleproductcorpus/data/wdc-products/sample_multi.json)
 
-The following is the original conditional recipe. Revision 4 authorized a bounded exception to its rights gate. Acquisition and structural checks have now run as recorded above; full semantic diagnostic review remains pending. It requires only Python's standard library and an arbitrary user-selected work directory; no project-local notes or saved payloads are required inputs. No downloader implementation is claimed to have been tested.
+The following is the original conditional recipe. Revision 4 authorized a bounded exception to its rights gate. Acquisition and structural checks ran as recorded above; revision 5 completed the ten-pair model-assisted semantic follow-up. The recipe requires only Python's standard library and an arbitrary user-selected work directory; no personal notes are required inputs. The successful acquisition script is reproduced below; its boundary/failure paths have not been tested.
 
 1. Recheck S1 and the applicable permission statement. Verify the two exact targets still correspond to Example (PW)/(MC). Record permission URL, scope, date and source version. Stop if unresolved.
 2. Save into the selected work directory with exclusive creation; preserve original bytes. Use a bounded streaming HTTP reader with a 30-second request timeout and an overall transfer deadline. Reject redirects outside publisher hosting before following them; rejecting all redirects is also acceptable. Reject authentication/access restrictions, archives, unexpected content encodings and non-success responses. Do not fetch corpus/category examples or archives.
@@ -197,9 +228,9 @@ Proposed inputs, not a frozen schema or acquisition authorization:
 | Grouping | Evidence that groups represent exact variants; unresolved identity conflicts retained, no silent label correction |
 | Evaluation | Original split membership, schema-inspected identity exclusion list, proposed reference selection and absent-product construction for later review |
 | Category | Observed category evidence and sufficient permitted diagnostic coverage; no selected category yet |
-| Acquisition envelope | First resolve permission for the two examples under the existing 2 MiB transfer / 5 MiB decoded limits. Any larger diagnostic acquisition requires an explicitly sized proposal and approval; none is authorized here. |
+| Acquisition envelope | Both examples were already acquired under the owner's bounded unresolved-rights exception (2 MiB transfer / 5 MiB decoded limits). The ten-pair chat review adds no acquisition permission. Any larger diagnostic acquisition requires an explicitly sized proposal and approval; none is authorized here. |
 
-**One next action:** the project owner should locally review PW rows 1-10 from the hash-identified saved example for identity-bearing attributes and ambiguous evidence, recording `same_variant`, `different_variant` or `insufficient_evidence` separately from source labels, without publishing product text. This completes the missing semantic check before proposing any larger, explicitly bounded diagnostic acquisition. Do not begin F1 or download archives automatically.
+**One next action:** prepare a bounded diagnostic proposal covering positive pairs and confusing variants in a candidate category, including data-use scope, sample limits and review method. D15 resolves the eligibility question, but rights, category coverage, positive-pair evidence and end-to-end evaluation design remain open. This does not make F1 ready or authorize acquisition.
 
 ## Executed acquisition script
 

@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 4
+- Revision: 6
 - Status: in_progress (F0 documentation-only audit reviewed and done; F1-F4 remain draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-10-30
-- Selected task: bounded local sample inspection after accepted F0
-- Execution: acquisition and structural inspection complete; semantic review pending; rights unresolved; F0 remains done; F1-F4 draft
+- Selected task: adopt offer eligibility policy and resolve PW line 5
+- Execution: ten-pair model-assisted semantic review complete; eligibility policy v1 accepted (D15); rights unresolved; F0 remains done; F1-F4 draft
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -32,7 +32,7 @@ Do not initialize Git, install production dependencies, download large corpora/m
 | F3 | draft | Comparable LLM baseline with observed cost and failure analysis | F2; explicit API/model budget authorization |
 | F4 | draft | Continue, simplify, or change-domain decision; next product slice | F2/F3 evidence, or explicit incomplete-stage limitation |
 
-### F0 — bounded data feasibility audit
+### F0 â€” bounded data feasibility audit
 
 **Purpose:** determine what evidence and permissions are still needed for F1. This is discovery, not dataset selection, annotation, a benchmark or application implementation. A well-supported negative or unresolved finding is a valid outcome.
 
@@ -82,20 +82,20 @@ The 2026-10-29 user request explicitly authorized F0 source/terms research and c
 
 Open: data-specific rights; sample accessibility and exact schema; exact-variant compatibility; sufficient single-category coverage; reliable identity/supplier metadata; future acquisition size. Escalate only a required scope/identity/evaluation change or new authorization. Otherwise finish the unresolved branch with evidence. Do not silently weaken criteria or make F1 dependent on hidden notes.
 
-### F1 — identity and evaluation design
+### F1 â€” identity and evaluation design
 Draft category-specific identity rules and annotation instructions. Inspect roughly 100-150 examples, including hard negatives, insufficient evidence and absent-product cases. Arrange owner review of ambiguous rules/labels rather than claiming model-generated labels are human-reviewed.
 
 Design product-disjoint splits and a reference catalog. Preserve original benchmark results separately. State uncertainty and potential contamination. Output paths and schema are to be defined after F0.
 
-### F2 — deterministic baseline
+### F2 â€” deterministic baseline
 Select a minimal environment/dependency set, with required approval, and document actual setup commands. Implement a reproducible local baseline and meaningful offline tests. Measure candidate recall separately from matching and report difficult cases. API/UI/queues are out of scope.
 
-### F3 — current LLM comparison
+### F3 â€” current LLM comparison
 Select provider/model from current documentation, record explicit budget and call limits, and keep credentials outside artifacts. Compare a constrained LLM decision with the deterministic baseline on equivalent candidates. Include abstention, invalid-output handling and actual cost. Keep held-out data separate from prompt tuning. Do not use the same model as sole ground-truth annotator/judge.
 
 If credentials/budget are missing, offline adapter tests may be prepared when authorized, but F3 remains incomplete. Never substitute mock results for live performance.
 
-### F4 — decision
+### F4 â€” decision
 Continue if the problem is assessable, data use is permitted, and results support meaningful quality/cost/reliability trade-offs. Simplify if a baseline wins; change category/scope if ground truth cannot be established. Do not require a custom model to outperform the LLM to justify building a well-evaluated application.
 
 Prepare the next small vertical-slice plan only after inspecting evidence. Preserve failed hypotheses and uncertainty. No invented claim of 99% precision or customer savings.
@@ -128,7 +128,7 @@ Planning validation: inspected the full relevant diff; `git diff --check` passed
 
 ## Handoff
 
-**F0, accepted at plan revision 2**, remains done. Revision 4 acquired both examples and completed structural inspection under the owner's limited exception to the rights gate. Rights remain unresolved. Next: owner locally reviews the first 10 PW rows for exact-variant evidence as specified in the audit. No larger acquisition or F1 execution is authorized by this handoff.
+**F0, accepted at plan revision 2**, remains done. Revision 4 acquired both examples and completed structural inspection under the owner's limited exception to the rights gate; revision 5 completed model-assisted semantic review of PW lines 1-10. Rights remain unresolved. Revision 6 resolved eligibility under D15. Next: prepare a bounded diagnostic proposal with positive pairs, confusing variants, a candidate category and explicit data-use scope. No larger acquisition or F1 execution is authorized by this handoff.
 
 ## F0 artifact review (2026-10-29)
 
@@ -139,6 +139,7 @@ Planning validation: inspected the full relevant diff; `git diff --check` passed
 - Review changes: recorded this verdict and updated the state pointer; the audit evidence and evaluation criteria were preserved. Next action is the targeted rights follow-up specified above.
 
 ## Revision notes
+- Revision 5 (2026-10-30): completed the separately authorized ten-pair semantic review in this chat; preserved source labels, F0's historical acceptance and F1-F4 draft status. No identity policy, category or evaluation contract selected or changed.
 - Revision 3 (2026-10-29): completed the separately requested, documentation-only rights follow-up below; preserved F0's accepted review and F1-F4 draft status. No acquisition authorization or evaluation criteria changed.
 - Revision 2 (2026-10-28): bounded F0 with primary-source leads, observed environment, conditional sample limits, reproducible outputs, negative-result path and explicit acceptance/handoff. Later tasks remain coarse; no feasibility execution claimed.
 - Revision 1: documentation/publication boundary clarified; technical scope unchanged. No feasibility work has been executed.
@@ -168,3 +169,28 @@ Approach: verify publisher hrefs; download with standard-library bounded reads (
 - Next action: owner locally reviews PW rows 1-10 for exact-variant identity and ambiguity, separately from source labels, before a larger diagnostic acquisition is proposed. F1-F4 stay draft. This sample follow-up is ready for review with the semantic limitation explicit; the historical accepted F0 review is unchanged.
 
 - Review support: generated an optional local HTML worksheet with the first 10 pairs, escaped raw values and initially collapsed source labels. It does not save judgments and is not a public artifact. The public procedure can regenerate the same rows from the hash-identified examples.
+
+## Bounded semantic follow-up (2026-10-30, revision 5)
+
+- Authorization: read only the specifically named local pair payload/metadata and optional HTML worksheet; analyze exactly PW physical lines 1-10 in this chat. No personal notes, additional models/services, downloads, merchant pages, installations, paid calls, delegation or Git mutations. The worksheet was not needed or read. This adds no license or broader acquisition permission.
+- Starting reality: Git HEAD `fb94af5`; initial working tree clean. Read AGENTS, STATE, active plan, audit, evaluation contract and referenced project brief, decisions, workflow and documentation policy. Existing committed evidence and the historical F0 artifact-review verdict were preserved.
+- Method/result: recomputed PW SHA-256 and byte length, matching audit and metadata (55,960 bytes); confirmed 50 physical lines and read only attributes from lines 1-10 before row-level supervision. Fixed nine `different_variant` and one `insufficient_evidence` judgments, then compared labels/cluster equality/flags. Required audit pre-reading disclosed aggregate labels, so this was not fully blinded. The audit is the source of truth for all ten hash/line/pair-ID locators, evidence and comparisons. No label corrections or human/gold claims.
+- Findings: model/capacity/product-type/form-factor/design differences support the nine negative judgments. Line 5 lacks a defined left sellable item; its divergence from source 0 concerns insufficient evidence, not a proven source error. Compatibility mentions are not sold-item identifiers. Internal attribute contradictions in lines 4/10 do not affect their product/model mismatch. Category remains open; the all-negative, consecutive tiny sample cannot validate positives or dataset/system quality and must not be used for tuning.
+- Changed files: existing audit, this plan and STATE only. No application, tests, dependency or decision/evaluation-contract changes. This completes the selected semantic follow-up, not F1 or a new acceptance review of F0.
+- Validation: inspected the full relevant diff and public summaries for raw restricted text, personal content and unsupported claims. All 14 relative Markdown links resolve; no absolute drive paths or required local links in the three documents. Assertions confirmed ten ordered judgment rows, consistent revision/recommendation/next-pair pointers, F0 done and F1-F4 draft. `git diff --check` passed; status contains only these three intended documents. `.local/` has no tracked files and the pair payload matches the existing ignore rule. No application tests or probabilistic evaluation were run; no such implementation changed.
+- Next exact action: obtain the owner's answer for line 5 / `67017951#5303451`: exclude family/editorial records with no sellable identity from future inputs, or retain them as `insufficient_evidence`? Record the answer in the audit before proposing further diagnostics. No larger sample is needed for that clarification and none is proposed or fetched now. Rights, positive-pair evidence, category coverage and offer-to-catalog design remain unresolved.
+
+### Follow-up verification (2026-10-30)
+
+- Verdict: no blocking findings in revision 5's bounded semantic report. Compared all ten rationales against the saved first ten PW records; the nine negative judgments and the unresolved sellable identity in line 5 are supported. This is a further AI review with prior access to the report and source labels, not blinded or human validation.
+- Repeated checks: payload SHA-256 and 55,960-byte length match metadata and audit; 50 physical lines; all ten ordered locators, source labels, unequal clusters and hard-negative flags match. All 14 relative document links resolve; no absolute drive paths in the three changed documents. Relevant diff inspected and `git diff --check` passed. Local payload remains ignored and no local files are tracked.
+- Scope: documentation and saved evidence verification only; no application tests, new downloads, live source-rights research or quality evaluation. Historical execution order and authorization are recorded provenance, not independently reconstructed by these checks. F1-F4 remain draft; the next action above is unchanged.
+
+## Eligibility policy adoption (2026-10-30, revision 6)
+
+- Authorization: owner explicitly delegated selection and adoption of the recommended eligibility rule. Adopted D15 / policy v1 in the decision register and evaluation contract; no further approval is pending for this rule.
+- Result: exclude confirmed editorial/family records without a sellable item, preserve raw evidence and exclusion reasons, retain incomplete offers and uncertain eligibility. Report exclusions and both eligible-input and all-input automation denominators; freeze policy before final testing.
+- Case resolution: PW line 5 left offer `67017951` is excluded from future eligible offers as `editorial_without_sellable_item`. Historical pair judgment `insufficient_evidence`, source label and ten-pair totals are preserved. This supersedes revision 5's pending owner question; it is not human annotation.
+- Scope: documentation only; no runtime filter, data edits, new acquisition, paid calls or Git mutations. F0 remains done and F1-F4 draft. Prior working-tree changes were preserved.
+- Validation: inspected the policy changes and affected audit/state/plan text; all 18 relative links across the five changed documents resolve, including the eligibility section target. Confirmed ten historical judgment rows and unchanged F0/F1-F4 statuses. `git diff --check` passed; no application tests apply to this documentation-only change.
+- Next action: prepare the bounded diagnostic proposal described in the audit; rights, category selection and evaluation design remain unresolved.

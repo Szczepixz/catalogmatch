@@ -1,6 +1,6 @@
 # Decision register
 
-Updated: 2026-10-27. `Accepted` describes project direction, not permission to install dependencies or spend money. Update a row when evidence changes it; do not silently rewrite history. Add a short dated note for consequential revisions.
+Updated: 2026-10-30. `Accepted` describes project direction, not permission to install dependencies or spend money. Update a row when evidence changes it; do not silently rewrite history. Add a short dated note for consequential revisions.
 
 | ID | Status | Decision | Reason / reopening condition |
 | --- | --- | --- | --- |
@@ -18,6 +18,7 @@ Updated: 2026-10-27. `Accepted` describes project direction, not permission to i
 | D12 | Deferred | Queues, Redis, MLflow, pgvector/ANN, fine-tuning, images | Add individually when evidence or acceptance criteria justify them |
 | D13 | Accepted | Version shared technical context; keep optional personal work in ignored `.local/` | Public instructions, plans and commands must remain usable in a fresh clone without local notes |
 | D14 | Accepted | Describe AI assistance honestly and evaluate accepted artifacts | No claim of unaided authorship or human verification based only on model review |
+| D15 | Accepted | Exclude confirmed editorial/family records without a sellable item; retain incomplete offers and uncertain eligibility | Separate input eligibility from pair identity; preserve evidence and report exclusions under the [evaluation contract](EVALUATION.md#offer-eligibility). Revisit with concrete input evidence, before final testing |
 
 ## Open decisions
 
@@ -32,5 +33,6 @@ Updated: 2026-10-27. `Accepted` describes project direction, not permission to i
 | O07 | Which deployment target and operating budget? | Application stage, not a feasibility prerequisite |
 
 ## Revision notes
+- 2026-10-30: Owner authorized adoption of the recommended eligibility rule (D15, policy v1). PW line 5's left record is excluded from future eligible offers; its historical pair judgment and source label remain unchanged. Category-specific identity rules remain open. This is policy approval, not human annotation or broader data-use authorization.
 - 2026-10-27: Separated public technical documentation from optional local prompts and personal context. Product scope and evaluation requirements are unchanged.
 - 2026-10-27: Starter records the reassessed direction. No model, category, license conclusion, measured result, or installed stack has been established.
