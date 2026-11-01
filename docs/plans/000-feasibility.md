@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 6
+- Revision: 7
 - Status: in_progress (F0 documentation-only audit reviewed and done; F1-F4 remain draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-10-30
-- Selected task: adopt offer eligibility policy and resolve PW line 5
-- Execution: ten-pair model-assisted semantic review complete; eligibility policy v1 accepted (D15); rights unresolved; F0 remains done; F1-F4 draft
+- Selected task: execute authorized remaining-sample diagnostic review
+- Execution: all 40 remaining pairs reviewed; no category meets the discovery threshold; D15 applied; F0 remains done; F1-F4 draft
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -128,7 +128,7 @@ Planning validation: inspected the full relevant diff; `git diff --check` passed
 
 ## Handoff
 
-**F0, accepted at plan revision 2**, remains done. Revision 4 acquired both examples and completed structural inspection under the owner's limited exception to the rights gate; revision 5 completed model-assisted semantic review of PW lines 1-10. Rights remain unresolved. Revision 6 resolved eligibility under D15. Next: prepare a bounded diagnostic proposal with positive pairs, confusing variants, a candidate category and explicit data-use scope. No larger acquisition or F1 execution is authorized by this handoff.
+**F0, accepted at plan revision 2**, remains done. Revision 4 acquired both examples and completed structural inspection under the owner's limited exception to the rights gate; revision 5 completed model-assisted semantic review of PW lines 1-10. Rights remain unresolved. Revision 6 resolved eligibility under D15. Revision 7 specifies the bounded proposal below. The authorized extension is now complete; no category passed. Next: prepare the documentation-only source comparison described in the audit. No larger acquisition or F1 execution is authorized by this handoff.
 
 ## F0 artifact review (2026-10-29)
 
@@ -194,3 +194,52 @@ Approach: verify publisher hrefs; download with standard-library bounded reads (
 - Scope: documentation only; no runtime filter, data edits, new acquisition, paid calls or Git mutations. F0 remains done and F1-F4 draft. Prior working-tree changes were preserved.
 - Validation: inspected the policy changes and affected audit/state/plan text; all 18 relative links across the five changed documents resolve, including the eligibility section target. Confirmed ten historical judgment rows and unchanged F0/F1-F4 statuses. `git diff --check` passed; no application tests apply to this documentation-only change.
 - Next action: prepare the bounded diagnostic proposal described in the audit; rights, category selection and evaluation design remain unresolved.
+
+## Remaining-sample diagnostic proposal (2026-10-30, revision 7)
+
+Historical proposal status: prepared before authorization; execution subsequently completed below. Starting commit `8e1cc12`, clean working tree. The user requested the recorded next step: preparation of a bounded diagnostic proposal. Earlier chat semantic authorization covered exactly ten pairs; this proposal explicitly requests extending it to the remaining saved PW rows. Rights remain unresolved; this is no new license or acquisition authorization.
+
+### Question and scope
+
+Can the existing example provide supported same-variant cases and confusing different variants within one candidate category, or is its coverage insufficient? The audit reports 46 source-negative and four source-positive pairs overall, with ten negatives already reviewed. Thus the remaining 40 rows contain four source positives and 36 negatives; these are sampling facts, not trusted exact-variant judgments.
+
+- Input: saved `sample_pairwise.json`, 55,960 bytes, SHA-256 `8c023e0f5571a95a833c431cb94d0f909db3c4bc6e0993d01c5b7488e356d90b`, and its acquisition metadata. Verify hash and 50 physical lines before reading attributes.
+- Maximum new semantic exposure: physical lines 11-50, 40 original pairs / 80 offer occurrences, processed in four batches of ten in source order. Include every row, even if excluded or unresolved; do not replace difficult cases. Reference previous lines 1-10 only through the existing audit.
+- Zero new dataset downloads, merchant-page visits, external-service calls, paid calls or installations. No MC payload inspection or synthetic/cross-row pair construction. Analysis uses this chat; do not describe that as offline-only processing. Local scripts may use the existing Python standard library.
+- Publish original summaries, counts and hash/line/pair/offer locators only; preserve raw payloads locally. No raw titles, descriptions or merchant contact data in versioned artifacts.
+
+### Review procedure
+
+1. Separate row-level supervision (`label`, cluster IDs and hard-negative flag) from the attribute view. Review brand/title/description/price/currency first. Prior knowledge of aggregate labels and previous judgments prevents a fully blinded claim.
+2. For each side, record observed product type and eligibility under D15 v1: eligible, excluded with evidence, or uncertain. Missing attributes alone do not justify exclusion. Product types are analyst observations, not source category metadata. Preserve identity-bearing conflicts and distinguish compatible devices from sold items.
+3. Record `same_variant`, `different_variant` or `insufficient_evidence`, decisive attributes and remaining uncertainties before comparing source supervision. A positive requires evidence of the same specific sellable model/configuration and resolution of observed capacity, form-factor, pack, condition or other relevant variant distinctions. Shared brand/family, absence of a contradiction and source label 1 are insufficient. If a new category-specific identity decision is necessary, retain `insufficient_evidence` and list the decision for F1 instead of inventing a policy.
+4. For an excluded side without a defined sellable item, retain the historical/source pair and record an unresolved identity judgment separately from eligibility. Do not count exclusion as a correct negative or catalog absence. Record assessment origin as AI-assisted, never human/gold annotation.
+5. Compare source supervision after each batch's judgments. Report discrepancies as evidence disagreements, not automatic label corrections. Define confusing negatives from observed shared product type/family and a decisive variant conflict, not from the source hard-negative flag alone.
+6. Aggregate all 50 pairs with separate previous/new counts. Deduplicate offers by ID for eligibility counts; report pair occurrences separately and flag repeated identities. Preserve all exclusions and uncertain cases, with explicit denominators. Do not compute matching accuracy or treat these annotations as gold.
+
+### Category recommendation and stopping rules
+
+Produce one coverage table by observed product type: pair count, unique offer count, source-label mix, the three review judgments, eligibility exclusions/uncertainty and confusing-negative count. Cross-type pairs remain a separate slice and do not inflate within-category coverage.
+
+Recommend at most one category for further investigation only if it contains at least two supported positive pairs and two confusing negative pairs with clear sellable identity evidence, and those pairs are not merely repeated unordered offer-ID combinations. This is a pragmatic discovery threshold, not statistical validation or an F1 acceptance criterion. Report distinct identities and any correlation even when the threshold is met. Prefer the category with more supported positives, then more confusing negatives; break ties by first occurrence. Do not combine unrelated types to reach the threshold. Owner confirmation is required before adopting the category or its final identity rules.
+
+If no category meets this threshold, report insufficient category evidence and the precise missing slice; stop without downloading or searching for more data. If hashes/schema/counts disagree with the recorded input, stop and report the discrepancy. Ambiguous cases are retained, not a reason to expand the sample. A category recommendation alone cannot make F1 ready: rights, independently checked labels, sufficient diagnostic coverage, identity grouping and offer-to-catalog design remain prerequisites.
+
+### Outputs, validation and handoff
+
+- Update the existing audit with 40 locatable judgments, eligibility evidence, category coverage, limitations and one next action. Update this plan and STATE; create no second audit or application scaffold.
+- Reconcile exactly 50 historical-plus-new pair rows, source-label counts and unique offer counts against the saved payload. Validate locators, category totals and exclusion denominators; check public text, relative links and `git diff --check`.
+- Keep all inspected identities outside a future custom frozen test and prohibit prompt/threshold/model tuning on this unknown-split sample. No baseline implementation, quality metric, source-label correction or F1 execution follows automatically.
+- Proposal preparation performed documentation inspection only; no new raw records were read and no semantic judgments were added. The existing evaluation contract and D15 were preserved.
+- Preparation validation: inspected changed scope and handoff text; 17 relative links resolve and the new proposal anchor exists. Confirmed revision 7, F0 done/F1-F4 draft and the unchanged ten historical judgment rows. `git diff --check` passed. No application tests or data-quality evaluation were run.
+- Next exact action: obtain authorization to read and analyze PW lines 11-50 in this chat under the bounds above despite the recorded unresolved rights, then execute this proposal. No additional service or acquisition permission is requested.
+
+### Authorized execution and result (2026-10-30)
+
+- Owner explicitly approved the further analysis. Scope: saved PW lines 11-50 in this chat under revision 7, preserving unresolved rights and prohibiting new acquisition/additional services. Starting HEAD `8e1cc12`; the three existing proposal edits were preserved.
+- Verified saved metadata, H SHA-256, 55,960 bytes and 50 physical lines. Reviewed four ten-row batches, recording attribute judgments before reading each batch's supervision. Prior aggregate knowledge prevents a blinded claim. No previous raw lines 1-10 were semantically reread; their existing audit summaries supplied historical types/eligibility. No MC attributes or personal notes were read.
+- Result: new 35 different / 5 insufficient; combined 44 different / 6 insufficient / 0 same across 50 pairs. All four source positives remain unresolved because configuration or bundle evidence is missing. Row 36 adds uncertain eligibility, not exclusion. D15 yields 95 eligible, one uncertain and one excluded unique offer among 97 (96 retained); occurrence counts are 98/1/1 among 100. No source labels changed or gold/human validation claimed.
+- Category outcome: none meets the predeclared two-positive/two-confusing-negative discovery threshold. The audit contains 40 new locators/rationales, category counts, repeated-ID accounting and explicit missing evidence. No rule or threshold was relaxed, no category selected and no F1 work executed.
+- Local scratch records fixed judgments before supervision comparison; public reproduction needs the hash-identified sample and documented procedure, not those scratch files. No code/dependencies, additional services, downloads, merchant visits, paid calls or Git mutations.
+- Validation: checked all 50 public locators/judgments against saved records and fixed assessments; verified 46/4 source labels, cluster equality, 50 unique unordered pairs, 97 unique offers and identical repeated-ID payloads. Category totals and eligibility denominators reconcile. All 16 relative links in changed documents resolve; no absolute drive paths or full raw titles/descriptions in the new report. Local scratch files are ignored and no local files are tracked. Inspected report/state/plan changes; `git diff --check` passed. No application tests, live source research, human annotation or probabilistic quality evaluation were run.
+- Next action: documentation-only comparison of bounded WDC continuation versus one alternative for permitted use and category-specific positive/negative variant evidence. No automatic expansion of acquisition. F0 remains done and F1-F4 draft.

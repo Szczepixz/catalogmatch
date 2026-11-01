@@ -1,16 +1,16 @@
 # F0: WDC Products data audit
 
-Date: 2026-10-29; updated 2026-10-30. Task: F0 accepted at revision 2; bounded semantic follow-up recorded in [feasibility plan](plans/000-feasibility.md), revision 5. Recommendation: `needs_targeted_followup`.
+Date: 2026-10-29; updated 2026-10-30. Task: F0 accepted at revision 2; bounded semantic follow-ups recorded in [feasibility plan](plans/000-feasibility.md), revision 7. Recommendation: `needs_targeted_followup`.
 
 ## Outcome and evidence boundary
 
-The documentation-only F0 branch remains accepted and done. On 2026-10-30 the user authorized bounded local inspection despite unresolved rights, retaining WDC and the exact-variant project. Both examples were acquired and structurally inspected; model-assisted semantic review of PW rows 1-10 is now complete. Dataset-wide variant correctness and category suitability remain unverified. Rights remain `unresolved`, not prohibited or newly licensed. F1 remains draft. Historical no-acquisition statements below describe the earlier documentation-only tasks.
+The documentation-only F0 branch remains accepted and done. On 2026-10-30 the user authorized bounded local inspection despite unresolved rights, retaining WDC and the exact-variant project. Both examples were acquired and structurally inspected; model-assisted semantic review of all 50 PW rows is now complete. Dataset-wide variant correctness and category suitability remain unverified. Rights remain `unresolved`, not prohibited or newly licensed. F1 remains draft. Historical no-acquisition statements below describe the earlier documentation-only tasks.
 
 For the original F0 task, the user authorized source/terms research and conditional inspection of the two publisher examples within the plan limits. That authorization does not resolve source rights. No archives, model weights, dependencies, paid calls, provider uploads, infrastructure, external messages or Git mutations were used. Personal notes were not read. The report is AI-assisted analysis and author self-check, not independent or human review.
 
 ## Bounded local inspection (2026-10-30)
 
-Status: structural inspection and the separately authorized ten-pair semantic follow-up complete. The user approved proceeding after discussion of the unresolved-rights gate. This is a limited project decision, not a publisher grant. No raw text is reproduced in public documentation. Structural scripts produced metadata and aggregates; the semantic follow-up processed the ten pairs in this chat with explicit authorization, without an additional model or external service. F0's accepted review is unchanged. No archives, additional datasets, separate model API calls, installations, Git mutations or F1 execution.
+Status: structural inspection, the ten-pair semantic follow-up and the separately authorized remaining 40-pair review complete. The user approved proceeding after discussion of the unresolved-rights gate. This is a limited project decision, not a publisher grant. No raw text is reproduced in public documentation. Structural scripts produced metadata and aggregates; the semantic follow-ups processed all 50 PW pairs in this chat with explicit authorization, without an additional model or external service. F0's accepted review is unchanged. No archives, additional datasets, separate model API calls, installations, Git mutations or F1 execution.
 
 ### Acquisition evidence
 
@@ -97,6 +97,112 @@ Application: H / line 5 / pair `67017951#5303451`, left offer `67017951`, is exc
 ### Verification and conclusion
 
 Saved bytes were reparsed offline with a separate line-by-line pass. Both hashes, byte counts, 50-row counts, pair-ID composition/uniqueness and combined unique offer/cluster counts were checked. No performance evaluation was run. The examples are usable for schema discovery, but do not establish one category with 100-150 diagnostic cases or an offer-to-catalog benchmark. Recommendation remains `needs_targeted_followup`; retain WDC, with F1-F4 draft.
+
+
+## Remaining-pair semantic analysis (2026-10-30, revision 7 execution)
+
+The owner explicitly authorized the proposed extension to PW physical lines 11-50 in this chat despite the recorded unresolved rights. The saved payload and metadata match H and 55,960 bytes; all 50 physical lines are present. No new download, MC inspection, merchant lookup, extra service, paid call or installation was used. Existing proposal changes were preserved.
+
+Method: four batches of ten in source order; brand/title/description/price/currency were read and judgments recorded before revealing each batch's row-level labels, clusters and hard-negative flags. Aggregate label counts and the prior report were already known, so this is not fully blinded. Assessments are AI-assisted diagnostic judgments, not gold labels or a measured model baseline. No category-specific identity policy was invented to force a positive. Matching model names without enough configuration or bundle evidence remain unresolved; unobserved condition is never assumed new.
+
+### Forty additional judgments
+
+H is the same SHA-256 defined above. Each locator is H / physical line / original pair ID; its left and right offer IDs are the components of that pair ID. E/E means both sides are eligible under D15 v1; U/E means left eligibility is uncertain and retained in the eligible denominator. Every E assessment has evidence of a named sellable item in the input; it does not imply complete variant evidence. The category describes both sides unless marked cross-type, where the rationale names the left and right types. No new exclusion was made.
+
+| Locator: H / line / pair_id | Product type / slice | Eligibility L/R | Judgment | Evidence and unresolved attributes | Source label |
+| --- | --- | --- | --- | --- | --- |
+| H / 11 / `49744056#66087579` | Label tapes | E/E | `different_variant` | Tape widths differ: 19 versus 12 mm; model codes also differ. | 0 |
+| H / 12 / `33473348#16164619` | Computer cases | E/E | `different_variant` | Distinct case model families and explicit colors; both are mid-tower cases. | 0 |
+| H / 13 / `78194247#19072250` | Headsets | E/E | `different_variant` | Different headset families and duo versus mono configuration. | 0 |
+| H / 14 / `1331887#46707617` | Cross-type | E/E | `different_variant` | Camera lens versus uninterruptible power supply. | 0 |
+| H / 15 / `14954745#7309472` | Bicycle chains | E/E | `insufficient_evidence` | Same chain family and speed, but right specifies 116 links and left does not establish length; weights differ without resolving configuration. | 1 |
+| H / 16 / `24300732#50979472` | Wireless access points | E/E | `different_variant` | In-wall versus Pro model identifiers; both explicitly five-unit packs. | 0 |
+| H / 17 / `4402971#13802221` | Cross-type | E/E | `different_variant` | Monitor versus hex-wrench set. | 0 |
+| H / 18 / `36616040#52341668` | Cross-type | E/E | `different_variant` | Headset versus notebook paper refill. | 0 |
+| H / 19 / `63505292#40438621` | Bicycle brake pads | E/E | `different_variant` | Sintered versus organic compound despite matching backing material and compatible brakes. | 0 |
+| H / 20 / `63587638#52588862` | External SSDs | E/E | `different_variant` | Touch versus standard model and black versus blue; equal 2 TB capacity is insufficient. | 0 |
+| H / 21 / `25138178#45664586` | Cross-type | E/E | `different_variant` | Memory card versus internal SSD; equal capacity is not identity. | 0 |
+| H / 22 / `14636186#625440` | Cross-type | E/E | `different_variant` | Mouse versus ink cartridge; compatible printers are not the sold item. | 0 |
+| H / 23 / `70272012#11565762` | Cross-type | E/E | `different_variant` | Bicycle chain versus internal SSD. | 0 |
+| H / 24 / `56902092#5578260` | Headsets | E/E | `different_variant` | Distinct headset model families, 2400 II versus 2300. | 0 |
+| H / 25 / `25607937#45641488` | UPS units | E/E | `different_variant` | Different UPS model designations, 1000 LCD versus SRT 3000. | 0 |
+| H / 26 / `28769706#78600248` | Cross-type | E/E | `different_variant` | Wireless earbuds with charging case versus USB drive. | 0 |
+| H / 27 / `25831104#57162953` | Bicycle cassettes | E/E | `different_variant` | Different cassette models and 11 versus seven speeds. | 0 |
+| H / 28 / `11556800#87112730` | Tablets | E/E | `insufficient_evidence` | Matching family, screen size, capacity and silver color; right omits Wi-Fi-only versus cellular configuration. | 1 |
+| H / 29 / `20791179#51278033` | Computer cases | E/E | `different_variant` | Different case models, H500M versus 110R; compatible components are not sold contents. | 0 |
+| H / 30 / `28403450#47959304` | Ink cartridges | E/E | `different_variant` | Distinct cartridge codes, color and size designations: yellow XL versus mono XXL. | 0 |
+| H / 31 / `62062623#16111692` | UPS units | E/E | `different_variant` | Different explicit UPS codes: SMT1000RMI2UC versus SMT1000I; equal VA rating does not establish identity. | 0 |
+| H / 32 / `21390817#18996777` | Cross-type | E/E | `different_variant` | Graphics card versus surveillance recorder. | 0 |
+| H / 33 / `6563464#89906566` | Cross-type | E/E | `different_variant` | Wristwatch versus camera bracket; bracket title and description conflict on color, without affecting this pair decision. | 0 |
+| H / 34 / `78660792#84859691` | Toner cartridges | E/E | `different_variant` | Different cartridge identifiers and compatible versus original product claims; no assumption that the compatibility brand is the manufacturer. | 0 |
+| H / 35 / `37083729#28769706` | Wireless earbuds | E/E | `different_variant` | Pro versus second-generation earbuds; shared charging-case feature does not establish identity. | 0 |
+| H / 36 / `45833973#96299407` | Notebook accessories | U/E | `insufficient_evidence` | Left names only notebook accessories, with price but no subtype; right specifies a slip case and dimensions. Left may be an incomplete offer or a category listing, so eligibility remains uncertain rather than excluded. | 0 |
+| H / 37 / `70728429#60131715` | Internal SSDs | E/E | `different_variant` | Same SSD family but 250 versus 500 GB capacity. | 0 |
+| H / 38 / `45366053#34146981` | Sports watches | E/E | `different_variant` | 5S Sapphire versus 5S Plus and different case finishes; generic multi-model description does not override the sold-item title. | 0 |
+| H / 39 / `54164067#3553691` | Cross-type | E/E | `different_variant` | Photo paper versus wristwatch. | 0 |
+| H / 40 / `33520763#47121877` | Headphones | E/E | `different_variant` | Distinct headphone model codes, M50XWH versus PRO7x. | 0 |
+| H / 41 / `6562952#14979345` | Bicycle pedals | E/E | `insufficient_evidence` | Same pedal model and interface, but left explicitly includes cleats while right does not establish included contents or unit count. Do not assume a standard bundle. | 1 |
+| H / 42 / `34868774#23678296` | Wristwatches | E/E | `different_variant` | Different model lines and 42 versus 41 mm case size; right is explicitly pre-owned and customized, while left condition is unstated. | 0 |
+| H / 43 / `68792553#22150807` | Cross-type | E/E | `different_variant` | Complete UPS versus replacement battery cartridge; battery compatibility is not complete-device identity. | 0 |
+| H / 44 / `34920376#40438621` | Bicycle brake pads | E/E | `different_variant` | Sintered versus organic compound and different named compatible brake families. | 0 |
+| H / 45 / `31517280#43227294` | Cross-type | E/E | `different_variant` | System memory module versus graphics card; graphics memory is not the sold standalone RAM. | 0 |
+| H / 46 / `88973966#13546282` | Drum heads | E/E | `different_variant` | Different model families and 14 versus 20 inch diameter. | 0 |
+| H / 47 / `25445188#14737778` | Cross-type | E/E | `different_variant` | Memory card with adapter versus mechanical mounting base; RAM is a mounting brand here, not computer memory. | 0 |
+| H / 48 / `87238244#84550965` | Cross-type | E/E | `different_variant` | Mouse versus printer ribbon; ribbon minimum purchase of three is not silently converted into a three-unit pack. | 0 |
+| H / 49 / `63396450#65942456` | Privacy filters | E/E | `insufficient_evidence` | Same brand and nominal diagonal, but left Flex wording does not establish model, dimensions or mounting; right explicitly framed. Do not infer an incompatible construction from an unexplained shorthand. | 1 |
+| H / 50 / `3553691#8032910` | Wristwatches | E/E | `different_variant` | Different watch reference identifiers and model lines. | 0 |
+
+The four source-positive rows are 15, 28, 41 and 49; all remain `insufficient_evidence`. Missing chain length, tablet connectivity, pedal bundle contents and filter construction/model evidence respectively prevent confirmation. Row 36 is a source-negative with unresolved identity and uncertain left eligibility. These are evidential disagreements, not proven source errors. The other 35 new rows have decisive differences consistent with source negatives. Labels agree with source cluster equality throughout; source labels and payloads were not changed.
+
+### Coverage and denominators
+
+Historical lines 1-10: 9 different, 1 insufficient. New lines 11-50: 35 different, 5 insufficient. Combined: **50 pairs, 44 different, 6 insufficient, 0 supported same-variant judgments**. Original supervision remains 46 negative / 4 positive. These counts are not accuracy, label-noise estimates or evidence that the source has no valid positive matches.
+
+The 100 offer occurrences contain 97 unique IDs: 95 eligible, one eligibility-uncertain and one excluded. Counting uncertainty in the eligible denominator gives 96/97 retained unique records; on an occurrence basis, 99/100 are retained (98 eligible, one uncertain, one excluded). These are input-accounting denominators, not automation metrics. The sole exclusion is historical line 5 left offer `67017951`, reason `editorial_without_sellable_item`. The uncertainty is line 36 left offer `45833973`: a generic accessory title and a price do not establish either a concrete subtype or an editorial/category page. Retain it for review.
+
+Repeated offer IDs are `28769706` (lines 26/35), `40438621` (19/44) and `3553691` (39/50), each with unchanged payloads. Pair IDs and unordered offer-ID pairs are unique. Source clusters also correlate records across pairs; neither different offer IDs nor source clusters prove independent exact identities. No new identity groups were established.
+
+The following table groups original pairs, not all possible combinations. Source counts are negative/positive; judgment counts are same/different/insufficient. Excluded/uncertain columns count unique offers within each slice; unique-offer totals across slices overlap. Confusing negatives share observed product type or family and a decisive conflict; this descriptive selection is not a difficulty benchmark. Historical types are taken from the existing ten-row audit, without rereading those attributes. The unresolved-type slice is line 5; cross-type pairs are not credited to a candidate category.
+
+| Observed pair slice | Pairs | Unique offers | Source -/+ | Judgments S/D/I | Excluded/uncertain | Confusing negatives |
+| --- | --- | --- | --- | --- | --- | --- |
+| USB drives | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Printers | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Cross-type | 17 | 34 | 17/0 | 0/17/0 | 0/0 | 0 |
+| Surveillance recorders | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Unresolved product type | 1 | 2 | 1/0 | 0/0/1 | 1/0 | 0 |
+| Surveillance cameras | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Memory modules | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Caps | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Label tapes | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Computer cases | 2 | 4 | 2/0 | 0/2/0 | 0/0 | 2 |
+| Headsets | 2 | 4 | 2/0 | 0/2/0 | 0/0 | 2 |
+| Bicycle chains | 1 | 2 | 0/1 | 0/0/1 | 0/0 | 0 |
+| Wireless access points | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Bicycle brake pads | 2 | 3 | 2/0 | 0/2/0 | 0/0 | 2 |
+| External SSDs | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| UPS units | 2 | 4 | 2/0 | 0/2/0 | 0/0 | 2 |
+| Bicycle cassettes | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Tablets | 1 | 2 | 0/1 | 0/0/1 | 0/0 | 0 |
+| Ink cartridges | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Toner cartridges | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Wireless earbuds | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Notebook accessories | 1 | 2 | 1/0 | 0/0/1 | 0/1 | 0 |
+| Internal SSDs | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Sports watches | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Headphones | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Bicycle pedals | 1 | 2 | 0/1 | 0/0/1 | 0/0 | 0 |
+| Wristwatches | 2 | 4 | 2/0 | 0/2/0 | 0/0 | 2 |
+| Drum heads | 1 | 2 | 1/0 | 0/1/0 | 0/0 | 1 |
+| Privacy filters | 1 | 2 | 0/1 | 0/0/1 | 0/0 | 0 |
+
+### Outcome and next action
+
+**No category meets the predeclared discovery threshold of two supported positive pairs and two confusing negatives.** None has a supported positive pair in this review; the four source positives also lie in four separate types. Changing the threshold or combining unrelated bicycle/electronic products would not supply the missing evidence. Recommendation remains `needs_targeted_followup`; no category is selected and F1-F4 remain draft.
+
+The precise missing slice is multiple independently checked same-variant pairs with explicit identity-bearing configuration and bundle evidence in one category, alongside confusing negatives in that category. Further work also needs category-specific rules for sufficient positive evidence, including treatment of unspecified condition and standard included accessories; this pass does not assume those rules. No larger acquisition is justified solely by these 50 examples.
+
+Next action: prepare a documentation-only comparison of a bounded WDC continuation versus one alternative source, focusing on explicit permitted use, category-specific positive/negative coverage and variant-level evidence, before proposing any new acquisition. No publisher contact, data download or provider upload is authorized by this recommendation. Keep all inspected identity groups excluded from future custom frozen tests; do not tune models, prompts or thresholds on this unknown-split sample. Source rights and offer-to-catalog construction remain unresolved.
 
 ## Dated primary-source evidence
 
@@ -230,7 +336,7 @@ Proposed inputs, not a frozen schema or acquisition authorization:
 | Category | Observed category evidence and sufficient permitted diagnostic coverage; no selected category yet |
 | Acquisition envelope | Both examples were already acquired under the owner's bounded unresolved-rights exception (2 MiB transfer / 5 MiB decoded limits). The ten-pair chat review adds no acquisition permission. Any larger diagnostic acquisition requires an explicitly sized proposal and approval; none is authorized here. |
 
-**One next action:** prepare a bounded diagnostic proposal covering positive pairs and confusing variants in a candidate category, including data-use scope, sample limits and review method. D15 resolves the eligibility question, but rights, category coverage, positive-pair evidence and end-to-end evaluation design remain open. This does not make F1 ready or authorize acquisition.
+**One next action:** prepare the documentation-only source comparison specified in the remaining-pair analysis above. The authorized 40-pair extension is complete; no category passed the discovery threshold. No new acquisition or F1 execution is authorized.
 
 ## Executed acquisition script
 
