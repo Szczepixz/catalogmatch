@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 7
-- Status: in_progress (F0 documentation-only audit reviewed and done; F1-F4 remain draft)
+- Revision: 9
+- Status: in_progress (source selection closed; F0 done; F1 ready; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-10-30
-- Selected task: execute authorized remaining-sample diagnostic review
-- Execution: all 40 remaining pairs reviewed; no category meets the discovery threshold; D15 applied; F0 remains done; F1-F4 draft
+- Updated: 2026-11-01
+- Selected task: complete ALASKA Monitor inspection and close source selection
+- Execution: 30-pair pilot complete; ALASKA Monitor selected under D16/D17; F1 data preparation ready; no application implemented
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -16,7 +16,7 @@ This repository contains project documentation and a local-note ignore rule only
 
 Verified on Windows/PowerShell: `py -3.12 --version` reports Python 3.12.4, `py -3.12 -m pip --version` reports pip 24.0, and Git is 2.43.0.windows.1. `uv` was not found on PATH; `python` resolves to a WindowsApps alias, so use the verified launcher. These observations do not establish a reproducible project environment. F0 needs only the existing interpreter and standard library; do not install anything or use global third-party packages. Environment creation/package management for F2 remains open.
 
-Read [project brief](../PROJECT_BRIEF.md), [decisions](../DECISIONS.md) and [evaluation contract](../EVALUATION.md). Exact variant identity is accepted; category, schema and model are not selected. WDC Products is a candidate, not an audited source.
+Read [project brief](../PROJECT_BRIEF.md), [decisions](../DECISIONS.md) and [evaluation contract](../EVALUATION.md). Exact variant identity is accepted; ALASKA Monitor is selected for feasibility under D16/D17. Input schema, final annotation release, splits and model remain to implement. Earlier environment observations above are historical.
 
 ## Timebox and permissions
 Estimated stage effort: 20-30 human working hours; review scope if evidence collection exceeds it. This is not an automatic runtime or monetary allowance.
@@ -27,7 +27,7 @@ Do not initialize Git, install production dependencies, download large corpora/m
 | ID | Status | Outcome | Dependency |
 | --- | --- | --- | --- |
 | F0 | done | [Documentation-only audit](../data-audit.md) reviewed; `needs_targeted_followup` | Documentation-only acceptance; source rights unresolved |
-| F1 | draft | Identity policy, reviewed diagnostic data and split design | F0 |
+| F1 | ready | Reproducible ALASKA Monitor preparation, reviewed diagnostic subset and split design | D16/D17 and revision 9 handoff |
 | F2 | draft | Reproducible lexical/rule baseline and error report | F1 |
 | F3 | draft | Comparable LLM baseline with observed cost and failure analysis | F2; explicit API/model budget authorization |
 | F4 | draft | Continue, simplify, or change-domain decision; next product slice | F2/F3 evidence, or explicit incomplete-stage limitation |
@@ -82,10 +82,15 @@ The 2026-10-29 user request explicitly authorized F0 source/terms research and c
 
 Open: data-specific rights; sample accessibility and exact schema; exact-variant compatibility; sufficient single-category coverage; reliable identity/supplier metadata; future acquisition size. Escalate only a required scope/identity/evaluation change or new authorization. Otherwise finish the unresolved branch with evidence. Do not silently weaken criteria or make F1 dependent on hidden notes.
 
-### F1 â€” identity and evaluation design
-Draft category-specific identity rules and annotation instructions. Inspect roughly 100-150 examples, including hard negatives, insufficient evidence and absent-product cases. Arrange owner review of ambiguous rules/labels rather than claiming model-generated labels are human-reviewed.
+### F1 - monitor data preparation and evaluation design
+Ready to implement after revision 9. Use the hash-identified ALASKA Monitor archive, [monitor policy v1](../EVALUATION.md#monitor-identity-policy-v1), and [pilot manifest](../data/alaska-monitor-pilot.json). No new source search or archive is needed.
 
-Design product-disjoint splits and a reference catalog. Preserve original benchmark results separately. State uncertainty and potential contamination. Output paths and schema are to be defined after F0.
+1. Implement a standard-library loader/validator preserving raw records, source IDs, original assignments, duplicate counts and conflicting memberships. Apply known group quarantines (054/063 structural conflicts; 032/205 pilot disagreements) to trusted-label preparation, without rewriting source data. Test duplicate/conflicting assignments, missing records and preservation of model suffixes using clearly synthetic fixtures.
+2. Produce a reproducible, versioned diagnostic set of approximately 100-150 pairs, separating source labels, eligibility, project judgments, rationale and reviewer origin. Include supported positives, confusing variants, missing attributes and contradictions. Sampling limits and any additional chat/raw-data exposure must be explicit in the execution scope; source selection approval is not an unlimited model-service budget.
+3. Define reference-record selection, validated identity groups, identity-disjoint development/frozen-test partitions and absent-product construction. Exclude the 41 semantically exposed pilot source groups and linked aliases from the final custom test. Automated structural parsing and fixed sampling are not themselves independent annotation or a frozen evaluation.
+4. Obtain independent checking of reference judgments before making final quality claims. AI-only diagnostics may support development but are not human gold. Record original benchmark and custom-protocol results separately.
+
+Acceptance: reproducible preparation command, meaningful offline correctness tests, auditable diagnostic manifest, explicit split/catalog protocol and honest annotation status. F1 is not complete merely because a loader runs; F2 baseline work starts after these inputs are defined. Update verified commands in README/AGENTS when executable code exists.
 
 ### F2 â€” deterministic baseline
 Select a minimal environment/dependency set, with required approval, and document actual setup commands. Implement a reproducible local baseline and meaningful offline tests. Measure candidate recall separately from matching and report difficult cases. API/UI/queues are out of scope.
@@ -128,7 +133,7 @@ Planning validation: inspected the full relevant diff; `git diff --check` passed
 
 ## Handoff
 
-**F0, accepted at plan revision 2**, remains done. Revision 4 acquired both examples and completed structural inspection under the owner's limited exception to the rights gate; revision 5 completed model-assisted semantic review of PW lines 1-10. Rights remain unresolved. Revision 6 resolved eligibility under D15. Revision 7 specifies the bounded proposal below. The authorized extension is now complete; no category passed. Next: prepare the documentation-only source comparison described in the audit. No larger acquisition or F1 execution is authorized by this handoff.
+Source selection is closed at revision 9: ALASKA Monitor and identity policy v1 are accepted for bounded local feasibility. F0 remains historically done; F1 data preparation is ready, not complete. Execute the F1 tasks above using the audit and pilot manifest. No publisher contact, additional source search, paid calls or raw redistribution is required or authorized.
 
 ## F0 artifact review (2026-10-29)
 
@@ -243,3 +248,39 @@ If no category meets this threshold, report insufficient category evidence and t
 - Local scratch records fixed judgments before supervision comparison; public reproduction needs the hash-identified sample and documented procedure, not those scratch files. No code/dependencies, additional services, downloads, merchant visits, paid calls or Git mutations.
 - Validation: checked all 50 public locators/judgments against saved records and fixed assessments; verified 46/4 source labels, cluster equality, 50 unique unordered pairs, 97 unique offers and identical repeated-ID payloads. Category totals and eligibility denominators reconcile. All 16 relative links in changed documents resolve; no absolute drive paths or full raw titles/descriptions in the new report. Local scratch files are ignored and no local files are tracked. Inspected report/state/plan changes; `git diff --check` passed. No application tests, live source research, human annotation or probabilistic quality evaluation were run.
 - Next action: documentation-only comparison of bounded WDC continuation versus one alternative for permitted use and category-specific positive/negative variant evidence. No automatic expansion of acquisition. F0 remains done and F1-F4 draft.
+
+## Documentation-only source comparison (2026-11-01, revision 8)
+
+- Scope/authorization: user requested the recommended next step. Compare WDC continuation with exactly one alternative, ALASKA, using primary documentation only. Starting HEAD `49da153`, clean working tree. No dataset downloads, raw-record inspection, external messages, installations, paid calls, delegation or Git mutations.
+- Approach: recheck WDC publisher documentation and repository license; inspect ALASKA author's repository README/LICENSE and paper. Compare category access, label provenance, variant evidence, catalog/split work and rights. Keep publisher claims separate from measured local evidence. This task does not adopt a category or change D01/D15/evaluation requirements.
+- Result: the audit records dated sources and recommends ALASKA Monitor for conditional investigation rather than a larger mixed-category WDC sample. Its technical promise does not establish exact-variant ground truth. MIT scope for merchant-derived records and the canonical archive/version need clarification; observed main/master README download links differ. Archive endpoints were not fetched.
+- Validation: inspected the relevant diff and source-backed claims; 16 relative links resolve, 50 historical judgments are preserved, and F0/F1-F4 statuses are unchanged. `git diff --check` passed; only the audit, plan and STATE changed. No local files are tracked. No application tests or dataset checks apply to this documentation-only task. The GitHub main tree page returned a tool cache error; raw README/LICENSE and the paper were readable. No archive availability or license completeness is claimed.
+- WDC is retained as historical diagnostic evidence, not declared generally unsuitable. No category passed the prior local threshold; documentation cannot substitute for that validation. F0 stays done and F1-F4 draft.
+- Next exact action: owner obtains the narrow ALASKA clarification using the unsent draft in the audit (license scope, canonical archive and label granularity). Sending requires explicit authorization; no message was sent. After a response, define a bounded acquisition/inspection task rather than silently extending the WDC exception to ALASKA.
+
+## Final source inspection (2026-11-01, revision 9)
+
+Authorization: owner approved ALASKA inspection and delegated the steps needed to close source selection. This supersedes the pending publisher-contact gate and permits one Monitor archive plus local parsing and a 30-pair analysis in this chat. No author contact is required. This is a bounded student-project decision, not a new data license or permission for raw redistribution, paid services or further provider uploads. Existing uncommitted comparison edits are preserved.
+
+Pre-inspection approach:
+- Download one Monitor archive from the author's linked hosting, at most 8 MiB transferred; allow at most 128 MiB decompressed tar stream and 25,000 members, at most 1 MiB per data member. Inspect members without extracting paths; no code in the archive is executed. Record endpoint, time, bytes and SHA-256. A data-only metadata request may pin the publisher revision.
+- Apply monitor identity policy v1 below before reading sample records. Parse the ER ground truth, retain provenance and contradictions, and select 15 within-entity pairs across distinct entities/sources plus 15 lexically similar between-entity pairs. Fix the sample before semantic judgments; no replacing ambiguous cases. Seed 20261101 and exact selection details will be recorded with the results.
+- Accept the source for feasibility if the sample supplies at least two supported positives from distinct source entities and two supported confusing negatives, with traceable annotations and usable identity-bearing attributes. This is a discovery gate only, not precision certification or completed F1. Otherwise give a final unsuitable/limited verdict without another source search. Do not relax the gate after inspection.
+
+Monitor identity policy v1 (fixed before inspection):
+- Target the exact monitor catalog variant, not an individual physical unit or merely a family. Preserve brand, complete model/part number including suffixes, size, resolution, refresh rate, panel/touch configuration, color and explicitly sold bundle/quantity/condition.
+- Matching explicit manufacturer and complete model identifiers on both sides can support `same_variant` when identity-bearing evidence is consistent. Case, spacing and formatting-only punctuation may differ; do not drop suffixes or equate distinct part numbers without evidence. A compatible-device mention is not a sold-item identifier.
+- Do not require every possible specification to be repeated once the complete model is established. Missing price, an incidental specification or condition on both sides is not alone a contradiction or an automatic abstention. This does not label the items new or invent accessory contents. The evaluation is catalog-variant linkage, not verification of identical commercial terms.
+- An explicit variant/condition/bundle qualifier on one side whose compatibility cannot be established on the other requires `insufficient_evidence`. Conflicting complete models or explicit variant attributes support `different_variant`. Material internal contradictions, truncated identifiers or unresolved suffix equivalence require `insufficient_evidence`; price alone never decides.
+- Apply D15 separately. Source entity IDs remain supervision, never identity evidence. Preserve benchmark labels and record AI judgments independently. This clarifies future monitor evaluation; it does not relabel the historical WDC review.
+
+### Revision 9 execution outcome
+
+- Download succeeded from the publisher-linked GitHub archive: 3,704,214 bytes, SHA-256 recorded in the audit. Initial sandbox DNS failure transferred zero bytes; approved curl retry succeeded. Decompressed tar and member sizes stayed within bounds; no archive paths were extracted or executed.
+- Structural parser found 16,662 JSON records and 2,342 ER rows. Exact duplicate assignments account for 60 rows; nine records have conflicting membership in groups 054/063. Initial no-conflict assertion failed, and raw CSV rows reproduced the issue. Quarantining both full groups (10 records) before selection is the material pre-sample deviation; source data and failure evidence are retained.
+- Fixed selection: seed 20261101, 15 cross-source within-entity pairs plus 15 title-Jaccard between-entity pairs. Manifest fixed before semantic review. The latter all happen to be same-source and are biased by boilerplate; no cross-source performance claim. 59 records / 41 source entities were exposed semantically.
+- Result: 4 same, 17 different, 9 insufficient across 30 pairs. Within-source-group stratum: 4/2/9; between-group: 0/15/0. Two source-positive contradictions additionally flag groups 032/205 for trusted-label quarantine; they remain in pilot totals. Eligibility: 57 eligible, 2 uncertain retained, 0 excluded unique records. All judgments are AI-assisted, not blinded or human gold.
+- Gate passed without changing its two-positive/two-confusing-negative threshold. D16 selects ALASKA Monitor for feasibility and D17 adopts monitor identity v1. Source discovery is closed; noisy annotations require subset review, not automatic rejection or another source hunt. Previous WDC judgments are preserved.
+- Changed artifacts: existing audit, evaluation contract, decision register, plan and STATE; new public pilot manifest contains only locators, hashes and original summaries. Raw archive/scratch data remain local. No application, dependency, paid call, external message or Git mutation.
+- Validation: a separate archive pass replayed all 30 selections, verified archive/record hashes and source assignments, reconciled counts and confirmed the discovery gate. All 25 Markdown relative links/anchors resolve; 50 WDC rows remain unchanged. Reviewed relevant changes and public manifest; `git diff --check` passed. No application tests or probabilistic evaluation. A documentation edit initially failed because an old heading contained mojibake; retry matched its stable heading prefix and preserved unrelated historical content.
+- Next action: implement F1 loader/validator and diagnostic preparation as specified above. Do not reopen publisher-contact or generic rights research as a prerequisite under the owner's accepted bounded scope. Public redistribution and later external-provider processing remain separate decisions.

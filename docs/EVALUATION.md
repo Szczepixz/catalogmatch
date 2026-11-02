@@ -16,6 +16,18 @@ Missing price, description, model code or variant attributes alone is not an exc
 
 For custom evaluation, report total input records, eligible records, exclusions by reason and unresolved eligibility counts. Keep uncertain cases in the eligible denominator until resolved; report automatic matches over both eligible requests and all input requests. Excluded records do not enter eligible-request matching metrics, but remain in the audit. Do not silently filter ambiguous offers or reinterpret original benchmark results. Freeze the eligibility policy before final testing; version later changes and do not use them to improve an already observed test result.
 
+## Monitor identity policy v1
+
+Adopted 2026-11-01 for the selected feasibility category. The target is an exact monitor catalog variant, not an individual physical unit or a broad model family. Preserve brand, complete manufacturer model/part identifiers including suffixes, size, resolution, refresh rate, panel/touch configuration, color and explicit bundle, quantity and condition qualifiers.
+
+- A matching manufacturer and complete model/part identifier on both sides, with consistent identity-bearing evidence, can support `same_variant`. Formatting-only case/spacing/punctuation differences are harmless; suffix removal and unexplained identifier equivalence are not. Compatibility references do not identify the sold item.
+- Do not require every specification to be repeated after the complete model is established. Missing price or an incidental specification is not a contradiction. Condition absent on both sides is recorded as unknown, not assumed new. Ordinary cable inventories do not alone define a separate bundle; explicitly additional accessories, pack quantity, regional configuration or condition must be reconciled.
+- An explicit variant/condition/bundle qualifier on one side with unresolved compatibility on the other requires `insufficient_evidence`. A complete part identifier shared by both records can provide configuration evidence, but cannot override explicit contradictory specifications. Preserve ambiguity over unknown retailer/manufacturer codes.
+- Distinct complete models or decisive variant attributes support `different_variant`. A shared model with contradictory material specifications, truncated codes or unclear suffix equivalence requires review. Distinguish nominal/viewable size, static/dynamic contrast and with/without-stand measurements. Price alone never decides.
+- D15 eligibility remains separate. Source clusters are supervision, never inference evidence. These are reference annotation rules, not automatic-match thresholds. Historical WDC judgments are not retroactively relabeled.
+
+The policy was fixed before the ALASKA pilot; the interpretation of ordinary cable lists is explicit here to distinguish a specification inventory from an offered extra bundle. [Pilot evidence and limitations](data-audit.md#alaska-monitor-final-inspection-2026-11-01) constrain its use. Pilot AI labels are not an independent final test set.
+
 ## Dataset requirements
 Record source URL/version, acquisition date, license/terms, permitted local use and redistribution, transformation rules, hashes, category coverage, and label origin. Distinguish benchmark labels, human review, model-assisted suggestions, and generated fixtures.
 

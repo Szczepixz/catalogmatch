@@ -1,8 +1,10 @@
-# F0: WDC Products data audit
+# Data source feasibility audit
 
-Date: 2026-10-29; updated 2026-10-30. Task: F0 accepted at revision 2; bounded semantic follow-ups recorded in [feasibility plan](plans/000-feasibility.md), revision 7. Recommendation: `needs_targeted_followup`.
+Date: 2026-10-29; updated 2026-11-01. Task: F0 accepted at revision 2; semantic follow-ups and source comparison recorded in [feasibility plan](plans/000-feasibility.md), revision 9. Current recommendation: `proceed_to_F1` for ALASKA Monitor; historical WDC outcomes remain unchanged.
 
 ## Outcome and evidence boundary
+
+Current outcome (2026-11-01): ALASKA Monitor selected for feasibility after the bounded pilot below; proceed to F1 data preparation. The following WDC outcome is historical and retained for provenance.
 
 The documentation-only F0 branch remains accepted and done. On 2026-10-30 the user authorized bounded local inspection despite unresolved rights, retaining WDC and the exact-variant project. Both examples were acquired and structurally inspected; model-assisted semantic review of all 50 PW rows is now complete. Dataset-wide variant correctness and category suitability remain unverified. Rights remain `unresolved`, not prohibited or newly licensed. F1 remains draft. Historical no-acquisition statements below describe the earlier documentation-only tasks.
 
@@ -204,6 +206,145 @@ The precise missing slice is multiple independently checked same-variant pairs w
 
 Next action: prepare a documentation-only comparison of a bounded WDC continuation versus one alternative source, focusing on explicit permitted use, category-specific positive/negative coverage and variant-level evidence, before proposing any new acquisition. No publisher contact, data download or provider upload is authorized by this recommendation. Keep all inspected identity groups excluded from future custom frozen tests; do not tune models, prompts or thresholds on this unknown-split sample. Source rights and offer-to-catalog construction remain unresolved.
 
+## Source comparison: WDC Products and ALASKA (2026-11-01)
+
+Scope: documentation only, following the completed 50-pair review. ALASKA is the sole alternative assessed. The trigger is insufficient category-specific positive evidence in the inspected WDC example, not a finding that the full WDC benchmark is unusable. No dataset archive, new raw record or merchant page was fetched. Documentation examples were not treated as reviewed data. Sources are mutable; no immutable dataset revision or archive hash was established for this comparison.
+
+### Primary evidence checked
+
+| Source | Observed documentation and limits |
+| --- | --- |
+| C1: [WDC publisher page](https://webdatacommons.org/largescaleproductcorpus/wdc-products/), sections 2, 3, 5 | Identifier-derived clusters; five descriptive fields; category mapping is separate. Listed PW archives: 20-21.6 MB; MC: 2.3-2.5 MB; category mapping: 134 MB. Sizes are publisher claims, not measured transfers. |
+| C2: [WDC repository license](https://raw.githubusercontent.com/wbsg-uni-mannheim/wdcproducts/main/LICENSE) | BSD-style source/binary terms; no new explicit grant for external merchant records found. Earlier rights uncertainty remains; this was not a repeat of the full upstream terms investigation. |
+| C3: [ALASKA main README](https://raw.githubusercontent.com/merialdo/research.alaska/main/README.md) | Monitor: 16,662 records, 26 sources, 232 labeled entities and 2,273 labeled records; listed archive 3.7 MB. JSON attributes are source-specific; entity/specification assignments are CSV. The documented ground truth covers a subset, not every record. |
+| C4: [ALASKA paper v1](https://arxiv.org/html/2101.11259v1), sections 1, 3.3, 4, 5 | Authors describe expert-curated annotations and closed-world evaluation within annotated subsets, alongside extraction noise and heterogeneous attributes. This supports using labeled subsets; it does not establish bundle, condition or regional-variant equivalence under CatalogMatch. |
+| C5: [ALASKA license](https://raw.githubusercontent.com/merialdo/research.alaska/main/LICENSE) | MIT, copyright 2021 Paolo Merialdo; wording covers software and associated documentation. Applicability to merchant-derived record content is not expressly explained in the checked documents. |
+| C6: [ALASKA master README](https://raw.githubusercontent.com/merialdo/research.alaska/master/README.md) | Retrieved main README uses a shortened monitor download link; master README points to a GitHub archive path. Neither destination was fetched. Confirm canonical version and endpoint before acquisition rather than assuming either is current. |
+
+### Comparison and recommendation
+
+| Criterion | Continue WDC Products | Investigate ALASKA Monitor |
+| --- | --- | --- |
+| Category access | Mixed categories; selecting a useful slice requires additional work. | A separate monitor collection directly addresses category scope. |
+| Evidence for identity | Our 50-row example left every source-positive pair unresolved; larger data may help but is unverified. | Richer specifications may resolve distinctions; this is a hypothesis, not a measured improvement. |
+| Label use | Preserve source supervision separately from exact-variant assessment. | Preserve author annotations; derive pairs only within validated labeled coverage. Never treat an unlabeled record as a negative. |
+| End-to-end work | Still needs reliable identities, catalog selection and custom product-disjoint splits. | Same work remains; source directories help provenance but do not prove supplier generalization. |
+| Rights | `unresolved`; prior exceptions were bounded to the saved examples. | `unresolved` for data use; MIT is positive repository-level evidence, not an established merchant-content clearance. No inherited exception. |
+
+**Recommendation: prioritize a conditional ALASKA Monitor feasibility check; do not acquire a larger WDC sample now.** A category-specific source is a more direct test of the missing evidence. This is an investigation priority, not acceptance of the dataset/category or a change from exact variants to model-family matching. WDC remains a fallback and its diagnostic history stays intact.
+
+There are two independent gates: data-use scope and whether labels distinguish the sellable variants we need. More descriptive fields alone cannot satisfy either. If eventual inspection shows model-level grouping that merges bundles or regional versions, retain unresolved cases or reject suitability; do not silently weaken the identity contract. Category-specific positive-evidence rules must also be defined before treating the new annotations as reference truth.
+
+### Historical proposal: narrow publisher clarification
+
+Superseded by the owner-authorized final inspection below; this contact is no longer a prerequisite. The unsent draft is retained as history.
+
+The following draft is prepared for the owner to send to an ALASKA maintainer; **not sent**. It concerns local research and derived reporting first, without requiring blanket commercial or provider-processing rights:
+
+> We are evaluating the ALASKA Monitor collection for exact sellable-variant matching research. Could you confirm (1) whether the repository MIT license applies to the monitor JSON records and entity-resolution annotations, including any separate conditions for merchant-derived content and local research use; (2) the canonical archive URL/version, since the main and master README links differ; and (3) whether entity IDs distinguish regional model suffixes, bundles/accessories and condition, or group at a broader model level? We would preserve provenance and initially publish only our code and original aggregate findings, not raw merchant text. Please identify any conditions for that reporting. We are not requesting permission for external model-provider processing at this stage.
+
+After clarification, prepare a separately bounded sample task targeting both within-entity and confusing between-entity pairs, preserving D15 and unknowns. A reply or a download link alone does not verify data quality. No acquisition is authorized here, and the old 2 MiB example limit must not be silently reused or increased for an archive. F1-F4 remain draft; recommendation stays `needs_targeted_followup`.
+
+## ALASKA Monitor final inspection (2026-11-01)
+
+**Decision: select ALASKA Monitor for the student-project feasibility stage; close source discovery.** The pre-inspection discovery gate passed: four supported same-variant pairs from four distinct source entities and at least two clear confusing negatives. This is acceptance of a workable research source, not acceptance of its annotations as exact-variant gold or evidence of system quality. WDC remains historical comparison material, not the primary source.
+
+The owner explicitly authorized inspection and the necessary closure steps without contacting authors. That supersedes the earlier publisher-contact next action. Repository MIT evidence and unresolved underlying-content scope are retained; the owner accepts bounded local/student research under this uncertainty. No raw-data redistribution, public data hosting, paid calls or additional model-provider use follows. No further licensing research is a prerequisite for the next local feasibility task under this accepted scope.
+
+### Acquisition and structural checks
+
+The publisher-linked GitHub Monitor archive returned HTTP 200, redirecting to the author's raw GitHub hosting. Original bytes remain local. Reproduction download command (run in any chosen work directory): `curl.exe --fail --location --proto "=https" --proto-redir "=https" --max-redirs 3 --connect-timeout 15 --max-time 90 --max-filesize 8388608 --output monitor.tar.gz https://github.com/merialdo/research.alaska/raw/main/monitor.tar.gz`. Verify the hash below before parsing; do not assume a mutable URL remains unchanged. First sandbox attempt failed DNS with zero bytes; the same bounded curl command succeeded outside the sandbox. No other category archive, merchant page or external inference service was used.
+
+| Artifact / measurement | Observed value |
+| --- | --- |
+| Download URL | `https://github.com/merialdo/research.alaska/raw/main/monitor.tar.gz` |
+| Final URL | `https://raw.githubusercontent.com/merialdo/research.alaska/main/monitor.tar.gz` |
+| Metadata recorded UTC | 2026-11-01T15:56:20.037997+00:00 |
+| Compressed bytes / SHA-256 | 3,704,214 / `9084b8998d5afa283865dfcf8e1f3cc4137f6befbe431903a4d83df4b3f7b45d` |
+| Decompressed tar bytes | 35,665,920 |
+| Archive members / regular files | 16,693 / 16,664 |
+| Product JSON records / source directories | 16,662 / 26 |
+| ER CSV rows / unique entity-record assignments | 2,342 / 2,282 |
+| Duplicate assignment rows | 60 |
+| Unique labeled records / source entities | 2,273 / 232 |
+| Records assigned to multiple entities | 9, all shared by `ENTITY#054` and `ENTITY#063` |
+| Quarantined full groups / unique records | 2 / 10 |
+| Remaining labeled records / groups | 2,263 / 230 |
+| Remaining groups spanning multiple sources | 178 |
+
+Limits were 8 MiB download, 128 MiB decompressed tar, 25,000 members and 1 MiB per regular member. Files were read by member name without filesystem extraction or execution. JSON decoding succeeded, and every labeled specification resolves to a record. The initial uniqueness assertion correctly failed on contradictory assignments; direct CSV-row inspection reproduced the issue. Original annotations were preserved. Deduplicating identical assignments is bookkeeping; both entire conflicting groups were quarantined before sampling, without deciding which label is correct. This pre-sample data-integrity deviation is reported and does not count as a D15 offer exclusion.
+
+### Fixed sample and reproduction
+
+[Public pilot manifest](data/alaska-monitor-pilot.json) contains exact record locators, per-record byte hashes, source entities, selection strata, eligibility and AI judgments, without raw product text. Archive members resolve as `monitor/monitor_specs/{source}/{id}.json` from each `source//id` locator. Source ER assignments come from `monitor/monitor_ground_truths/monitor_entity_resolution_gt.csv`.
+
+Reproduce with Python 3.12 standard-library parsing of the hash-identified archive in any chosen working directory:
+1. Deduplicate exact ER assignments, identify multi-entity records, and quarantine their complete source groups. Sort remaining entity IDs and each group's specification IDs lexicographically.
+2. Initialize `random.Random(20261101)`. From sorted groups with at least two source directories, `sample(..., 15)` entity IDs. In that order, choose one pair with `choice(...)` from lexicographically enumerated `itertools.combinations(sorted(spec_ids), 2)` restricted to different sources. These are A01-A15.
+3. For each of the 230 usable groups, choose its lexicographically first spec ID. Tokenize that record's page title into a set using lowercase ASCII `[a-z0-9]+`. Rank all between-group representative pairs by descending token Jaccard, then entity IDs and spec IDs ascending. Greedily take 15 pairs, never reusing a group within this negative stratum. These are A16-A30. Do not require cross-source negatives or change the sample after reading it.
+4. Read all attributes of the fixed 30 pairs; apply [monitor identity v1](EVALUATION.md#monitor-identity-policy-v1) and D15. Preserve original supervision, judgments and contradictions separately.
+
+The local sampling manifest hash was `0051bb721a8750d88168b52b91f3ff389550b96cb20000e9747894c95ae0071c`; the public manifest adds judgments and record hashes, so it is a different artifact. No personal notes or scratch files are required to reproduce selection.
+
+Selection produced 59 unique records, 41 source entities and 17 source directories. One record occurs twice. Every negative pair is within one source: shared site boilerplate strongly influences title similarity. Thus this is a deliberately selected diagnostic set, not representative traffic or a cross-supplier performance estimate. Some positive descriptions are near-duplicates across sources. All source-stratum memberships were known; the review is not blinded, human annotation or a model benchmark. Metadata/structural parsing covered the archive; raw records exposed semantically in this chat were the 59 selected records only. Reserve all 41 exposed source groups, plus identity-linked aliases found later, outside any future custom frozen test; do not tune on a final test. The remaining groups are only candidates for a later validated split, not already a test set.
+
+### Pair judgments
+
+Source `1` means within an author group; `0` means between distinct non-conflicting author groups. S/D/I mean `same_variant` / `different_variant` / `insufficient_evidence`. E/E denotes eligible records; U/U denotes retained uncertain eligibility. Exact left/right IDs and source group IDs are in the manifest. No pair was replaced after review.
+
+| Pair | Source | Judgment | Eligibility L/R | Decisive evidence / limitation |
+| --- | --- | --- | --- | --- |
+| A01 | 1 | D | E/E | Full manufacturer model/part codes differ by an identity-bearing letter; do not merge the suffix. |
+| A02 | 1 | S | E/E | Same full manufacturer part number including /00; size, resolution and integrated-device configuration agree. |
+| A03 | 1 | S | E/E | Same full model and EAN; size, panel, resolution and monitor hood contents agree. Generic power-cord wording does not contradict the UK cord; commercial terms are not inferred. |
+| A04 | 1 | I | E/E | Same model code, but speakers are explicitly absent on one side and integrated on the other. Conflicting configuration requires review. |
+| A05 | 1 | I | E/E | Matching model, but left explicitly new and right condition unknown; right also lacks resolution and disagrees on response time. |
+| A06 | 1 | I | E/E | Left is explicitly new with surface-wave touch; right has a specific part number and another touch designation not established on the left. No variant equivalence assumed. |
+| A07 | 1 | I | E/E | Shared model family and size, but right specifies touch technology and new condition that left does not establish. |
+| A08 | 1 | D | E/E | Manufacturer, model and size conflict: a small Samsung monitor versus an 80-inch NEC display. |
+| A09 | 1 | I | E/E | Left is explicitly used; right condition is unstated. Right distinguishes nominal 20-inch from viewable 19.5-inch, so that size wording alone is not a mismatch. |
+| A10 | 1 | I | E/E | Same base model, but right has an additional part code and response-time figures disagree; exact configuration cannot be resolved locally. |
+| A11 | 1 | S | E/E | Same complete manufacturer part code and model; size, resolution, frequency and connectors agree. Ordinary cable listing does not establish a separate bundle variant. |
+| A12 | 1 | S | E/E | Same full model including /00, black color, size and resolution. Static versus dynamic contrast and with/without-stand measurements are distinguished rather than treated as conflicts. |
+| A13 | 1 | I | E/E | Same full model but response-time values conflict without a stated measurement basis; retain contradiction for review. |
+| A14 | 1 | I | E/E | Same complete model with matching core specifications, but only left establishes new condition. |
+| A15 | 1 | I | E/E | Matching model and core specifications, but right includes an unexplained manufacturer-number field that cannot safely be treated as either a retailer code or equivalent part. |
+| A16 | 0 | D | U/U | Different explicit monitor models despite identical listing boilerplate. Both pages have filter labels instead of specifications, so offer eligibility is uncertain and retained. |
+| A17 | 0 | D | E/E | Same brand and size, but different complete monitor model numbers. |
+| A18 | 0 | D | E/E | Different complete model numbers; malformed aspect-ratio text does not override that decisive conflict. |
+| A19 | 0 | D | E/E | Same brand, size and resolution but different full model codes and panel/stand characteristics. |
+| A20 | 0 | D | E/E | Near-identical core specifications but different full model/part codes; matching region suffix does not make them identical. |
+| A21 | 0 | D | E/E | Different models, screen sizes, aspect ratios and resolutions. |
+| A22 | 0 | D | E/E | Same brand, size and resolution but different full model codes and connector configuration. |
+| A23 | 0 | D | E/E | Same brand, size and resolution but different model codes and panel configurations. |
+| A24 | 0 | D | E/E | Near-identical core specifications but different model codes; similarity does not establish identity. |
+| A25 | 0 | D | E/E | Same brand and size but different model codes and 4K versus Full HD resolution. |
+| A26 | 0 | D | E/E | Same brand, size and refresh rate but different full model codes and connectors. |
+| A27 | 0 | D | E/E | Different complete models and resolution; inconsistent aspect-ratio wording on left is preserved. |
+| A28 | 0 | D | E/E | Different complete models and resolutions despite common brand and nominal size. |
+| A29 | 0 | D | E/E | Similar full model names but different complete codes and connector configuration. |
+| A30 | 0 | D | E/E | Different complete model codes with panel and speaker differences. |
+
+| Stratum | Same | Different | Insufficient | Total |
+| --- | --- | --- | --- | --- |
+| Within source entity | 4 | 2 | 9 | 15 |
+| Between source entities | 0 | 15 | 0 | 15 |
+| Total | 4 | 17 | 9 | 30 |
+
+The four supported positives are A02, A03, A11 and A12. A01 and A08 have clear input-level conflicts despite sharing a source entity; retain those as pilot disagreements and quarantine the affected source groups `ENTITY#032` and `ENTITY#205` from any future trusted label pool pending audit. They were not removed from the pilot. The other nine source-positive pairs remain unresolved rather than being silently converted to negatives. These fractions do not estimate archive-wide label noise.
+
+Among the 59 unique selected records, 57 are eligible and two (both in A16) have uncertain offer eligibility; none is excluded under D15. Uncertain records remain in the denominator: 59/59 retained unique records, 60/60 occurrences. The two pages identify distinct models but contain listing-filter boilerplate rather than reliable specifications. This is insufficient evidence for offer eligibility, not a reason to erase the pair's clear model difference. Four source entities occur in both selection strata; pairs are not independent observations.
+
+### Validation
+
+A separate verification pass reproduced all 30 selections from the archive and seed, checked archive and all 60 occurrence-level member hashes, source assignments, pair and eligibility counts, and the predeclared gate. All 25 relative links/anchors across the five Markdown documents resolved; the 50 historical WDC judgment rows were preserved. Public output was checked for raw titles and restricted text; the archive is ignored and no local files are tracked. `git diff --check` passed. No application tests, model benchmark or independent human annotation were run.
+
+### Closed decision and implementation handoff
+
+Use ALASKA Monitor as the primary data source, monitor identity v1 as the provisional annotation contract, and the original records as immutable inputs. Keep benchmark entity IDs separate from project labels. Do not use all 2,263 structurally consistent records as trusted ground truth: the pilot proves structural consistency alone is insufficient. Version a reviewed diagnostic subset and retain unresolved cases and annotation disagreements visibly.
+
+The next task is **F1 data preparation**, not another source search: implement a small reproducible loader/validator and sampler, apply known quarantines, prepare roughly 100-150 diagnostic pairs, and define catalog construction and identity-disjoint splits before a baseline. Keep the 30-pair pilot as discovery/development material and obtain independent checking before using AI assessments as final evaluation truth. Freeze splits only after alias/conflict review; absent-product cases require removing complete validated identities. Standard-library Python is sufficient for the first loader; no web app, database or paid model calls are needed. F1 is ready to start, not complete; F2-F4 remain draft.
+
 ## Dated primary-source evidence
 
 All sources below were inspected on 2026-10-29. Web pages and repository `main` are mutable; no immutable dataset revision or payload hash was established. The source is WDC Products, initially released 2022-12-22 according to its publisher page; no particular benchmark variant was selected.
@@ -320,7 +461,7 @@ The following is the original conditional recipe. Revision 4 authorized a bounde
 5. Count available rows offline, then inspect the first at most 50 PW and 50 MC rows in original order. Record the inspected/available counts and truncation. Preserve raw values; enumerate observed keys/types and label domains. Count absent keys, nulls and empty values separately. Compare repeated IDs using their full offer payloads; repeated offers across pairs are expected unless payloads conflict. Reconcile PW/MC overlap before any combined unique count.
 6. Examine at most 10 cases for variant evidence, ambiguity and label conflict; record file hash plus row/side/ID locators and only permitted evidence. Separate AI-assisted judgments from original labels. Repeat parsing/counting from saved bytes offline and reconcile results. Apply the split restrictions above. Return for review; do not promote a tiny example to representative data.
 
-## Validation and proposed F1 input contract
+## Historical WDC validation and proposed F1 input contract
 
 F0 validation: required repository inputs were read; the working tree was initially clean at `1a4292e`; Python 3.12.4 was observed. Documentation links, consistency, public-content boundary and Git diff/status were checked as recorded in the active plan. Payload checks are explicitly not run in the table above. No application test result is claimed.
 
@@ -336,7 +477,7 @@ Proposed inputs, not a frozen schema or acquisition authorization:
 | Category | Observed category evidence and sufficient permitted diagnostic coverage; no selected category yet |
 | Acquisition envelope | Both examples were already acquired under the owner's bounded unresolved-rights exception (2 MiB transfer / 5 MiB decoded limits). The ten-pair chat review adds no acquisition permission. Any larger diagnostic acquisition requires an explicitly sized proposal and approval; none is authorized here. |
 
-**One next action:** prepare the documentation-only source comparison specified in the remaining-pair analysis above. The authorized 40-pair extension is complete; no category passed the discovery threshold. No new acquisition or F1 execution is authorized.
+**One next action:** execute F1 data preparation for ALASKA Monitor under the final inspection handoff above. Source selection is closed; no author contact or further source research is required for this bounded local project scope.
 
 ## Executed acquisition script
 
