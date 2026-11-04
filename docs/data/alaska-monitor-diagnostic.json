@@ -1,0 +1,2302 @@
+{
+  "seed": "f1-diagnostic-v1",
+  "archive_sha256": "9084b8998d5afa283865dfcf8e1f3cc4137f6befbe431903a4d83df4b3f7b45d",
+  "quarantine": {
+    "membership_conflicts": {
+      "entities": [
+        "ENTITY#054",
+        "ENTITY#063"
+      ],
+      "records": 10
+    },
+    "ai_assisted_pilot_disputes": {
+      "entities": [
+        "ENTITY#032",
+        "ENTITY#205"
+      ],
+      "records": 17
+    }
+  },
+  "pairs": [
+    {
+      "left": "www.cleverboxes.com//216",
+      "right": "ce.yikus.com//968",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#170",
+        "ENTITY#170"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D001"
+    },
+    {
+      "left": "www.jrlinton.co.uk//546",
+      "right": "www.nexus-t.co.uk//24",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#134",
+        "ENTITY#134"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D002"
+    },
+    {
+      "left": "www.ebay.com//21101",
+      "right": "www.best-deal-items.com//1998",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#135",
+        "ENTITY#098"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D003"
+    },
+    {
+      "left": "www.ebay.com//16294",
+      "right": "ce.yikus.com//226",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#119",
+        "ENTITY#119"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D004"
+    },
+    {
+      "left": "www.ebay.com//22164",
+      "right": "www.ohc24.ch//868",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#140",
+        "ENTITY#140"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D005"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//259",
+      "right": "www.shopmania.com//38",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#100",
+        "ENTITY#100"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D006"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//567",
+      "right": "www.xpcpro.com//271",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#034",
+        "ENTITY#034"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D007"
+    },
+    {
+      "left": "www.ebay.com//23030",
+      "right": "ca.pcpartpicker.com//469",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#190",
+        "ENTITY#190"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D008"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//630",
+      "right": "www.mediashopuk.com//117",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#158",
+        "ENTITY#157"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D009"
+    },
+    {
+      "left": "www.ebay.com//20464",
+      "right": "ca.pcpartpicker.com//620",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#145",
+        "ENTITY#145"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D010"
+    },
+    {
+      "left": "www.getprice.com.au//310",
+      "right": "www.mrhightech.com//110",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#023",
+        "ENTITY#023"
+      ],
+      "pilot_record": [
+        false,
+        true
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D011"
+    },
+    {
+      "left": "www.ebay.com//20673",
+      "right": "www.makingbuyingeasy.co.uk//361",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#169",
+        "ENTITY#169"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D012"
+    },
+    {
+      "left": "www.best-deal-items.com//1385",
+      "right": "www.ebay.com//21328",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#075",
+        "ENTITY#075"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D013"
+    },
+    {
+      "left": "www.softwarecity.ca//5448",
+      "right": "www.cleverboxes.com//111",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#083",
+        "ENTITY#039"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D014"
+    },
+    {
+      "left": "www.ebay.com//16681",
+      "right": "www.officedepot.com//136",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#161",
+        "ENTITY#161"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D015"
+    },
+    {
+      "left": "www.ebay.com//21257",
+      "right": "www.cleverboxes.com//60",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#157",
+        "ENTITY#157"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D016"
+    },
+    {
+      "left": "www.itenergy.co.uk//782",
+      "right": "www.kingsfieldcomputers.co.uk//739",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#102",
+        "ENTITY#103"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D017"
+    },
+    {
+      "left": "www.ebay.com//15988",
+      "right": "www.officedepot.com//282",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#200",
+        "ENTITY#196"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D018"
+    },
+    {
+      "left": "www.ebay.com//17093",
+      "right": "catalog.com//617",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#104",
+        "ENTITY#104"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D019"
+    },
+    {
+      "left": "ce.yikus.com//199",
+      "right": "www.xpcpro.com//245",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#127",
+        "ENTITY#127"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D020"
+    },
+    {
+      "left": "www.ebay.com//23697",
+      "right": "www.best-deal-items.com//343",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#070",
+        "ENTITY#070"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D021"
+    },
+    {
+      "left": "www.getprice.com.au//200",
+      "right": "www.officedepot.com//168",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#182",
+        "ENTITY#182"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D022"
+    },
+    {
+      "left": "www.ebay.com//20800",
+      "right": "www.softwarecity.ca//5419",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#161",
+        "ENTITY#161"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D023"
+    },
+    {
+      "left": "catalog.com//353",
+      "right": "www.pc-canada.com//314",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#128",
+        "ENTITY#128"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D024"
+    },
+    {
+      "left": "www.ebay.com//14413",
+      "right": "ce.yikus.com//1219",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#002",
+        "ENTITY#002"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D025"
+    },
+    {
+      "left": "www.vology.com//2581",
+      "right": "www.officedepot.com//309",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#107",
+        "ENTITY#107"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D026"
+    },
+    {
+      "left": "www.ebay.com//20216",
+      "right": "www.officedepot.com//232",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#182",
+        "ENTITY#181"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D027"
+    },
+    {
+      "left": "www.ebay.com//21172",
+      "right": "www.vology.com//2444",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#167",
+        "ENTITY#167"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D028"
+    },
+    {
+      "left": "www.cleverboxes.com//345",
+      "right": "www.ebay.com//23534",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#171",
+        "ENTITY#173"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D029"
+    },
+    {
+      "left": "www.nexus-t.co.uk//4",
+      "right": "www.ebay.com//14275",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#184",
+        "ENTITY#172"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D030"
+    },
+    {
+      "left": "www.ebay.com//9909",
+      "right": "ca.pcpartpicker.com//711",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#126",
+        "ENTITY#126"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D031"
+    },
+    {
+      "left": "www.ebay.com//18982",
+      "right": "www.getprice.com.au//233",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#126",
+        "ENTITY#126"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D032"
+    },
+    {
+      "left": "www.ebay.com//9462",
+      "right": "www.best-deal-items.com//693",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#021",
+        "ENTITY#021"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D033"
+    },
+    {
+      "left": "www.ebay.com//23682",
+      "right": "www.cleverboxes.com//388",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#192",
+        "ENTITY#192"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D034"
+    },
+    {
+      "left": "www.ebay.com//19434",
+      "right": "www.vology.com//2650",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#124",
+        "ENTITY#124"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D035"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//269",
+      "right": "www.cleverboxes.com//314",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#156",
+        "ENTITY#156"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D036"
+    },
+    {
+      "left": "www.best-deal-items.com//2149",
+      "right": "www.ebay.com//23158",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#012",
+        "ENTITY#067"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D037"
+    },
+    {
+      "left": "www.ohc24.ch//450",
+      "right": "www.ebay.com//22351",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#183",
+        "ENTITY#183"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D038"
+    },
+    {
+      "left": "www.ebay.com//21028",
+      "right": "www.best-deal-items.com//1533",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#108",
+        "ENTITY#108"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D039"
+    },
+    {
+      "left": "www.ebay.com//19080",
+      "right": "www.best-deal-items.com//1205",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#075",
+        "ENTITY#075"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D040"
+    },
+    {
+      "left": "www.officedepot.com//191",
+      "right": "www.ebay.com//23754",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#160",
+        "ENTITY#137"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D041"
+    },
+    {
+      "left": "www.ohc24.ch//443",
+      "right": "www.ebay.com//21512",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#019",
+        "ENTITY#018"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D042"
+    },
+    {
+      "left": "www.ebay.com//16466",
+      "right": "ce.yikus.com//193",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#029",
+        "ENTITY#143"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D043"
+    },
+    {
+      "left": "www.ebay.com//12083",
+      "right": "www.hardware-planet.it//215",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#179",
+        "ENTITY#169"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D044"
+    },
+    {
+      "left": "www.ebay.com//21066",
+      "right": "www.shopmania.com//35",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#154",
+        "ENTITY#154"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D045"
+    },
+    {
+      "left": "www.ebay.com//22962",
+      "right": "www.vology.com//2257",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#079",
+        "ENTITY#079"
+      ],
+      "pilot_record": [
+        false,
+        true
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D046"
+    },
+    {
+      "left": "www.mediashopuk.com//126",
+      "right": "www.vology.com//2308",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#167",
+        "ENTITY#171"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D047"
+    },
+    {
+      "left": "www.best-deal-items.com//953",
+      "right": "www.ebay.com//22727",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#069",
+        "ENTITY#069"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D048"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//460",
+      "right": "www.best-deal-items.com//2331",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#086",
+        "ENTITY#086"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D049"
+    },
+    {
+      "left": "www.ebay.com//20331",
+      "right": "catalog.com//514",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#142",
+        "ENTITY#142"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D050"
+    },
+    {
+      "left": "catalog.com//596",
+      "right": "www.ebay.com//18704",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#002",
+        "ENTITY#005"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D051"
+    },
+    {
+      "left": "www.ohc24.ch//184",
+      "right": "ce.yikus.com//25",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#157",
+        "ENTITY#156"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D052"
+    },
+    {
+      "left": "ca.pcpartpicker.com//235",
+      "right": "www.ebay.com//14705",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#144",
+        "ENTITY#144"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D053"
+    },
+    {
+      "left": "www.ebay.com//22437",
+      "right": "www.shopmania.com//26",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#181",
+        "ENTITY#181"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D054"
+    },
+    {
+      "left": "www.ebay.com//16513",
+      "right": "www.imldirect.it//844",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#172",
+        "ENTITY#172"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D055"
+    },
+    {
+      "left": "www.best-deal-items.com//1238",
+      "right": "www.ebay.com//23099",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#114",
+        "ENTITY#114"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D056"
+    },
+    {
+      "left": "www.best-deal-items.com//1750",
+      "right": "www.ebay.com//18638",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#069",
+        "ENTITY#070"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D057"
+    },
+    {
+      "left": "www.best-deal-items.com//1218",
+      "right": "www.ebay.com//20336",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#105",
+        "ENTITY#105"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D058"
+    },
+    {
+      "left": "www.ebay.com//21562",
+      "right": "www.cleverboxes.com//233",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#122",
+        "ENTITY#122"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D059"
+    },
+    {
+      "left": "www.best-deal-items.com//2614",
+      "right": "www.ebay.com//23467",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#058",
+        "ENTITY#159"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D060"
+    },
+    {
+      "left": "www.ebay.com//18926",
+      "right": "catalog.com//515",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#191",
+        "ENTITY#192"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D061"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//191",
+      "right": "www.ebay.com//23735",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#100",
+        "ENTITY#100"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D062"
+    },
+    {
+      "left": "www.ebay.com//18109",
+      "right": "ce.yikus.com//118",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#183",
+        "ENTITY#172"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D063"
+    },
+    {
+      "left": "www.best-deal-items.com//854",
+      "right": "www.ebay.com//23694",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#160",
+        "ENTITY#181"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D064"
+    },
+    {
+      "left": "www.ebay.com//19867",
+      "right": "www.vology.com//2651",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#126",
+        "ENTITY#126"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D065"
+    },
+    {
+      "left": "www.ebay.com//23479",
+      "right": "ca.pcpartpicker.com//179",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#122",
+        "ENTITY#122"
+      ],
+      "pilot_record": [
+        false,
+        true
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D066"
+    },
+    {
+      "left": "www.getprice.com.au//287",
+      "right": "www.ebay.com//9397",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#107",
+        "ENTITY#107"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D067"
+    },
+    {
+      "left": "www.ebay.com//19271",
+      "right": "www.vology.com//2653",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#122",
+        "ENTITY#122"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D068"
+    },
+    {
+      "left": "www.ebay.com//20098",
+      "right": "www.cleverboxes.com//470",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#120",
+        "ENTITY#120"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D069"
+    },
+    {
+      "left": "www.getprice.com.au//374",
+      "right": "ca.pcpartpicker.com//184",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#157",
+        "ENTITY#157"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D070"
+    },
+    {
+      "left": "www.ebay.com//22615",
+      "right": "catalog.com//333",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#144",
+        "ENTITY#144"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D071"
+    },
+    {
+      "left": "www.ebay.com//20610",
+      "right": "www.softwarecity.ca//5714",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#163",
+        "ENTITY#163"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D072"
+    },
+    {
+      "left": "catalog.com//526",
+      "right": "www.getprice.com.au//173",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#154",
+        "ENTITY#154"
+      ],
+      "pilot_record": [
+        true,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D073"
+    },
+    {
+      "left": "www.best-deal-items.com//1463",
+      "right": "www.ebay.com//22040",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#052",
+        "ENTITY#072"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D074"
+    },
+    {
+      "left": "www.makingbuyingeasy.co.uk//10",
+      "right": "www.vology.com//2510",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#140",
+        "ENTITY#141"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        false
+      ],
+      "id": "D075"
+    },
+    {
+      "left": "www.imldirect.it//213",
+      "right": "www.vology.com//2422",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#168",
+        "ENTITY#168"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D076"
+    },
+    {
+      "left": "www.ebay.com//15514",
+      "right": "ce.yikus.com//896",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#104",
+        "ENTITY#104"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D077"
+    },
+    {
+      "left": "www.hardware-planet.it//235",
+      "right": "ca.pcpartpicker.com//491",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#171",
+        "ENTITY#171"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D078"
+    },
+    {
+      "left": "www.cleverboxes.com//452",
+      "right": "www.best-deal-items.com//1191",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#133",
+        "ENTITY#133"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D079"
+    },
+    {
+      "left": "www.ebay.com//11690",
+      "right": "www.shopmania.com//63",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#178",
+        "ENTITY#178"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D080"
+    },
+    {
+      "left": "www.ebay.com//18140",
+      "right": "www.best-deal-items.com//2683",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#021",
+        "ENTITY#021"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D081"
+    },
+    {
+      "left": "www.ebay.com//20910",
+      "right": "ca.pcpartpicker.com//589",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#085",
+        "ENTITY#085"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D082"
+    },
+    {
+      "left": "ce.yikus.com//147",
+      "right": "www.ebay.com//18237",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#142",
+        "ENTITY#142"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D083"
+    },
+    {
+      "left": "www.vology.com//2193",
+      "right": "www.ebay.com//14326",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#107",
+        "ENTITY#196"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D084"
+    },
+    {
+      "left": "catalog.com//587",
+      "right": "ca.pcpartpicker.com//175",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#143",
+        "ENTITY#143"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D085"
+    },
+    {
+      "left": "www.best-deal-items.com//1320",
+      "right": "www.ebay.com//12156",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#089",
+        "ENTITY#137"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D086"
+    },
+    {
+      "left": "www.ebay.com//21425",
+      "right": "www.best-deal-items.com//1213",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#073",
+        "ENTITY#073"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D087"
+    },
+    {
+      "left": "www.getprice.com.au//555",
+      "right": "www.shopmania.com//650",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#170",
+        "ENTITY#190"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D088"
+    },
+    {
+      "left": "www.ohc24.ch//721",
+      "right": "www.ebay.com//23335",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#004",
+        "ENTITY#002"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        true
+      ],
+      "id": "D089"
+    },
+    {
+      "left": "www.best-deal-items.com//1551",
+      "right": "www.ebay.com//21224",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#210",
+        "ENTITY#105"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D090"
+    },
+    {
+      "left": "www.ebay.com//19756",
+      "right": "www.makingbuyingeasy.co.uk//633",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#120",
+        "ENTITY#120"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D091"
+    },
+    {
+      "left": "www.imldirect.it//431",
+      "right": "www.xpcpro.com//155",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#036",
+        "ENTITY#036"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D092"
+    },
+    {
+      "left": "www.ebay.com//20812",
+      "right": "www.pc-canada.com//12",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#031",
+        "ENTITY#031"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D093"
+    },
+    {
+      "left": "ca.pcpartpicker.com//409",
+      "right": "www.hardware-planet.it//245",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#140",
+        "ENTITY#102"
+      ],
+      "pilot_record": [
+        true,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        false
+      ],
+      "id": "D094"
+    },
+    {
+      "left": "www.ebay.com//21782",
+      "right": "www.hardware-planet.it//67",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#141",
+        "ENTITY#141"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D095"
+    },
+    {
+      "left": "www.ebay.com//11924",
+      "right": "www.odsi.co.uk//62",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#084",
+        "ENTITY#164"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D096"
+    },
+    {
+      "left": "www.hardware-planet.it//112",
+      "right": "www.ebay.com//22767",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#183",
+        "ENTITY#128"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D097"
+    },
+    {
+      "left": "www.best-deal-items.com//2161",
+      "right": "www.ebay.com//20928",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#106",
+        "ENTITY#217"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        false
+      ],
+      "id": "D098"
+    },
+    {
+      "left": "www.ebay.com//20181",
+      "right": "www.cleverboxes.com//281",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#079",
+        "ENTITY#079"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D099"
+    },
+    {
+      "left": "www.ebay.com//19378",
+      "right": "www.makingbuyingeasy.co.uk//410",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#183",
+        "ENTITY#183"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D100"
+    },
+    {
+      "left": "www.ebay.com//16790",
+      "right": "www.best-deal-items.com//1378",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#244",
+        "ENTITY#227"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D101"
+    },
+    {
+      "left": "www.cleverboxes.com//308",
+      "right": "www.ebay.com//18962",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#099",
+        "ENTITY#195"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        true
+      ],
+      "id": "D102"
+    },
+    {
+      "left": "www.softwarecity.ca//5669",
+      "right": "www.ebay.com//19641",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#041",
+        "ENTITY#145"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        false
+      ],
+      "id": "D103"
+    },
+    {
+      "left": "catalog.com//493",
+      "right": "ce.yikus.com//1352",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#082",
+        "ENTITY#108"
+      ],
+      "pilot_record": [
+        true,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        false
+      ],
+      "id": "D104"
+    },
+    {
+      "left": "www.ebay.com//14802",
+      "right": "www.shopmania.com//664",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#125",
+        "ENTITY#125"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D105"
+    },
+    {
+      "left": "catalog.com//490",
+      "right": "www.ebay.com//10730",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#145",
+        "ENTITY#145"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D106"
+    },
+    {
+      "left": "www.best-deal-items.com//2557",
+      "right": "www.ebay.com//22840",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#070",
+        "ENTITY#070"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D107"
+    },
+    {
+      "left": "www.best-deal-items.com//998",
+      "right": "www.nexus-t.co.uk//65",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#060",
+        "ENTITY#060"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D108"
+    },
+    {
+      "left": "www.ebay.com//23545",
+      "right": "www.softwarecity.ca//5748",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#166",
+        "ENTITY#166"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D109"
+    },
+    {
+      "left": "www.ebay.com//18869",
+      "right": "www.makingbuyingeasy.co.uk//507",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#078",
+        "ENTITY#078"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D110"
+    },
+    {
+      "left": "www.getprice.com.au//317",
+      "right": "www.vology.com//2687",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#112",
+        "ENTITY#113"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        false
+      ],
+      "id": "D111"
+    },
+    {
+      "left": "www.pc-canada.com//299",
+      "right": "www.softwarecity.ca//5423",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#162",
+        "ENTITY#162"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D112"
+    },
+    {
+      "left": "ce.yikus.com//568",
+      "right": "www.ebay.com//21623",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#146",
+        "ENTITY#122"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        true
+      ],
+      "id": "D113"
+    },
+    {
+      "left": "www.ebay.com//22988",
+      "right": "www.imldirect.it//694",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#174",
+        "ENTITY#174"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D114"
+    },
+    {
+      "left": "www.ebay.com//21745",
+      "right": "www.officedepot.com//267",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#086",
+        "ENTITY#198"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D115"
+    },
+    {
+      "left": "www.ebay.com//20657",
+      "right": "www.mrhightech.com//134",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#090",
+        "ENTITY#090"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D116"
+    },
+    {
+      "left": "www.ebay.com//15200",
+      "right": "ce.yikus.com//670",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#124",
+        "ENTITY#124"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D117"
+    },
+    {
+      "left": "www.pcconnection.com//3793",
+      "right": "www.hardware-planet.it//313",
+      "stratum": "between_title_overlap",
+      "source_label": 0,
+      "entities": [
+        "ENTITY#117",
+        "ENTITY#132"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D118"
+    },
+    {
+      "left": "www.ebay.com//11994",
+      "right": "www.getprice.com.au//269",
+      "stratum": "within_sparse",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#124",
+        "ENTITY#124"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        true,
+        true
+      ],
+      "id": "D119"
+    },
+    {
+      "left": "www.kingsfieldcomputers.co.uk//588",
+      "right": "www.ebay.com//22820",
+      "stratum": "within_general",
+      "source_label": 1,
+      "entities": [
+        "ENTITY#175",
+        "ENTITY#175"
+      ],
+      "pilot_record": [
+        false,
+        false
+      ],
+      "pilot_entity": [
+        false,
+        false
+      ],
+      "id": "D120"
+    }
+  ]
+}

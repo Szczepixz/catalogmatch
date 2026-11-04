@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 10
+- Revision: 15
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-11-04
-- Selected task: implement the structural loader and validator
+- Selected task: reconcile the returned second AI review
 - Execution: 30-pair pilot complete; ALASKA Monitor selected under D16/D17; F1 structural loader verified; diagnostic review and protocol pending
 
 ## Objective
@@ -292,3 +292,59 @@ Implement a bounded standard-library archive reader, preserve source rows and ra
 Verified with Python 3.12.4 and no dependencies. The CLI reproduced the audited hash and all requested counts, including nine conflicting records and zero missing references. Full-group exclusions cover ten records for membership conflicts and seventeen for AI-assisted disputes. The 2,246 remaining assignments require substantive review. The local report contains identifiers and aggregates only.
 
 Four offline synthetic tests passed, including malformed inputs and all four resource limits. The first sandbox run could not create fixture files in the temporary directory. The same command passed with temporary-directory access. Next, specify reproducible strata and sample 100-150 diagnostic pairs for independent review. Keep pilot exposure separate before designing catalog and identity-disjoint splits.
+
+## F1 diagnostic selection (revision 11, 2026-11-04)
+
+Fixed 120 cross-source pairs from the audited archive and loader candidates. Exclude both structural and disputed groups, exact pilot pairs and reused endpoints. Select sequential quotas of 40 with deterministic SHA-256 ordering. Within-group sparse anchors have the fewest raw fields first. Between-group anchors take their highest nonzero title-token Jaccard partner. The remaining within-group pairs use hash-ranked anchors and partners. These proxies seek missing evidence, confusing variants and possible matches. Actual identity, contradictions and eligibility require review. The quotas do not estimate population prevalence.
+
+The [manifest](../data/alaska-monitor-diagnostic.json) contains only locators and audit metadata. Left/right flags distinguish previously inspected records from membership in previously inspected source entities. Six pairs touch a pilot record and 33 touch a pilot entity, including those six. No raw attributes were sent to a reviewer or additional service. The [CLI](../../README.md#run-locally) emits an interleaved worksheet without audit fields.
+
+Validated archive replay, all source assignments, quarantines, exposure flags, quotas, 240 unique records, zero pilot pair repeats and worksheet alignment/blank annotations. An initial verification script used the wrong loader field name; rerunning against the preserved assignments passed. Next action is independent substantive review. Catalog construction and final identity-disjoint splitting are deferred.
+
+## F1 returned worksheet (revision 12)
+
+The owner supplied a first AI review from a separate chat and project. Preserved the received CSV locally (SHA-256 `e9e2849b3e41fbf91c4f1231b8dd9304497579167f5839b75f5986a986bef018`). All 120 manifest IDs appear exactly once, with complete answers and allowed categorical values. All 240 eligibility assessments are eligible. The CSV establishes the reported judgments; reviewer isolation and semantic correctness were not independently verified.
+
+| Source stratum | Same | Different | Insufficient |
+| --- | ---: | ---: | ---: |
+| Within sparse | 9 | 4 | 27 |
+| Within general | 10 | 5 | 25 |
+| Between title overlap | 0 | 38 | 2 |
+
+Pilot exposure (same/different/insufficient): shared pilot record 3/2/1, pilot entity only 3/11/13, neither 13/34/40. Next, adjudicate nine explicit within-group disagreements (D023, D025, D033, D034, D036, D040, D056, D058, D072) against the offers and D17. Preserve the 54 insufficient judgments separately. Source assignments and quarantines remain as recorded. Final split design is deferred.
+
+## F1 disagreement adjudication (revision 13)
+
+Scope: AI-assisted, unblinded second assessment of the nine source-positive / reviewer-different rows only. The pinned review CSV hash, archive hash, manifest IDs and both original record objects per case were checked locally. Field-specific probes extracted identifiers and relevant qualifiers. No external lookup, new provider call for raw records or human verification. The first review remains immutable.
+
+| Pair | Source entity | D17 assessment | Decisive evidence or unresolved question |
+| --- | --- | --- | --- |
+| D023 | 161 | different_variant | The left feature block and right manufacturer part field give distinct complete Acer codes ending in .003 and .001 despite the shared V196WL model. |
+| D025 | 002 | different_variant | The left title identifies E779029 and the right MPN identifies E700813 within the 1515L family. |
+| D033 | 021 | different_variant | Both titles name 1739L but specify distinct Elo identifiers E734455 and E012584. |
+| D034 | 192 | different_variant | The W2072a titles specify different HP product codes A3M50AA and B5M13AT. |
+| D036 | 156 | insufficient_evidence | Both name U2713HM. Left product colour is black while right case colour is silver. The fields can describe different surfaces of one monitor; a distinct configuration is unresolved. |
+| D040 | 075 | different_variant | The left title offers a lot of five Grade A monitors. The right names a Grade C monitor stand. Multiple compatible model references cannot establish the same sold item. |
+| D056 | 114 | different_variant | The left title gives M170 and part code 41 91377 117; the right model and MPN give M1700SS and 11-91378-227. |
+| D058 | 105 | insufficient_evidence | Both name L1710. The right title explicitly says quantity two; the left does not establish sold quantity. A singular model name alone does not establish a one-unit bundle. |
+| D072 | 163 | different_variant | Both MPN fields give complete V246HL codes with different endings, .004 and .005. |
+
+For subsequent trusted-label preparation, hold source entities 161, 002, 021, 192, 075, 114 and 163 out of automatic same-identity grouping. This is a conservative group-level hold, not a blanket different-variant label. Keep D036 and D058 unresolved at pair level. The versioned sampling input and its original quarantine remain fixed for replay. Apply these later holds separately when building a reviewed set. The other 111 first-pass judgments were carried forward without re-review. The resulting diagnostic tally is 19 same, 45 different and 56 insufficient. Next, independently check the 19 provisional positives before using them as reference links. Catalog and final split remain pending.
+
+## F1 independent review packet (revision 14)
+
+Prepared a local packet with all 19 first-pass positives and ten masked controls. All nine within-group first-pass negatives were excluded by the adjudicated-case exclusion, leaving no eligible within-group negative controls. Therefore the five different-variant controls come from the between-group title-overlap stratum. The five insufficient-evidence controls come from within groups. Controls are masking material, not an accuracy sample.
+
+Using revision 12 judgments and the frozen diagnostic IDs, take the first five per control pool in ascending SHA-256 order of the UTF-8 string `f1-r14-v1|control|ID` (substitute the original ID). Interleave all selected IDs by the same ranking with `order` replacing `control`; assign R001 through R029. Keep the mapping and first judgments outside the reviewer packet.
+
+Reopened the ZIP and checked its three entries, all 58 original offer objects and side orientations against the pinned archive and manifest, all 29 blank worksheet rows, control quotas, excluded IDs and the separate comparison key. Both generated files are Git-ignored. Next, obtain the completed worksheet from a reviewer without prior results and compare it using the private key.
+
+## F1 second AI review (revision 15)
+
+Pinned the returned CSV locally, SHA-256 `c8966d6ef5fc284bd124115552e197a4c70a5d10594112e0b6ec4ed8e8f892ae`. The 29 unique IDs matched the worksheet and private key. All fields were populated, all origins AI, and all 58 eligibility decisions eligible. Reviewer isolation was not independently verified.
+
+Fifteen provisional positives received a second same-variant judgment. The cited model identifier occurs on both sides of each pair. These are AI-supported diagnostic links, pending independent human verification. Pair and shared identifier: D011 EA193MI-BK, D013 E178FPB, D019 I2367FH, D024 PA249Q, D049 E241i, D066 P2214H, D070 U2913WM, D073 U2414H, D076 VG278HE, D078 VK278Q, D079 PQ321QE, D085 S2440L, D092 25UM65-P, D105 P2314T and D112 V226WL (also matching UM.EV6AA.002).
+
+Hold four pairs out of reference links pending adjudication. Both reviewers identify the same monitor models. For D035 and D065 the second reviewer questions service duration, for D068 whether both offers include the same service coverage, and for D099 whether the reported operating and maximum power figures are comparable. The second judgments are insufficient evidence in all four cases. Explicit service bundles versus ordinary warranty language, and the materiality of power measurements, need a D17 check before changing the first labels.
+
+All ten masking controls reproduced their first judgments (five different and five insufficient). This purposive comparison does not estimate accuracy. Keep revision 13 decisions intact and defer final splitting.

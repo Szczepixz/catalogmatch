@@ -27,6 +27,15 @@ py -3.12 -m unittest discover -s tests -v
 
 The CLI writes deterministic JSON to stdout. Exit 0 means structural inspection completed. Inspect the issues and quarantine sections even on success. Duplicate entries give the entity, record locator and total occurrences. Missing references are excluded from candidates. Exit 1 reports an unreadable, malformed or oversized input as a single JSON error. Redirect stdout to a private path to retain the report. The loader reads members in memory under the audit limits and preserves original attributes and ER rows for subsequent local review. Ordinary tests use synthetic archives.
 
+To replay the [F1 diagnostic manifest](docs/data/alaska-monitor-diagnostic.json), run the first command below. For independent review, give the reviewer the second command's worksheet and local access to the referenced archive records. Keep the manifest, ER assignments and pilot judgments separate until judgments are recorded.
+
+```powershell
+py -3.12 -m diagnostic_pairs "path/to/monitor.tar.gz"
+py -3.12 -m diagnostic_pairs "path/to/monitor.tar.gz" --worksheet > review.csv
+```
+
+For each pair, record each offer's eligibility under D15, then apply monitor identity policy D17 using the raw attributes. Enter `same_variant`, `different_variant` or `insufficient_evidence`, a short evidence-based rationale and reviewer origin. Preserve uncertain cases and join completed reviews by ID. See the [evaluation contract](docs/EVALUATION.md).
+
 ## Project context
 
 | Document | Purpose |
