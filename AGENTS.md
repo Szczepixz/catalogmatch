@@ -21,7 +21,7 @@ Use [project brief](docs/PROJECT_BRIEF.md) for scope, [decisions](docs/DECISIONS
 
 ## Engineering constraints
 - Begin with local feasibility experiments. No framework-heavy application scaffold before the data and baseline questions are addressed.
-- Python is the primary language. Runtime, package manager, and dependencies must be selected from the inspected environment and documented; none are installed by this starter.
+- Python is the primary language. The F1 loader uses Python 3.12 and the standard library.
 - Separate normalization, candidate retrieval, pair/selection scoring, and decision policy. Prefer plain functions and small modules over premature plugin interfaces.
 - Keep domain decisions outside HTTP handlers and vendor-specific SDK code.
 - Preserve raw input. Normalization must not silently remove identity-bearing attributes.
@@ -53,4 +53,4 @@ Use [project brief](docs/PROJECT_BRIEF.md) for scope, [decisions](docs/DECISIONS
 - `.gitignore` is not access control and does not untrack existing files. Do not stage, untrack or rewrite history without explicit authorization.
 
 ## Commands
-No application, environment, or test commands exist yet. Do not invent successful setup or checks. When the first executable slice exists, document verified commands in README and reference them here.
+Use the [verified CLI and offline test commands](README.md#run-locally) from the repository root.

@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 9
-- Status: in_progress (source selection closed; F0 done; F1 ready; F2-F4 draft)
+- Revision: 10
+- Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-11-01
-- Selected task: complete ALASKA Monitor inspection and close source selection
-- Execution: 30-pair pilot complete; ALASKA Monitor selected under D16/D17; F1 data preparation ready; no application implemented
+- Updated: 2026-11-04
+- Selected task: implement the structural loader and validator
+- Execution: 30-pair pilot complete; ALASKA Monitor selected under D16/D17; F1 structural loader verified; diagnostic review and protocol pending
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -27,7 +27,7 @@ Do not initialize Git, install production dependencies, download large corpora/m
 | ID | Status | Outcome | Dependency |
 | --- | --- | --- | --- |
 | F0 | done | [Documentation-only audit](../data-audit.md) reviewed; `needs_targeted_followup` | Documentation-only acceptance; source rights unresolved |
-| F1 | ready | Reproducible ALASKA Monitor preparation, reviewed diagnostic subset and split design | D16/D17 and revision 9 handoff |
+| F1 | in_progress | Reproducible ALASKA Monitor preparation, reviewed diagnostic subset and split design | D16/D17 and revision 9 handoff |
 | F2 | draft | Reproducible lexical/rule baseline and error report | F1 |
 | F3 | draft | Comparable LLM baseline with observed cost and failure analysis | F2; explicit API/model budget authorization |
 | F4 | draft | Continue, simplify, or change-domain decision; next product slice | F2/F3 evidence, or explicit incomplete-stage limitation |
@@ -284,3 +284,11 @@ Monitor identity policy v1 (fixed before inspection):
 - Changed artifacts: existing audit, evaluation contract, decision register, plan and STATE; new public pilot manifest contains only locators, hashes and original summaries. Raw archive/scratch data remain local. No application, dependency, paid call, external message or Git mutation.
 - Validation: a separate archive pass replayed all 30 selections, verified archive/record hashes and source assignments, reconciled counts and confirmed the discovery gate. All 25 Markdown relative links/anchors resolve; 50 WDC rows remain unchanged. Reviewed relevant changes and public manifest; `git diff --check` passed. No application tests or probabilistic evaluation. A documentation edit initially failed because an old heading contained mojibake; retry matched its stable heading prefix and preserved unrelated historical content.
 - Next action: implement F1 loader/validator and diagnostic preparation as specified above. Do not reopen publisher-contact or generic rights research as a prerequisite under the owner's accepted bounded scope. Public redistribution and later external-provider processing remain separate decisions.
+
+## F1 structural preparation (revision 10, 2026-11-04)
+
+Implement a bounded standard-library archive reader, preserve source rows and raw attributes, separate quarantines and review candidates, and verify the JSON CLI against synthetic failures and the audited archive. Pair sampling and evaluation design remain pending.
+
+Verified with Python 3.12.4 and no dependencies. The CLI reproduced the audited hash and all requested counts, including nine conflicting records and zero missing references. Full-group exclusions cover ten records for membership conflicts and seventeen for AI-assisted disputes. The 2,246 remaining assignments require substantive review. The local report contains identifiers and aggregates only.
+
+Four offline synthetic tests passed, including malformed inputs and all four resource limits. The first sandbox run could not create fixture files in the temporary directory. The same command passed with temporary-directory access. Next, specify reproducible strata and sample 100-150 diagnostic pairs for independent review. Keep pilot exposure separate before designing catalog and identity-disjoint splits.
