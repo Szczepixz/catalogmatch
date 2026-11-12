@@ -1,6 +1,6 @@
 # Decision register
 
-Updated: 2026-11-01. `Accepted` describes project direction, not permission to install dependencies or spend money. Update a row when evidence changes it; do not silently rewrite history. Add a short dated note for consequential revisions.
+Updated: 2026-11-12. `Accepted` describes project direction, not permission to install dependencies or spend money. Update a row when evidence changes it; do not silently rewrite history. Add a short dated note for consequential revisions.
 
 | ID | Status | Decision | Reason / reopening condition |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@ Updated: 2026-11-01. `Accepted` describes project direction, not permission to i
 | D14 | Accepted | Describe AI assistance honestly and evaluate accepted artifacts | No claim of unaided authorship or human verification based only on model review |
 | D15 | Accepted | Exclude confirmed editorial/family records without a sellable item; retain incomplete offers and uncertain eligibility | Separate input eligibility from pair identity; preserve evidence and report exclusions under the [evaluation contract](EVALUATION.md#offer-eligibility). Revisit with concrete input evidence, before final testing |
 | D16 | Accepted | Use ALASKA Monitor as the primary feasibility data source; close source discovery | Bounded 30-pair pilot passed the discovery gate. Source labels remain noisy; validate a project subset, quarantine conflicts and preserve WDC history. Reopen only for a concrete downstream blocker, not another generic source search |
-| D17 | Accepted | Apply monitor identity policy v1 for catalog-variant linkage | Complete model/part evidence can support a positive without every attribute repeated; preserve suffixes and explicit variant, bundle and condition uncertainty. See [evaluation contract](EVALUATION.md#monitor-identity-policy-v1) |
+| D17 | Accepted | Apply monitor identity policy v1.1 for catalog-variant linkage | Complete model/part evidence can support a positive without every attribute repeated. Manufacturer protection descriptions alone do not define a bundle; explicit additional coverage must be reconciled. Preserve suffixes and explicit variant, bundle and condition uncertainty. See [evaluation contract](EVALUATION.md#monitor-identity-policy-v1) |
 
 ## Open decisions
 
@@ -34,6 +34,7 @@ Updated: 2026-11-01. `Accepted` describes project direction, not permission to i
 | O07 | Which deployment target and operating budget? | Application stage, not a feasibility prerequisite |
 
 ## Revision notes
+- 2026-11-12: Owner approved D17 v1.1's manufacturer-coverage rule, including missing-term handling and review of conflicting stated terms. A bundle field alone does not establish additional coverage; explicit extensions remain identity-bearing even without a separate SKU. Applied to D035/D065 in plan revision 17 while preserving original reviews and revision 16 history. Approval establishes policy, not human verification of the records or identical warranty entitlements. D15 and final-test requirements are unchanged.
 - 2026-11-01: D16/D17 close O01 for bounded local student-project feasibility. Owner authorized ALASKA inspection and source closure without publisher contact; unresolved underlying-content rights are recorded rather than treated as a new license. This does not authorize raw redistribution, paid services or additional provider processing. The pilot and selection limitations are in the audit; F1 remains unfinished.
 - 2026-10-30: Owner authorized adoption of the recommended eligibility rule (D15, policy v1). PW line 5's left record is excluded from future eligible offers; its historical pair judgment and source label remain unchanged. Category-specific identity rules remain open. This is policy approval, not human annotation or broader data-use authorization.
 - 2026-10-27: Separated public technical documentation from optional local prompts and personal context. Product scope and evaluation requirements are unchanged.

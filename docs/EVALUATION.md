@@ -18,6 +18,8 @@ For custom evaluation, report total input records, eligible records, exclusions 
 
 ## Monitor identity policy v1
 
+Current revision: **v1.1**, approved by the owner on 2026-11-12. This adds the manufacturer-coverage rule below to the original v1 adopted on 2026-11-01; the section anchor is retained for existing references. Historical assessments retain their original policy context.
+
 Adopted 2026-11-01 for the selected feasibility category. The target is an exact monitor catalog variant, not an individual physical unit or a broad model family. Preserve brand, complete manufacturer model/part identifiers including suffixes, size, resolution, refresh rate, panel/touch configuration, color and explicit bundle, quantity and condition qualifiers.
 
 - A matching manufacturer and complete model/part identifier on both sides, with consistent identity-bearing evidence, can support `same_variant`. Formatting-only case/spacing/punctuation differences are harmless; suffix removal and unexplained identifier equivalence are not. Compatibility references do not identify the sold item.
@@ -26,7 +28,13 @@ Adopted 2026-11-01 for the selected feasibility category. The target is an exact
 - Distinct complete models or decisive variant attributes support `different_variant`. A shared model with contradictory material specifications, truncated codes or unclear suffix equivalence requires review. Distinguish nominal/viewable size, static/dynamic contrast and with/without-stand measurements. Price alone never decides.
 - D15 eligibility remains separate. Source clusters are supervision, never inference evidence. These are reference annotation rules, not automatic-match thresholds. Historical WDC judgments are not retroactively relabeled.
 
-The policy was fixed before the ALASKA pilot; the interpretation of ordinary cable lists is explicit here to distinguish a specification inventory from an offered extra bundle. [Pilot evidence and limitations](data-audit.md#alaska-monitor-final-inspection-2026-11-01) constrain its use. Pilot AI labels are not an independent final test set.
+### Manufacturer coverage (v1.1)
+
+Manufacturer warranty and protection descriptions do not alone define a separate monitor variant, including when listed under a bundle field. A missing coverage term on one side does not block a match when the complete monitor identity is established and neither offer explicitly identifies additional or modified coverage. Explicit extensions, separately offered service plans or coverage upgrades are bundle qualifiers and must be reconciled. A separate service SKU is supporting evidence, not a requirement. Conflicting stated coverage terms require review unless the records establish that the difference concerns only non-identity-bearing commercial terms. Preserve stated and missing coverage details; do not infer entitlement equivalence from a variant match.
+
+An explicit additional package on one side with unresolved compatibility on the other requires `insufficient_evidence`. Explicitly incompatible additional packages support `different_variant` for the sold bundle even when the monitor itself matches. Do not infer an extension from a field name alone, or fill in a missing term from the other offer.
+
+The original v1 was fixed before the ALASKA pilot; v1.1 was approved after diagnostic review, before final split/test construction. The interpretation of ordinary cable lists distinguishes a specification inventory from an offered extra bundle. [Pilot evidence and limitations](data-audit.md#alaska-monitor-final-inspection-2026-11-01) constrain its use. Pilot AI labels are not an independent final test set. The coverage amendment is a policy decision, not measured evidence of improved matching quality.
 
 ## Dataset requirements
 Record source URL/version, acquisition date, license/terms, permitted local use and redistribution, transformation rules, hashes, category coverage, and label origin. Distinguish benchmark labels, human review, model-assisted suggestions, and generated fixtures.
