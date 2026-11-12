@@ -2,7 +2,7 @@
 
 Supplier product matching with measured automation risk.
 
-**Status: data feasibility.** The offline ALASKA Monitor validator is implemented. Matching quality has yet to be evaluated.
+**Status: data feasibility.** The offline ALASKA Monitor validator and diagnostic annotation ledger are implemented. Matching quality has yet to be evaluated.
 
 CatalogMatch will map inconsistent supplier offers to exact variants in a reference catalog. It will compare inexpensive deterministic methods with retrieval and LLM approaches, automate decisions supported by evidence, and send ambiguous cases to human review.
 
@@ -36,6 +36,22 @@ py -3.12 -m diagnostic_pairs "path/to/monitor.tar.gz" --worksheet > review.csv
 
 For each pair, record each offer's eligibility under D15, then apply monitor identity policy D17 using the raw attributes. Enter `same_variant`, `different_variant` or `insufficient_evidence`, a short evidence-based rationale and reviewer origin. Preserve uncertain cases and join completed reviews by ID. See the [evaluation contract](docs/EVALUATION.md).
 
+### Replay the F1 annotation ledger
+
+The ledger verifies the archive, replays diagnostic selection and the masked-review ID mapping, preserves observations, and applies the [versioned adjudications](docs/data/alaska-monitor-adjudications.json). Supply the two preserved private review CSVs and mapping explicitly:
+
+```powershell
+py -3.12 -m annotation_ledger "path/to/monitor.tar.gz" "path/to/first-review.csv" "path/to/second-review.csv" "path/to/private-key.csv" > "path/to/ledger.json"
+```
+
+Use an existing output directory and a new output path, never an input CSV. Exit 0 emits one complete deterministic JSON ledger; exit 1 emits one JSON error without a partial ledger. Inspect exit status before consuming a redirected file. All processing is offline; nothing is uploaded. No personal notes or private default paths are loaded.
+
+Both review CSVs have the exact header `id,eligibility_left,eligibility_right,judgment,rationale,reviewer_origin`; the key has `id,original_id,first_judgment`. This release imports the preserved AI reviews only: origin `AI`, eligibility `eligible`, and the three D17 judgment values. It is not a general annotation importer. The configuration pins the archive and private CSV hashes to exact bytes. Public JSON hashes normalize CRLF to LF so Git checkout line endings do not change provenance; substantive changes still fail verification. A fresh clone can run synthetic tests but needs the original private CSVs to reproduce these annotations.
+
+The ledger retains 120 oriented pairs, 149 observation events and 15 adjudication events; effective counts are **18 same / 45 different / 57 insufficient**. Original rationale text stays in the input CSVs and is referenced by SHA-256 of its decoded UTF-8 text. Output includes categorical observations, sanitized adjudication reasons, evidence field names, provenance hashes, source structure, exposure/hold blocks and identity warnings, but no raw offer attributes or reviewer prose. An unknown historical event date is `null`; plan revision order determines supersession. The pinned ID mapping binds assessments to the original side orientation; it cannot independently establish how reviewers interpreted their inputs or their isolation.
+
+All 11 held groups remain separate from pair judgments. D013 is still a positive pair in held group 075, and D066/D068 are disconnected positive pairs in group 122. Conservative blocks join shared memberships and exact duplicate JSON objects among assigned records; they do not establish semantic aliases or validated identities. The output is a provisional AI-assisted diagnostic artifact, not a catalog, final split or gold set. Treat its locators and annotations according to the [publication policy](docs/DOCUMENTATION.md) before sharing.
+
 ## Project context
 
 | Document | Purpose |
@@ -58,5 +74,5 @@ Start locally with one category and text input. Prove data fitness and useful ba
 
 ## Development and AI assistance
 
-AI assistance was used to prepare the initial project documentation. The intended development process also uses AI for implementation drafts, tests and review. Generated output is not evidence of correctness: accepted changes and reported results require appropriate validation. Record actual experiments and meaningful failures, and update this description as work progresses. AI assistance also contributed to the loader and its synthetic tests.
+AI assistance was used to prepare the initial project documentation. The intended development process also uses AI for implementation drafts, tests and review. Generated output is not evidence of correctness: accepted changes and reported results require appropriate validation. Record actual experiments and meaningful failures, and update this description as work progresses. AI assistance also contributed to the loader, annotation ledger and their synthetic tests.
 

@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "policy": "monitor-identity-v1.1",
+  "archive_sha256": "9084b8998d5afa283865dfcf8e1f3cc4137f6befbe431903a4d83df4b3f7b45d",
+  "input_sha256": {
+    "pilot": "81ac96af29ea8b2005a2fa159cd1501e11c4b19c98c89c1455b0b2fdc5b11817",
+    "manifest": "61a40e7a795ecd4752aae6c0243c4b60555424cd9c96b39e494e18a979abb93e",
+    "first_review": "e9e2849b3e41fbf91c4f1231b8dd9304497579167f5839b75f5986a986bef018",
+    "second_review": "c8966d6ef5fc284bd124115552e197a4c70a5d10594112e0b6ec4ed8e8f892ae",
+    "key": "a7adfecd38070ddd1e2b1c311092e27c63555d898fd7ac5326419bccea015267"
+  },
+  "review_revisions": {
+    "first": 12,
+    "second": 15
+  },
+  "excluded_second_review_ids": [
+    "D023",
+    "D025",
+    "D033",
+    "D034",
+    "D036",
+    "D040",
+    "D056",
+    "D058",
+    "D072"
+  ],
+  "additional_holds": {
+    "ENTITY#161": "revision_13_identity_dispute",
+    "ENTITY#002": "revision_13_identity_dispute",
+    "ENTITY#021": "revision_13_identity_dispute",
+    "ENTITY#192": "revision_13_identity_dispute",
+    "ENTITY#075": "revision_13_identity_dispute",
+    "ENTITY#114": "revision_13_identity_dispute",
+    "ENTITY#163": "revision_13_identity_dispute"
+  },
+  "expected_counts": {
+    "same_variant": 18,
+    "different_variant": 45,
+    "insufficient_evidence": 57
+  },
+  "adjudications": [
+    {
+      "event_id": "r13:D023",
+      "pair_id": "D023",
+      "left": "www.ebay.com//20800",
+      "right": "www.softwarecity.ca//5419",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Distinct complete Acer part suffixes.",
+      "supersedes": "first:D023",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D023",
+      "evidence_fields": {
+        "left": [
+          "main features"
+        ],
+        "right": [
+          "manufacturer part number"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D025",
+      "pair_id": "D025",
+      "left": "www.ebay.com//14413",
+      "right": "ce.yikus.com//1219",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Distinct complete Elo identifiers within the same model family.",
+      "supersedes": "first:D025",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D025",
+      "evidence_fields": {
+        "left": [
+          "<page title>"
+        ],
+        "right": [
+          "part number"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D033",
+      "pair_id": "D033",
+      "left": "www.ebay.com//9462",
+      "right": "www.best-deal-items.com//693",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Distinct Elo identifiers in the titles.",
+      "supersedes": "first:D033",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D033",
+      "evidence_fields": {
+        "left": [
+          "<page title>"
+        ],
+        "right": [
+          "<page title>"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D034",
+      "pair_id": "D034",
+      "left": "www.ebay.com//23682",
+      "right": "www.cleverboxes.com//388",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Distinct HP product codes in the titles.",
+      "supersedes": "first:D034",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D034",
+      "evidence_fields": {
+        "left": [
+          "<page title>"
+        ],
+        "right": [
+          "<page title>"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D036",
+      "pair_id": "D036",
+      "left": "www.makingbuyingeasy.co.uk//269",
+      "right": "www.cleverboxes.com//314",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "insufficient_evidence",
+      "reason": "Colour fields may describe different surfaces; configuration unresolved.",
+      "supersedes": "first:D036",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D036",
+      "evidence_fields": {
+        "left": [
+          "<page title>",
+          "colour of product"
+        ],
+        "right": [
+          "<page title>",
+          "case colour"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D040",
+      "pair_id": "D040",
+      "left": "www.ebay.com//19080",
+      "right": "www.best-deal-items.com//1205",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Five Grade A monitors versus a Grade C stand.",
+      "supersedes": "first:D040",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D040",
+      "evidence_fields": {
+        "left": [
+          "<page title>"
+        ],
+        "right": [
+          "<page title>"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D056",
+      "pair_id": "D056",
+      "left": "www.best-deal-items.com//1238",
+      "right": "www.ebay.com//23099",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Distinct model and part identifiers.",
+      "supersedes": "first:D056",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D056",
+      "evidence_fields": {
+        "left": [
+          "<page title>"
+        ],
+        "right": [
+          "model",
+          "mpn"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D058",
+      "pair_id": "D058",
+      "left": "www.best-deal-items.com//1218",
+      "right": "www.ebay.com//20336",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "insufficient_evidence",
+      "reason": "Quantity two on the right; sold quantity on the left unresolved.",
+      "supersedes": "first:D058",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D058",
+      "evidence_fields": {
+        "left": [
+          "<page title>"
+        ],
+        "right": [
+          "<page title>"
+        ]
+      }
+    },
+    {
+      "event_id": "r13:D072",
+      "pair_id": "D072",
+      "left": "www.ebay.com//20610",
+      "right": "www.softwarecity.ca//5714",
+      "revision": 13,
+      "date": null,
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "different_variant",
+      "reason": "Distinct complete Acer part suffixes.",
+      "supersedes": "first:D072",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 13, pair D072",
+      "evidence_fields": {
+        "left": [
+          "mpn"
+        ],
+        "right": [
+          "manufacturer part number"
+        ]
+      }
+    },
+    {
+      "event_id": "r16:D035",
+      "pair_id": "D035",
+      "left": "www.ebay.com//19434",
+      "right": "www.vology.com//2650",
+      "revision": 16,
+      "date": "2026-11-12",
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "insufficient_evidence",
+      "reason": "Coverage term missing on the left; service-policy boundary unresolved under v1.",
+      "supersedes": "second:D035",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 16, pair D035",
+      "evidence_fields": {
+        "left": [
+          "<page title>",
+          "environmentconscious and reliable"
+        ],
+        "right": [
+          "product description",
+          "bundled with",
+          "manufacturer warranty"
+        ]
+      }
+    },
+    {
+      "event_id": "r16:D065",
+      "pair_id": "D065",
+      "left": "www.ebay.com//19867",
+      "right": "www.vology.com//2651",
+      "revision": 16,
+      "date": "2026-11-12",
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "insufficient_evidence",
+      "reason": "Coverage term missing on the left; service-policy boundary unresolved under v1.",
+      "supersedes": "second:D065",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 16, pair D065",
+      "evidence_fields": {
+        "left": [
+          "<page title>",
+          "environmentconscious and reliable"
+        ],
+        "right": [
+          "product description",
+          "bundled with",
+          "manufacturer warranty"
+        ]
+      }
+    },
+    {
+      "event_id": "r16:D068",
+      "pair_id": "D068",
+      "left": "www.ebay.com//19271",
+      "right": "www.vology.com//2653",
+      "revision": 16,
+      "date": "2026-11-12",
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "same_variant",
+      "reason": "Matching complete model and specifications; ordinary protection language is not an explicit extra bundle.",
+      "supersedes": "second:D068",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 16, pair D068",
+      "evidence_fields": {
+        "left": [
+          "<page title>",
+          "environmentconscious and reliable"
+        ],
+        "right": [
+          "product description",
+          "viewable size",
+          "native resolution",
+          "response time"
+        ]
+      }
+    },
+    {
+      "event_id": "r16:D099",
+      "pair_id": "D099",
+      "left": "www.ebay.com//20181",
+      "right": "www.cleverboxes.com//281",
+      "revision": 16,
+      "date": "2026-11-12",
+      "policy": "monitor-identity-v1",
+      "origin": "AI-assisted",
+      "judgment": "insufficient_evidence",
+      "reason": "Operating 22 W versus maximum 14 W without measurement conditions.",
+      "supersedes": "second:D099",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 16, pair D099",
+      "evidence_fields": {
+        "left": [
+          "product model",
+          "power description",
+          "standby power consumption"
+        ],
+        "right": [
+          "model name",
+          "power consumption"
+        ]
+      }
+    },
+    {
+      "event_id": "r17:D035",
+      "pair_id": "D035",
+      "left": "www.ebay.com//19434",
+      "right": "www.vology.com//2650",
+      "revision": 17,
+      "date": "2026-11-12",
+      "policy": "monitor-identity-v1.1",
+      "origin": "AI-assisted",
+      "judgment": "same_variant",
+      "reason": "Matching complete model; no explicit coverage extension. Under v1.1, a bundle field and missing ordinary coverage term do not block identity.",
+      "supersedes": "r16:D035",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 17, pair D035",
+      "evidence_fields": {
+        "left": [
+          "<page title>",
+          "environmentconscious and reliable"
+        ],
+        "right": [
+          "product description",
+          "bundled with",
+          "manufacturer warranty"
+        ]
+      }
+    },
+    {
+      "event_id": "r17:D065",
+      "pair_id": "D065",
+      "left": "www.ebay.com//19867",
+      "right": "www.vology.com//2651",
+      "revision": 17,
+      "date": "2026-11-12",
+      "policy": "monitor-identity-v1.1",
+      "origin": "AI-assisted",
+      "judgment": "same_variant",
+      "reason": "Matching complete model; no explicit coverage extension. Under v1.1, a bundle field and missing ordinary coverage term do not block identity.",
+      "supersedes": "r16:D065",
+      "evidence_reference": "docs/plans/000-feasibility.md revision 17, pair D065",
+      "evidence_fields": {
+        "left": [
+          "<page title>",
+          "environmentconscious and reliable"
+        ],
+        "right": [
+          "product description",
+          "bundled with",
+          "manufacturer warranty"
+        ]
+      }
+    }
+  ]
+}
