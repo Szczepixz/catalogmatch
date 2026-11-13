@@ -53,6 +53,14 @@ Approximately 100-150 manually inspected diagnostic examples are an early feasib
 - Do not claim unseen-supplier generalization without a supplier-aware split and sufficient metadata.
 - Separate a curated challenge set from a representative sample. Its class balance and error rate must not be presented as expected live traffic performance.
 
+### Development reference selection
+
+Owner-approved on 2026-11-13 for the bounded F1-I development catalog: `capacity-information-hash-v2`. Among eligible original records with established identity and no unresolved material contradiction, maximize nonduplicate cross-host query capacity first, then the number of explicit usable information categories, then the lowest SHA-256 of UTF-8 `f1-catalog-v1|reference|locator`, then locator. Do not synthesize a reference by merging offers.
+
+The ten equally weighted categories are identifier, size, resolution, panel/display technology (including 3D), touch, color, refresh/scan range, condition, bundle/inventory, and coverage. Count each category once, whether found in a title, prose or structured fields; repeated fields do not earn points. Exclude missing values, placeholders and unresolved contradictory evidence. Retain field locators and annotation origin. This is a bounded reviewed completeness measure, not an automatic semantic parser, identity-confidence score or measured quality gain. Missing manufacturer coverage terms remain missing under D17 v1.1; inventory evidence does not itself imply an additional bundle.
+
+The owner confirmed the displayed development memberships and reported no noticed aliases between sections, after exposure to AI proposals. Preserve that scoped assessment separately from the AI findings. It does not certify the individual reference choices, supply unrecorded field rationales or satisfy independent final-test review. The earlier manifest and selection rule remain preserved for audit; no final split or test policy is approved by this change.
+
 ## Baselines and experiments
 1. Exact identifiers where legitimate, followed by normalization, lexical/fuzzy retrieval and attribute rules.
 2. A current LLM over a bounded candidate set, with constrained output and an abstention option.

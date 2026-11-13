@@ -1,0 +1,1147 @@
+{
+  "schema_version": 1,
+  "policy": "monitor-identity-v1.1",
+  "eligibility_policy": "D15-v1",
+  "origin": "AI-assisted",
+  "human_verified": false,
+  "scope": "bounded-development-proposal",
+  "review_date": "2026-11-13",
+  "plan_revision": 20,
+  "provenance": {
+    "archive_sha256": "9084b8998d5afa283865dfcf8e1f3cc4137f6befbe431903a4d83df4b3f7b45d",
+    "pilot": "81ac96af29ea8b2005a2fa159cd1501e11c4b19c98c89c1455b0b2fdc5b11817",
+    "manifest": "61a40e7a795ecd4752aae6c0243c4b60555424cd9c96b39e494e18a979abb93e",
+    "first_review": "e9e2849b3e41fbf91c4f1231b8dd9304497579167f5839b75f5986a986bef018",
+    "second_review": "c8966d6ef5fc284bd124115552e197a4c70a5d10594112e0b6ec4ed8e8f892ae",
+    "key": "a7adfecd38070ddd1e2b1c311092e27c63555d898fd7ac5326419bccea015267",
+    "adjudications_sha256": "2c1c51791c4fe95aeb86f916d18706e5bba18cb847e4976eb0baf4e4984c9c08",
+    "hash_encoding": "public JSON: CRLF normalized to LF; archive and private CSV: exact bytes"
+  },
+  "positive_pair_ids": [
+    "D011",
+    "D013",
+    "D019",
+    "D024",
+    "D035",
+    "D049",
+    "D065",
+    "D066",
+    "D068",
+    "D070",
+    "D073",
+    "D076",
+    "D078",
+    "D079",
+    "D085",
+    "D092",
+    "D105",
+    "D112"
+  ],
+  "held_entities": [
+    "ENTITY#002",
+    "ENTITY#021",
+    "ENTITY#032",
+    "ENTITY#054",
+    "ENTITY#063",
+    "ENTITY#075",
+    "ENTITY#114",
+    "ENTITY#161",
+    "ENTITY#163",
+    "ENTITY#192",
+    "ENTITY#205"
+  ],
+  "limitations": [
+    "Unblinded AI-assisted membership review, not human gold or quality evaluation. Pair assessments and source assignments remain unchanged.",
+    "Only the 34 endpoints of 17 non-held positive pairs were semantically inspected in this iteration. No archive-wide alias uniqueness claim.",
+    "Complete identifiers support membership only with the recorded qualifier review; missing condition remains unknown and missing attributes are not imputed.",
+    "No final split, test reservation, absence scenario or F2. Source hosts are provenance proxies, not independent suppliers.",
+    "D099 and every other unresolved pair remain unchanged. D013 and all 11 held groups remain excluded.",
+    "Semantic findings are explicit annotations. Validator checks integrity and coverage, not the truth of model/qualifier interpretation."
+  ],
+  "candidate_reviews": [
+    {
+      "pair_id": "D011",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Full model including BK suffix agrees case-insensitively; size and resolution agree. Black is supported by the shared suffix. LED/LCD labels do not establish opposing configurations.",
+      "members": [
+        {
+          "locator": "www.getprice.com.au//310",
+          "source_entities": [
+            "ENTITY#023"
+          ],
+          "object_sha256": "e79214badb62ddbc468caae063bb073f801a12e22accd5e167b8f475f4104d57",
+          "evidence_fields": [
+            "<page title>",
+            "monitor size",
+            "display resolution"
+          ],
+          "identifier_key": "nec|ea193mi-bk",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.mrhightech.com//110",
+          "source_entities": [
+            "ENTITY#023"
+          ],
+          "object_sha256": "a276b7ba05a361f4c7e7ca6feae0867f1899b21d978f6aaa61c04fbbff5bfdb3",
+          "evidence_fields": [
+            "<page title>",
+            "colour of product",
+            "display diagonal",
+            "display resolution"
+          ],
+          "identifier_key": "nec|ea193mi-bk",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D019",
+      "pair_basis": "review_consensus",
+      "status": "deferred",
+      "finding": "Deferred: title and structured model/part identify I2367FH, but marketing text in both general information and main features names I2367FWH. Suffix equivalence or copied-text error is not established. No identity is assigned and the existing positive pair assessment is unchanged.",
+      "members": [
+        {
+          "locator": "www.ebay.com//17093",
+          "source_entities": [
+            "ENTITY#104"
+          ],
+          "object_sha256": "529530ef76c39ccdd3ddca59217d6804550fce2336f96ae08368edbf4910547f",
+          "evidence_fields": [
+            "<page title>",
+            "general information",
+            "main features"
+          ],
+          "identifier_key": "aoc|i2367fh",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "catalog.com//617",
+          "source_entities": [
+            "ENTITY#104"
+          ],
+          "object_sha256": "4b74539e2642d3e8b114213a37893b55de3fe66be7e345f5c14c754a307f358d",
+          "evidence_fields": [
+            "<page title>",
+            "max resolution"
+          ],
+          "identifier_key": "aoc|i2367fh",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D024",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete model/part PA249Q agrees; size and resolution agree. Black and the specification/cable inventory are recorded on one side; no separate color option or extra bundle is identified by these records. Missing refresh on the other side is not filled in.",
+      "members": [
+        {
+          "locator": "catalog.com//353",
+          "source_entities": [
+            "ENTITY#128"
+          ],
+          "object_sha256": "99613e14736866f0c5515976172d3dcbb66f6fb8fb969d783f9c32b69b089bdc",
+          "evidence_fields": [
+            "<page title>",
+            "max resolution"
+          ],
+          "identifier_key": "asus|pa249q",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.pc-canada.com//314",
+          "source_entities": [
+            "ENTITY#128"
+          ],
+          "object_sha256": "bb58de9d2d18087e5b248a6c266b6277361814663a8c9217da6ebb2b72f6fc6c",
+          "evidence_fields": [
+            "manufacturer part number",
+            "product model",
+            "color",
+            "screen size",
+            "maximum resolution",
+            "package contents",
+            "standard refresh rate"
+          ],
+          "identifier_key": "asus|pa249q",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D035",
+      "pair_basis": "r17:D035",
+      "status": "confirmed_membership",
+      "finding": "Complete P2314H model and 23-inch Full HD evidence agree. Both describe manufacturer protection; one omits the term, the other states three years alongside a three-year limited warranty. D17 v1.1 applies; no additional coverage is established and entitlement equality is not inferred. Numeric seller code is not used as an alias.",
+      "members": [
+        {
+          "locator": "www.ebay.com//19434",
+          "source_entities": [
+            "ENTITY#124"
+          ],
+          "object_sha256": "f92511d25d54e96f248d851deabf59eb518cc05208514c5ac5bc0a02490cfd69",
+          "evidence_fields": [
+            "<page title>",
+            "environmentconscious and reliable",
+            "impressive screen clarity"
+          ],
+          "identifier_key": "dell|p2314h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.vology.com//2650",
+          "source_entities": [
+            "ENTITY#124"
+          ],
+          "object_sha256": "7188464f2ad53a5b907df378fff657368c6d27c04916836d29cc20b9abc49c93",
+          "evidence_fields": [
+            "<page title>",
+            "product description",
+            "bundled with",
+            "manufacturer warranty",
+            "service  support details",
+            "native resolution",
+            "viewable size",
+            "included accessories"
+          ],
+          "identifier_key": "dell|p2314h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D049",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete EliteDisplay E241i identifier and 24-inch evidence agree. Silver is stated on one side; no separate selectable color variant is established. The condition field on the other side is a placeholder, not evidence of new or used condition. Other absent specifications remain missing.",
+      "members": [
+        {
+          "locator": "www.makingbuyingeasy.co.uk//460",
+          "source_entities": [
+            "ENTITY#086"
+          ],
+          "object_sha256": "acc1d0ef732c8bfdbe5d741e8281d9d9fe9aeade7b818e8f55f63ae37f4978eb",
+          "evidence_fields": [
+            "<page title>",
+            "colour of product",
+            "display diagonal",
+            "display resolution"
+          ],
+          "identifier_key": "hp|e241i",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.best-deal-items.com//2331",
+          "source_entities": [
+            "ENTITY#086"
+          ],
+          "object_sha256": "9dfc645629b7777893152eb18481a919b2632372110a9a8d1e4119e44fc601f7",
+          "evidence_fields": [
+            "<page title>",
+            "condition"
+          ],
+          "identifier_key": "hp|e241i",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D065",
+      "pair_basis": "r17:D065",
+      "status": "confirmed_membership",
+      "finding": "Complete P2414H model and 23.8-inch Full HD evidence agree. Apply the same manufacturer-coverage v1.1 reasoning as D035: preserve missing/stated terms, no inferred extension or entitlement equality. Distinct from P2314H and P2214H; numeric seller code is not treated as an identifier alias.",
+      "members": [
+        {
+          "locator": "www.ebay.com//19867",
+          "source_entities": [
+            "ENTITY#126"
+          ],
+          "object_sha256": "4c87f5488b0f22c4de8f69b4ad9661f3dd6d2ceb55e775e9aa63be803328a348",
+          "evidence_fields": [
+            "<page title>",
+            "environmentconscious and reliable",
+            "impressive screen clarity"
+          ],
+          "identifier_key": "dell|p2414h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.vology.com//2651",
+          "source_entities": [
+            "ENTITY#126"
+          ],
+          "object_sha256": "c2a48f01394c50fb202c17161088505f5040fbc39ad2651e4cdf17ccf547af67",
+          "evidence_fields": [
+            "<page title>",
+            "product description",
+            "bundled with",
+            "manufacturer warranty",
+            "service  support details",
+            "native resolution",
+            "viewable size",
+            "included accessories"
+          ],
+          "identifier_key": "dell|p2414h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D066",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Both endpoints explicitly identify P2214H, 21.5-inch and Full HD. Cross-pair comparison with both D068 endpoints supports the same identity: nominal 22-inch versus viewable 21.5-inch is explicit in the Vology record, native refresh agrees at 60 Hz and the stated scan range includes it. No incompatible condition or additional bundle is established.",
+      "members": [
+        {
+          "locator": "www.ebay.com//23479",
+          "source_entities": [
+            "ENTITY#122"
+          ],
+          "object_sha256": "f1704304d16c024b3143ea0ff949d34e25dde5966fc4df35ccf221dfa6f23dc5",
+          "evidence_fields": [
+            "<page title>",
+            "brand",
+            "screen size"
+          ],
+          "identifier_key": "dell|p2214h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "ca.pcpartpicker.com//179",
+          "source_entities": [
+            "ENTITY#122"
+          ],
+          "object_sha256": "5bc727c908ed72ab975ddd3e716bfcf275ae4abff87e7d5f28a4135c8b9d1c83",
+          "evidence_fields": [
+            "<page title>",
+            "manufacturer",
+            "part",
+            "screen size",
+            "recommended resolution",
+            "refresh rate",
+            "ips"
+          ],
+          "identifier_key": "dell|p2214h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D068",
+      "pair_basis": "r16:D068",
+      "status": "confirmed_membership",
+      "finding": "P2214H is explicit in both endpoints. The Vology record distinguishes nominal 22-inch and viewable 21.5-inch and gives Full HD at 60 Hz, consistent with D066. Ordinary stand/cable inventory is not an extra bundle. Manufacturer protection text without a stated term is preserved under v1.1. Group 122 is not identity evidence.",
+      "members": [
+        {
+          "locator": "www.ebay.com//19271",
+          "source_entities": [
+            "ENTITY#122"
+          ],
+          "object_sha256": "007d262dbe5a42ed0d3979f4c643372d9a9c56d92e62f3fd05baa94a1d7ad5af",
+          "evidence_fields": [
+            "<page title>",
+            "environmentconscious and reliable",
+            "impressive screen clarity"
+          ],
+          "identifier_key": "dell|p2214h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.vology.com//2653",
+          "source_entities": [
+            "ENTITY#122"
+          ],
+          "object_sha256": "61e1f16477d62de8423f06ec89f34939cb661e6527ce731397a8f082f2010fb9",
+          "evidence_fields": [
+            "<page title>",
+            "product description",
+            "diagonal size",
+            "viewable size",
+            "native resolution",
+            "vertical refresh rate",
+            "panel type",
+            "color",
+            "included accessories",
+            "cables included"
+          ],
+          "identifier_key": "dell|p2214h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D070",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete U2913WM and 29-inch identifiers agree. One missing resolution value stays missing; it does not contradict the other record. No material contradictory qualifier is established.",
+      "members": [
+        {
+          "locator": "www.getprice.com.au//374",
+          "source_entities": [
+            "ENTITY#157"
+          ],
+          "object_sha256": "8c8a1d596196b3f2e2acd4a431459f4e21922d835214a60f960a910cc99f0d0a",
+          "evidence_fields": [
+            "<page title>",
+            "display resolution",
+            "monitor size"
+          ],
+          "identifier_key": "dell|u2913wm",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "ca.pcpartpicker.com//184",
+          "source_entities": [
+            "ENTITY#157"
+          ],
+          "object_sha256": "428cd76e303ec5d754b2234575ebd37aa68f3edec34db2e49355a811e0629f87",
+          "evidence_fields": [
+            "<page title>",
+            "manufacturer",
+            "part",
+            "screen size",
+            "recommended resolution"
+          ],
+          "identifier_key": "dell|u2913wm",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D073",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete U2414H model, 24-inch nominal size and Full HD agree. LCD versus LED wording is not evidence of incompatible configurations. Distinct from the P-series models; suffixes are preserved.",
+      "members": [
+        {
+          "locator": "catalog.com//526",
+          "source_entities": [
+            "ENTITY#154"
+          ],
+          "object_sha256": "fac1bd0e7df9c51669b19102e1d5c8f14ef0f857f618adaf6447436c1a163d6c",
+          "evidence_fields": [
+            "<page title>",
+            "max resolution"
+          ],
+          "identifier_key": "dell|u2414h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.getprice.com.au//173",
+          "source_entities": [
+            "ENTITY#154"
+          ],
+          "object_sha256": "82548a5a362839e39f647af2c484df3560f5b70ff2e9873d84d418a2b72f7a9a",
+          "evidence_fields": [
+            "<page title>",
+            "display resolution",
+            "monitor size"
+          ],
+          "identifier_key": "dell|u2414h",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D076",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete VG278HE model/part, 27-inch Full HD, black and 3D evidence agree. The stated 122 Hz vertical refresh has no opposing value in the other record; it is preserved without correction or external verification. Ordinary cable inventory does not establish an extra bundle.",
+      "members": [
+        {
+          "locator": "www.imldirect.it//213",
+          "source_entities": [
+            "ENTITY#168"
+          ],
+          "object_sha256": "c9d59ddb254ec00274da3e3c8c1802324ca2541e4992a86823791d3c5f9e8a56",
+          "evidence_fields": [
+            "manufacturer part number",
+            "product model",
+            "screen size",
+            "maximum resolution",
+            "colour",
+            "3d type",
+            "features"
+          ],
+          "identifier_key": "asus|vg278he",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.vology.com//2422",
+          "source_entities": [
+            "ENTITY#168"
+          ],
+          "object_sha256": "57feda0f790a67d78ee28812cdf55ee48c7490308da662336cdc0bf0f1514126",
+          "evidence_fields": [
+            "<page title>",
+            "product description",
+            "native resolution",
+            "diagonal size",
+            "vertical refresh rate",
+            "color",
+            "3d capable",
+            "cables included"
+          ],
+          "identifier_key": "asus|vg278he",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D078",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete VK278Q model/part, 27-inch and Full HD agree. Italian black/scan-range/camera fields remain as stated; no conflicting configuration is established. VK278Q is distinct from VG278HE despite similar size and brand.",
+      "members": [
+        {
+          "locator": "www.hardware-planet.it//235",
+          "source_entities": [
+            "ENTITY#171"
+          ],
+          "object_sha256": "a95daf59c2dd5f0649dd07736695faabcd01cd8669dc8e8a1dbf1bafbab24d85",
+          "evidence_fields": [
+            "<page title>",
+            "dimensioni schermo",
+            "risoluzione",
+            "colore del prodotto",
+            "frequenza scansione verticale",
+            "fotocamera integrata"
+          ],
+          "identifier_key": "asus|vk278q",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "ca.pcpartpicker.com//491",
+          "source_entities": [
+            "ENTITY#171"
+          ],
+          "object_sha256": "7829cfcb0746712bafee0e771b83bbc89c4df89403fc0b71e806a0dd55c78f13",
+          "evidence_fields": [
+            "<page title>",
+            "manufacturer",
+            "part",
+            "screen size",
+            "recommended resolution",
+            "ips"
+          ],
+          "identifier_key": "asus|vk278q",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D079",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete PQ321QE and 31.5-inch identifiers agree, retaining QE suffix. One offer has detailed black/IGZO/DisplayPort evidence and ordinary inventory; the sparse offer states no opposing variant. Placeholder condition is unknown. No extra bundle or selectable color option is established.",
+      "members": [
+        {
+          "locator": "www.cleverboxes.com//452",
+          "source_entities": [
+            "ENTITY#133"
+          ],
+          "object_sha256": "82f08dcc04d580a7b3e9d03f4d31a05e6584f265cff24fca0db2b90a8f6ff7de",
+          "evidence_fields": [
+            "<page title>",
+            "model name",
+            "screen dimensions",
+            "case colour",
+            "in the box"
+          ],
+          "identifier_key": "asus|pq321qe",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.best-deal-items.com//1191",
+          "source_entities": [
+            "ENTITY#133"
+          ],
+          "object_sha256": "3a487ce6cf0f6d6469488b1011e514ed46569c7cbde73772679406eae9490338",
+          "evidence_fields": [
+            "<page title>",
+            "condition"
+          ],
+          "identifier_key": "asus|pq321qe",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D085",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete S2440L, 24-inch and Full HD agree. Missing refresh or panel details on one side are not imputed. Distinct from the reviewed UltraSharp and P-series models.",
+      "members": [
+        {
+          "locator": "catalog.com//587",
+          "source_entities": [
+            "ENTITY#143"
+          ],
+          "object_sha256": "fc0243edaed17401c7d3c892834b9b3161e450a513d90e08eed2053ddb2124ec",
+          "evidence_fields": [
+            "<page title>",
+            "max resolution"
+          ],
+          "identifier_key": "dell|s2440l",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "ca.pcpartpicker.com//175",
+          "source_entities": [
+            "ENTITY#143"
+          ],
+          "object_sha256": "24c2d3e656e4a0b83d0d8aae68842b8f30ab7caad1decdf6205919b9cdc08b5c",
+          "evidence_fields": [
+            "<page title>",
+            "manufacturer",
+            "part",
+            "screen size",
+            "recommended resolution",
+            "refresh rate"
+          ],
+          "identifier_key": "dell|s2440l",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D092",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete 25UM65-P including suffix agrees; 25-inch, black, IPS and 2560-by-1080 evidence agree. No suffix stripping or additional accessory bundle is inferred.",
+      "members": [
+        {
+          "locator": "www.imldirect.it//431",
+          "source_entities": [
+            "ENTITY#036"
+          ],
+          "object_sha256": "cfe7d593e19392d8169ceaca8ad6419f7e2b93bfeca3581dec063c56859a7273",
+          "evidence_fields": [
+            "manufacturer part number",
+            "product model",
+            "screen size",
+            "maximum resolution",
+            "colour",
+            "panel technology"
+          ],
+          "identifier_key": "lg|25um65-p",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.xpcpro.com//155",
+          "source_entities": [
+            "ENTITY#036"
+          ],
+          "object_sha256": "5fb5c7389042e3fb6176898acb8fdcec35b4dc3a6ad3897ff021511f61a0312b",
+          "evidence_fields": [
+            "<page title>",
+            "display diagonal",
+            "display resolution",
+            "colour of product",
+            "display technology",
+            "cables included"
+          ],
+          "identifier_key": "lg|25um65-p",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D105",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Complete P2314T and 23-inch Full HD touch evidence agree. Manufacturer protection on one side is handled under v1.1 without inferring a service upgrade. P2314T remains distinct from P2314H; touch suffix is identity-bearing.",
+      "members": [
+        {
+          "locator": "www.ebay.com//14802",
+          "source_entities": [
+            "ENTITY#125"
+          ],
+          "object_sha256": "a3808819b65e46b3c2ec0c6df095f407a3d2628898cc0d23bd65d06c634c8a9d",
+          "evidence_fields": [
+            "<page title>",
+            "engaging touch experience",
+            "peace of mind"
+          ],
+          "identifier_key": "dell|p2314t",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.shopmania.com//664",
+          "source_entities": [
+            "ENTITY#125"
+          ],
+          "object_sha256": "c436aaa2a4a7c24a1de4542dda5d39690f79226b98b54bafa74399fbcecfa06b",
+          "evidence_fields": [
+            "product name",
+            "brand",
+            "diagonal size",
+            "resolution",
+            "touchscreen"
+          ],
+          "identifier_key": "dell|p2314t",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    },
+    {
+      "pair_id": "D112",
+      "pair_basis": "review_consensus",
+      "status": "confirmed_membership",
+      "finding": "Full manufacturer part UM.EV6AA.002 and V226WL agree; black, 22-inch, 1680-by-1050 and 60 Hz agree. Preserve the full part suffix. Shared specification template is flagged separately; different hosts do not establish independent offer authorship.",
+      "members": [
+        {
+          "locator": "www.pc-canada.com//299",
+          "source_entities": [
+            "ENTITY#162"
+          ],
+          "object_sha256": "a8bc0c4f65a344dacd033ac8be24d424cc4848a6348a8848f63ac80a31780875",
+          "evidence_fields": [
+            "manufacturer part number",
+            "product model",
+            "screen size",
+            "maximum resolution",
+            "color",
+            "standard refresh rate",
+            "package contents"
+          ],
+          "identifier_key": "acer|um.ev6aa.002",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        },
+        {
+          "locator": "www.softwarecity.ca//5423",
+          "source_entities": [
+            "ENTITY#162"
+          ],
+          "object_sha256": "1b71bee52d54725109caa85be4012f78e592924c7013a3c8cd12d0361831dfd6",
+          "evidence_fields": [
+            "manufacturer part number",
+            "product model",
+            "screen size",
+            "maximum resolution",
+            "color",
+            "standard refresh rate",
+            "package contents"
+          ],
+          "identifier_key": "acer|um.ev6aa.002",
+          "eligibility": "eligible",
+          "condition": "unknown"
+        }
+      ]
+    }
+  ],
+  "alias_review": {
+    "scope_pair_ids": [
+      "D011",
+      "D019",
+      "D024",
+      "D035",
+      "D049",
+      "D065",
+      "D066",
+      "D068",
+      "D070",
+      "D073",
+      "D076",
+      "D078",
+      "D079",
+      "D085",
+      "D092",
+      "D105",
+      "D112"
+    ],
+    "origin": "AI-assisted",
+    "comparison_count": 136,
+    "same_identity_pairs": [
+      [
+        "D066",
+        "D068"
+      ]
+    ],
+    "unresolved_pairs": [],
+    "other_comparisons": "distinct_complete_identifiers",
+    "finding": "Compared all 136 cross-pair candidate combinations using complete manufacturer/model/part evidence and qualifiers. Only D066/D068 share the established complete identity. Other comparisons have distinct complete identifiers, including P2314H versus P2314T and VG278HE versus VK278Q. D019 internal FH/FWH uncertainty is deferred, not resolved by a source label. This is scoped separation evidence, not archive-wide uniqueness."
+  },
+  "identities": [
+    {
+      "identity_id": "DEV-D011",
+      "pair_ids": [
+        "D011"
+      ],
+      "members": [
+        "www.getprice.com.au//310",
+        "www.mrhightech.com//110"
+      ],
+      "leakage_blocks": [
+        "ENTITY#023"
+      ],
+      "reference": "www.getprice.com.au//310",
+      "queries": [
+        "www.mrhightech.com//110"
+      ]
+    },
+    {
+      "identity_id": "DEV-D024",
+      "pair_ids": [
+        "D024"
+      ],
+      "members": [
+        "catalog.com//353",
+        "www.pc-canada.com//314"
+      ],
+      "leakage_blocks": [
+        "ENTITY#128"
+      ],
+      "reference": "catalog.com//353",
+      "queries": [
+        "www.pc-canada.com//314"
+      ]
+    },
+    {
+      "identity_id": "DEV-D035",
+      "pair_ids": [
+        "D035"
+      ],
+      "members": [
+        "www.ebay.com//19434",
+        "www.vology.com//2650"
+      ],
+      "leakage_blocks": [
+        "ENTITY#124"
+      ],
+      "reference": "www.ebay.com//19434",
+      "queries": [
+        "www.vology.com//2650"
+      ]
+    },
+    {
+      "identity_id": "DEV-D049",
+      "pair_ids": [
+        "D049"
+      ],
+      "members": [
+        "www.best-deal-items.com//2331",
+        "www.makingbuyingeasy.co.uk//460"
+      ],
+      "leakage_blocks": [
+        "ENTITY#086"
+      ],
+      "reference": "www.makingbuyingeasy.co.uk//460",
+      "queries": [
+        "www.best-deal-items.com//2331"
+      ]
+    },
+    {
+      "identity_id": "DEV-D065",
+      "pair_ids": [
+        "D065"
+      ],
+      "members": [
+        "www.ebay.com//19867",
+        "www.vology.com//2651"
+      ],
+      "leakage_blocks": [
+        "ENTITY#126"
+      ],
+      "reference": "www.vology.com//2651",
+      "queries": [
+        "www.ebay.com//19867"
+      ]
+    },
+    {
+      "identity_id": "DEV-D066",
+      "pair_ids": [
+        "D066",
+        "D068"
+      ],
+      "members": [
+        "ca.pcpartpicker.com//179",
+        "www.ebay.com//19271",
+        "www.ebay.com//23479",
+        "www.vology.com//2653"
+      ],
+      "leakage_blocks": [
+        "ENTITY#122"
+      ],
+      "reference": "www.vology.com//2653",
+      "queries": [
+        "ca.pcpartpicker.com//179",
+        "www.ebay.com//19271",
+        "www.ebay.com//23479"
+      ]
+    },
+    {
+      "identity_id": "DEV-D070",
+      "pair_ids": [
+        "D070"
+      ],
+      "members": [
+        "ca.pcpartpicker.com//184",
+        "www.getprice.com.au//374"
+      ],
+      "leakage_blocks": [
+        "ENTITY#157"
+      ],
+      "reference": "www.getprice.com.au//374",
+      "queries": [
+        "ca.pcpartpicker.com//184"
+      ]
+    },
+    {
+      "identity_id": "DEV-D073",
+      "pair_ids": [
+        "D073"
+      ],
+      "members": [
+        "catalog.com//526",
+        "www.getprice.com.au//173"
+      ],
+      "leakage_blocks": [
+        "ENTITY#154"
+      ],
+      "reference": "catalog.com//526",
+      "queries": [
+        "www.getprice.com.au//173"
+      ]
+    },
+    {
+      "identity_id": "DEV-D076",
+      "pair_ids": [
+        "D076"
+      ],
+      "members": [
+        "www.imldirect.it//213",
+        "www.vology.com//2422"
+      ],
+      "leakage_blocks": [
+        "ENTITY#168"
+      ],
+      "reference": "www.imldirect.it//213",
+      "queries": [
+        "www.vology.com//2422"
+      ]
+    },
+    {
+      "identity_id": "DEV-D078",
+      "pair_ids": [
+        "D078"
+      ],
+      "members": [
+        "ca.pcpartpicker.com//491",
+        "www.hardware-planet.it//235"
+      ],
+      "leakage_blocks": [
+        "ENTITY#171"
+      ],
+      "reference": "ca.pcpartpicker.com//491",
+      "queries": [
+        "www.hardware-planet.it//235"
+      ]
+    },
+    {
+      "identity_id": "DEV-D079",
+      "pair_ids": [
+        "D079"
+      ],
+      "members": [
+        "www.best-deal-items.com//1191",
+        "www.cleverboxes.com//452"
+      ],
+      "leakage_blocks": [
+        "ENTITY#133"
+      ],
+      "reference": "www.cleverboxes.com//452",
+      "queries": [
+        "www.best-deal-items.com//1191"
+      ]
+    },
+    {
+      "identity_id": "DEV-D085",
+      "pair_ids": [
+        "D085"
+      ],
+      "members": [
+        "ca.pcpartpicker.com//175",
+        "catalog.com//587"
+      ],
+      "leakage_blocks": [
+        "ENTITY#143"
+      ],
+      "reference": "catalog.com//587",
+      "queries": [
+        "ca.pcpartpicker.com//175"
+      ]
+    },
+    {
+      "identity_id": "DEV-D092",
+      "pair_ids": [
+        "D092"
+      ],
+      "members": [
+        "www.imldirect.it//431",
+        "www.xpcpro.com//155"
+      ],
+      "leakage_blocks": [
+        "ENTITY#036"
+      ],
+      "reference": "www.imldirect.it//431",
+      "queries": [
+        "www.xpcpro.com//155"
+      ]
+    },
+    {
+      "identity_id": "DEV-D105",
+      "pair_ids": [
+        "D105"
+      ],
+      "members": [
+        "www.ebay.com//14802",
+        "www.shopmania.com//664"
+      ],
+      "leakage_blocks": [
+        "ENTITY#125"
+      ],
+      "reference": "www.shopmania.com//664",
+      "queries": [
+        "www.ebay.com//14802"
+      ]
+    },
+    {
+      "identity_id": "DEV-D112",
+      "pair_ids": [
+        "D112"
+      ],
+      "members": [
+        "www.pc-canada.com//299",
+        "www.softwarecity.ca//5423"
+      ],
+      "leakage_blocks": [
+        "ENTITY#162"
+      ],
+      "reference": "www.pc-canada.com//299",
+      "queries": [
+        "www.softwarecity.ca//5423"
+      ]
+    }
+  ],
+  "deferred": [
+    {
+      "pair_id": "D013",
+      "members": [
+        "www.best-deal-items.com//1385",
+        "www.ebay.com//21328"
+      ],
+      "reason": "Held group 075; endpoints not semantically re-reviewed and no group release attempted."
+    },
+    {
+      "pair_id": "D019",
+      "members": [
+        "www.ebay.com//17093",
+        "catalog.com//617"
+      ],
+      "reason": "Unexplained I2367FH/I2367FWH identifier conflict inside one offer; no forced merge or singleton identity. Historical positive pair retained."
+    }
+  ],
+  "exact_duplicate_groups": [],
+  "template_overlap_reviews": [
+    {
+      "members": [
+        "www.best-deal-items.com//1191",
+        "www.best-deal-items.com//2331"
+      ],
+      "equal_fields": 6,
+      "common_fields": 6,
+      "decision": "different_models_shared_template",
+      "reason": "Common template/body or placeholder metadata agrees, but titles establish different complete models. Do not collapse distinct models or infer aliases from copied prose."
+    },
+    {
+      "members": [
+        "www.ebay.com//19271",
+        "www.ebay.com//19434"
+      ],
+      "equal_fields": 3,
+      "common_fields": 3,
+      "decision": "different_models_shared_template",
+      "reason": "Common template/body or placeholder metadata agrees, but titles establish different complete models. Do not collapse distinct models or infer aliases from copied prose."
+    },
+    {
+      "members": [
+        "www.ebay.com//19271",
+        "www.ebay.com//19867"
+      ],
+      "equal_fields": 3,
+      "common_fields": 3,
+      "decision": "different_models_shared_template",
+      "reason": "Common template/body or placeholder metadata agrees, but titles establish different complete models. Do not collapse distinct models or infer aliases from copied prose."
+    },
+    {
+      "members": [
+        "www.ebay.com//19434",
+        "www.ebay.com//19867"
+      ],
+      "equal_fields": 3,
+      "common_fields": 3,
+      "decision": "different_models_shared_template",
+      "reason": "Common template/body or placeholder metadata agrees, but titles establish different complete models. Do not collapse distinct models or infer aliases from copied prose."
+    },
+    {
+      "members": [
+        "www.pc-canada.com//299",
+        "www.softwarecity.ca//5423"
+      ],
+      "equal_fields": 38,
+      "common_fields": 38,
+      "decision": "retain_correlated_cross_source_query",
+      "reason": "All 38 shared non-title fields agree; titles and one vendor-specific field differ. Same full part identity, not an exact object duplicate. Retain with shared-template dependence explicit; no independent-supplier claim."
+    }
+  ],
+  "counts": {
+    "positive_pairs": 18,
+    "reviewed_pairs": 17,
+    "reviewed_records": 34,
+    "identities": 15,
+    "identity_members": 32,
+    "references": 15,
+    "queries": 17,
+    "deferred_pairs": 2,
+    "deferred_records": 4,
+    "exact_duplicate_groups": 0,
+    "exact_duplicate_excess_records": 0,
+    "template_overlap_pairs": 5
+  }
+}

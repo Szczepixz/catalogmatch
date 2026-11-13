@@ -2,7 +2,7 @@
 
 Supplier product matching with measured automation risk.
 
-**Status: data feasibility.** The offline ALASKA Monitor validator and diagnostic annotation ledger are implemented. Matching quality has yet to be evaluated.
+**Status: data feasibility.** The offline ALASKA Monitor validator, diagnostic annotation ledger and bounded development identity proposal are implemented. Matching quality has yet to be evaluated.
 
 CatalogMatch will map inconsistent supplier offers to exact variants in a reference catalog. It will compare inexpensive deterministic methods with retrieval and LLM approaches, automate decisions supported by evidence, and send ambiguous cases to human review.
 
@@ -52,6 +52,23 @@ The ledger retains 120 oriented pairs, 149 observation events and 15 adjudicatio
 
 All 11 held groups remain separate from pair judgments. D013 is still a positive pair in held group 075, and D066/D068 are disconnected positive pairs in group 122. Conservative blocks join shared memberships and exact duplicate JSON objects among assigned records; they do not establish semantic aliases or validated identities. The output is a provisional AI-assisted diagnostic artifact, not a catalog, final split or gold set. Treat its locators and annotations according to the [publication policy](docs/DOCUMENTATION.md) before sharing.
 
+### Validate the bounded F1-I development proposal
+
+The [development manifest](docs/data/alaska-monitor-development.json) records an explicit AI-assisted membership review of the 34 endpoints of 17 non-held positive pairs. It proposes **15 identities, 15 original-record references and 17 cross-source queries**. D066/D068 share a reviewed identity based on record evidence, separately from their leakage block. D013 remains held; D019 is deferred because an offer contains unexplained FH/FWH identifier disagreement. Original pair labels remain unchanged. This is development material, not human gold, a final split or archive-wide alias certification.
+
+```powershell
+py -3.12 -m development_identities "path/to/monitor.tar.gz" "path/to/first-review.csv" "path/to/second-review.csv" "path/to/private-key.csv"
+py -3.12 -m unittest discover -s tests -v
+```
+
+The CLI rebuilds F1-L from the original hash-pinned inputs on every run; it never trusts a saved ledger. It checks the manifest's provenance, explicit endpoints/source memberships, evidence fields and canonical object hashes, holds, internal nonpositive edges, scoped alias-review coverage, duplicates, and reference/query selection. `--manifest "path/to/proposal.json"` selects an explicit alternative. Exit 0 emits a compact validation report and normalized manifest SHA-256; exit 1 emits a single error without a partial report or raw records. Semantic findings are preserved annotations, not generated or proved by this validator. A fresh clone can run synthetic checks but requires the original private inputs to reproduce the real-data validation.
+
+Reference selection uses the owner-approved `capacity-information-hash-v2` rule: maximize nonduplicate cross-host query capacity, then maximize the number of reviewed information categories, then choose the lowest SHA-256 of UTF-8 `f1-catalog-v1|reference|locator`, then locator. Exact duplicates use canonical JSON objects (sorted keys, compact separators, ASCII escaping, UTF-8); choose the lowest eligible query locator per identical payload and retain every member in the audit. Reference/query entries contain locators, not raw descriptions; load the selected original record locally without merging descriptions. No exact duplicates occur in this bounded pool. A review trigger flags at least three common non-title fields with at least 90% identical values; its five findings are explicitly reviewed, not automatically collapsed. D112 retains one correlated cross-source query with 38 matching specification fields. Four other template-overlap pairs have different model identities. Different hostnames are not proof of independent suppliers.
+
+The owner confirmed membership within the 15 displayed sections and reported no noticed aliases between them. This separate event is bound to the [preserved revision-20 snapshot](docs/data/alaska-monitor-development-v1.json); no per-field rationale or approval of individual references was supplied. The original AI annotations remain intact. `human_verified: false` means full independent verification is not claimed; the scoped human assessment is recorded in `owner_review`. Completeness annotations remain AI-assisted, with one point per explicit usable category and field locators, without rewarding repetition. See the [reference rule](docs/EVALUATION.md#development-reference-selection).
+
+All 11 holds, D099 and other unresolved judgments remain unchanged. Independent test checking, broader alias coverage and protocol agreement remain separate work; no F2, final-test reservation or absence experiment has been run. See [revision 20](docs/plans/000-feasibility.md#bounded-f1-i-development-identities-revision-20-2026-11-13) for scope and validation evidence.
+
 ## Project context
 
 | Document | Purpose |
@@ -74,5 +91,5 @@ Start locally with one category and text input. Prove data fitness and useful ba
 
 ## Development and AI assistance
 
-AI assistance was used to prepare the initial project documentation. The intended development process also uses AI for implementation drafts, tests and review. Generated output is not evidence of correctness: accepted changes and reported results require appropriate validation. Record actual experiments and meaningful failures, and update this description as work progresses. AI assistance also contributed to the loader, annotation ledger and their synthetic tests.
+AI assistance was used to prepare the initial project documentation. The intended development process also uses AI for implementation drafts, tests and review. Generated output is not evidence of correctness: accepted changes and reported results require appropriate validation. Record actual experiments and meaningful failures, and update this description as work progresses. AI assistance also contributed to the loader, annotation ledger, bounded identity review/validator and their synthetic tests.
 

@@ -258,6 +258,27 @@ def build_ledger(dataset, pilot, manifest, first, second, key, config):
             "identity_warnings": identity_warnings(histories, exposure)}
 
 
+def replay(archive, first_review, second_review, key):
+    """Verify original inputs and return the dataset and freshly rebuilt ledger."""
+    config_bytes = read_input(DATA / "alaska-monitor-adjudications.json", normalize_lf=True)
+    config = read_json(config_bytes)
+    require(config["schema_version"] == 1, "unsupported ledger configuration")
+    paths = {"manifest": DATA / "alaska-monitor-diagnostic.json", "pilot": DATA / "alaska-monitor-pilot.json",
+             "first_review": first_review, "second_review": second_review, "key": key}
+    inputs = {name: read_input(path, config["input_sha256"][name], normalize_lf=name in {"pilot", "manifest"})
+              for name, path in paths.items()}
+    manifest, pilot = read_json(inputs["manifest"]), read_json(inputs["pilot"])
+    dataset = prepare(archive)
+    require(select(dataset, pilot) == manifest, "diagnostic manifest replay mismatch")
+    ledger = build_ledger(dataset, pilot, manifest,
+                          read_csv(inputs["first_review"], REVIEW_FIELDS),
+                          read_csv(inputs["second_review"], REVIEW_FIELDS),
+                          read_csv(inputs["key"], KEY_FIELDS), config)
+    ledger["provenance"]["adjudications_sha256"] = digest(config_bytes)
+    ledger["provenance"]["hash_encoding"] = "public JSON: CRLF normalized to LF; archive and private CSV: exact bytes"
+    return dataset, ledger
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("archive", type=Path)
@@ -266,22 +287,7 @@ def main():
     parser.add_argument("key", type=Path)
     args = parser.parse_args()
     try:
-        config_bytes = read_input(DATA / "alaska-monitor-adjudications.json", normalize_lf=True)
-        config = read_json(config_bytes)
-        require(config["schema_version"] == 1, "unsupported ledger configuration")
-        paths = {"manifest": DATA / "alaska-monitor-diagnostic.json", "pilot": DATA / "alaska-monitor-pilot.json",
-                 "first_review": args.first_review, "second_review": args.second_review, "key": args.key}
-        inputs = {name: read_input(path, config["input_sha256"][name], normalize_lf=name in {"pilot", "manifest"})
-                  for name, path in paths.items()}
-        manifest, pilot = read_json(inputs["manifest"]), read_json(inputs["pilot"])
-        dataset = prepare(args.archive)
-        require(select(dataset, pilot) == manifest, "diagnostic manifest replay mismatch")
-        ledger = build_ledger(dataset, pilot, manifest,
-                              read_csv(inputs["first_review"], REVIEW_FIELDS),
-                              read_csv(inputs["second_review"], REVIEW_FIELDS),
-                              read_csv(inputs["key"], KEY_FIELDS), config)
-        ledger["provenance"]["adjudications_sha256"] = digest(config_bytes)
-        ledger["provenance"]["hash_encoding"] = "public JSON: CRLF normalized to LF; archive and private CSV: exact bytes"
+        _, ledger = replay(args.archive, args.first_review, args.second_review, args.key)
         print(json.dumps(ledger, indent=2, ensure_ascii=True))
         return 0
     except (OSError, EOFError, tarfile.TarError, zlib.error, ValueError, KeyError, TypeError, csv.Error) as exc:

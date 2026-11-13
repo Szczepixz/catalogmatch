@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 19
+- Revision: 21
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-11-12
-- Selected task: implement F1-L annotation/exposure ledger (completed)
+- Updated: 2026-11-13
+- Selected task: record owner membership review and update development reference ranking (completed)
 - Execution: 30-pair pilot complete; ALASKA Monitor selected under D16/D17; F1 structural loader verified; diagnostic review and protocol pending
 
 ## Objective
@@ -463,7 +463,7 @@ Use plain JSON/CSV and Python 3.12 standard library for the next implementation;
 | --- | --- | --- |
 | F1-P: catalog/split design | review | This proposal, observed capacity, risks and checks; no split execution. |
 | F1-L: annotation and exposure ledger | done in revision 19 | Import the explicitly supplied preserved reviews/private mapping, public manifests and dated revision 13/16/17 adjudications; materialize a sanitized current-label ledger and exposure/hold report. Reproduce 120 unique pairs and 18/45/57 totals, keep all observations, propagate source exposure, and flag D013/075 and D066/D068/122. No new semantic review, identity merge or partition assignment. |
-| F1-I: identity/reference preparation | draft; after F1-L | Resolve proposed membership, aliases, duplicates and held cases only within a separately selected bounded review task; produce actual eligible identity/query capacity and independent-review requirements. Never promote whole source groups. |
+| F1-I: identity/reference preparation | bounded iteration complete in revision 20 | Reviewed only 34 endpoints from 17 non-held positive pairs; 15 proposed development identities, 15 references and 17 queries. D013/075 and D019 deferred. Broader membership/alias work and independent checking remain separately scoped; never promote whole source groups. |
 | F1-S: reservation and release | draft; after protocol agreement and F1-I | Agree allocation/absence parameters and independent review process, reserve blocks, independently verify test references, then freeze artifacts and validate the split. No execution in this task. |
 
 F1-L's implementation should reject checksum/ID/orientation mismatches, duplicate review IDs, missing judgments and unsupported categorical values without producing a partial release. Test observable behavior with synthetic records: immutable original judgments plus overlays, exposed cross-group aliases, group hold versus positive pair, two disconnected positive pairs in one source group, and contradictory edges that prevent release. The ledger preserves insufficient cases and never interprets them as negatives. Replay the real manifest with an explicit local archive path and compare aggregate outcomes; ordinary tests stay offline and synthetic. F1-L can proceed when selected without resolving D099, fixing split proportions or acquiring a human reviewer. This design does not execute that next task automatically.
@@ -484,3 +484,61 @@ Validation: `py -3.12 -m unittest discover -s tests -v` passed all **14 tests** 
 The real CLI was run twice with the verified local archive/reviews/key and produced byte-identical output: **120 pairs, 149 observations, 15 adjudications, 18/45/57 effective judgments**. Exposure covers 124 of 232 source groups before and after structural propagation; 11 groups remain held. The ledger contains 2,273 distinct assigned record locators, 231 conservative blocks and 42 structural linking records (shared membership or exact duplicate-object groups). It flags D013/075 and D066/D068/122 as expected. No nonpositive edge is inside the diagnostic positive components; this is not evidence of conflict-free full source groups or completed alias review. The output SHA-256 on this Windows run is `2921398602b5219d2da6d4e71c108581ddaa818593bd2b73e8f0fc6e85e4abf3`; stdout line endings can differ across platforms, so compare parsed content or normalize line endings for cross-platform output comparison.
 
 Review covered input integrity, error output without raw data, chronological supersession, held positives, disconnected positive evidence, conservative exposure propagation and the publication boundary. Documentation links/anchors and whitespace checks passed; new source, tests and configuration were inspected alongside the tracked diff. No remaining blocking findings identified in this self-review; no independent human/code review or quality evaluation is claimed. Scope complete: no catalog identity release, new semantic review, split, dependency installation or Git mutation. Next exact task: select bounded F1-I membership/alias review for a small development catalog; preserve D099 and all holds until evidence resolves them. Split allocation proposals remain unapproved and unexecuted.
+
+## Bounded F1-I development identities (revision 20, 2026-11-13)
+
+Authorized scope: inspect the endpoints of the 17 current positive diagnostic pairs outside D013/held group 075. Preserve all pair observations, adjudications, source assignments and 11 holds; no new assessment of D099 or other unresolved cases. No other group members, source search, provider processing, final split, reservation, absence experiment or F2.
+
+Implementation approach (recorded before implementation): replay F1-L with hash-verified archive, both preserved CSVs and private mapping; inspect complete identity evidence and material qualifiers locally, emitting only bounded evidence summaries. Review membership separately from pair labels and compare all candidate identities for aliases/duplicates, explicitly resolving or deferring D066/D068 without using group 122 as identity evidence. Store a sanitized, AI-assisted review manifest with explicit member locators, field/hash evidence, policy/provenance and deferrals. Add a small standard-library validator/materializer reusing the loader and ledger helpers, applying revision 18's original-record reference ranking and cross-source duplicate rules. Validate synthetic failure cases and replay real inputs deterministically. Report capacity and limitations, inspect the diff and documentation links, then update STATE. Human verification remains separate.
+
+
+Completed artifacts: [development manifest](../data/alaska-monitor-development.json), [validator](../../development_identities.py), [synthetic tests](../../tests/test_development_identities.py) and [run instructions](../../README.md#validate-the-bounded-f1-i-development-proposal). Extracted the existing F1-L replay into a reusable function without changing its output or annotation semantics. The manifest is the versioned review source of truth, including deterministic reference/query selections; the CLI recomputes and validates these selections rather than generating semantic decisions. No extra platform or dependency was added.
+
+Observed outcome:
+
+- Inspected only the 34 endpoints of the 17 non-held positive pairs. All remain eligible under D15: they identify specific monitor offers rather than editorial/family-only content. Missing condition stays unknown; placeholder condition text is not interpreted as new or used. Evidence fields and canonical full-object hashes bind each member finding to the unchanged local record. Annotation origin is AI-assisted and unblinded; human verification is false.
+- Reviewed all 136 cross-pair combinations for complete identifiers and qualifier compatibility. D066/D068 support one P2214H identity with four explicit members: full model, Full HD and native 60 Hz are consistent; the Vology record explicitly distinguishes nominal 22-inch from viewable 21.5-inch. Manufacturer protection and ordinary accessory inventory do not establish an additional bundle under v1.1. Source group 122 supplies only the conservative leakage block, not membership proof. Other reviewed complete identifiers are distinct within this pool; no archive-wide uniqueness is claimed.
+- D019 is deferred because one endpoint contains I2367FH in title/structured identifiers and I2367FWH in marketing text. The records do not resolve that suffix discrepancy. No new pair assessment, forced alias or singleton identity was created. D013 remains outside the proposal due to hold 075, without re-reviewing its endpoints or resolving the group. All source assignments, holds, original reviews/adjudications and D099 remain unchanged.
+- Proposed capacity: **15 identities, 32 member records, 15 original-record references and 17 cross-host queries**. The two deferred pairs account for four locators, including the two unreviewed held endpoints. Reference ranking follows revision 18; no record descriptions are merged. The P2214H reference comes from a non-eBay host, allowing three queries including the two eBay records.
+- No exact JSON-object duplicates among the 34 reviewed records. Five pairs trigger the documented common-field template check: D112's two records share all 38 common non-title fields and retain one explicitly correlated query; four other pairs share templates/placeholder metadata but have different model identifiers. The trigger is an audit aid, not an identity classifier or proof of complete near-duplicate detection. No independent-supplier claim follows from different hosts.
+
+Validation performed:
+
+- Ran the F1-L CLI with the existing archive, both preserved CSVs and private key; checked pinned input hashes and replayed selection/mapping. Re-ran after extracting the helper and compared the entire parsed ledger with the pre-change replay: identical. The Windows output SHA-256 remains `2921398602b5219d2da6d4e71c108581ddaa818593bd2b73e8f0fc6e85e4abf3`. Verified 120/149/15, 18/45/57, unchanged D099, 11 holds and source/exposure structure.
+- Ran the F1-I CLI twice with the original inputs: byte-identical reports. Manifest SHA-256 after CRLF-to-LF normalization: `876b97b3a6cd01ba9df4a226ea2835d760cfed817868102531d370351aefa55a`. Checked explicit IDs, endpoint orientation, source membership, field presence/object hashes, scoped alias coverage, no nonpositive internal edge, hold/exposure eligibility, complete candidate disposition and duplicate inventory. Independently recomputed reference ranking and cross-host queries from member locators; reference/query sets are disjoint.
+- `py -3.12 -m unittest discover -s tests -v`: **23 passed**, including nine new synthetic tests for provenance/membership failures, holds, unresolved membership, nonpositive internal edges, explicit alias evidence, coverage, deterministic ranking and duplicate/template handling. Initial sandbox run failed to create temporary fixtures; rerun with temporary-directory access passed without weakening assertions. An earlier private inspection helper hit Windows console encoding/PowerShell quoting errors; corrected local invocation used UTF-8, without changing source data.
+- Self-review with code-review-and-quality covered semantics versus structural validation, immutable provenance, publication boundary, bounded scope, deterministic selection and failure handling. Reviewed tracked diff and new files, relative documentation links/anchors and whitespace; no raw offers, reviewer prose, private paths or mapping contents are included in shared artifacts. Local outputs remain ignored and untracked. No independent code/human annotation review is claimed.
+
+Limitations and next action: this bounded F1-I iteration is complete, with provisional AI-assisted membership claims only. A validator cannot prove the semantic interpretation of missing or contradictory qualifiers. Separately scope independent human verification of these development memberships before stronger reference claims; keep D013 and D019 deferred unless targeted work is requested. Broader aliases, split allocation/absence parameters and independent test review remain unresolved. Stop here: no F2, test reservation, final split, absence experiment, additional service, source search, dependency installation or Git mutation was performed.
+
+
+## Owner membership review and reference ranking (revision 21, 2026-11-13)
+
+Authorized scope: record the owner's statement that all offers within each of the 15 displayed sections represent the same monitor and that no duplicate identity was noticed between sections. This is an owner review after exposure to AI proposals, not independent/blinded final-test verification. No detailed field rationale or approval of individual reference records was supplied; do not invent either. The owner accepted capacity first, then relevant noncontradictory information completeness, then the existing hash tie-break.
+
+Implementation approach: preserve the revision-20 manifest as an immutable public snapshot; add a separately attributed owner review event bound to that snapshot and unchanged membership. Define a bounded, auditable completeness annotation by information categories with field locators (one point per category, no reward for repeated text). Recompute only reference/query roles using capacity, completeness and hash; retain original observations, holds and deferred cases. Validate provenance, category evidence and ranking with synthetic tests and real-data replay; report role changes and inspect all uncommitted files before recommending a commit. No Git mutation or F2/split work.
+
+
+Completed: schema-v2 [current manifest](../data/alaska-monitor-development.json) preserves the prior AI findings and adds an attributed `owner_review` event with the exact 15-identity membership scope. The [schema-v1 snapshot](../data/alaska-monitor-development-v1.json) is unchanged and checksum-bound to that event. `human_verified: false` continues to mean that full independent verification is not claimed; it does not erase the separately recorded owner review. Detailed reference-completeness annotations remain AI-assisted. The durable ranking rule and its ten equally weighted categories are documented in [EVALUATION](../EVALUATION.md#development-reference-selection), including title/prose evidence, placeholders, repeated content and coverage limits.
+
+Changed references (all other reference choices unchanged):
+
+| Identity | Previous reference | Current reference |
+| --- | --- | --- |
+| DEV-D011 | `www.getprice.com.au//310` | `www.mrhightech.com//110` |
+| DEV-D024 | `catalog.com//353` | `www.pc-canada.com//314` |
+| DEV-D035 | `www.ebay.com//19434` | `www.vology.com//2650` |
+| DEV-D070 | `www.getprice.com.au//374` | `ca.pcpartpicker.com//184` |
+| DEV-D076 | `www.imldirect.it//213` | `www.vology.com//2422` |
+| DEV-D078 | `ca.pcpartpicker.com//491` | `www.hardware-planet.it//235` |
+| DEV-D085 | `catalog.com//587` | `ca.pcpartpicker.com//175` |
+| DEV-D092 | `www.imldirect.it//431` | `www.xpcpro.com//155` |
+| DEV-D105 | `www.shopmania.com//664` | `www.ebay.com//14802` |
+
+Counts remain 15 identities, 32 members, 15 references and 17 cross-source queries. All original pair observations/adjudications, membership findings, alias findings, provenance, holds and deferrals compare equal to revision 20. D013/D019 remain deferred; D099 remains insufficient. No scores or categories were selected against matcher outcomes, and no quality improvement is claimed.
+
+Validation: all **25 offline synthetic tests passed** (`py -3.12 -m unittest discover -s tests -v`, with Windows temporary-directory access). Two real CLI runs produced byte-identical reports and validated both manifest versions, the owner event's snapshot/membership binding and original F1-L inputs. Independently recomputed capacity/completeness/hash ranking and reference/query disjointness. The entire freshly rebuilt F1-L equals the pre-change replay. Current normalized manifest SHA-256: `d453ef90eeb92601e2b350d34e32d1dce523343941431579a931a3773d35b84a`; preserved v1: `876b97b3a6cd01ba9df4a226ea2835d760cfed817868102531d370351aefa55a`.
+
+Self-review covered all nine pending shared files, including new/untracked manifests and tests, the reused F1-L function, category evidence, owner attribution and publication boundary. Whitespace, relative links/anchors and raw-prose/private-path checks passed. No staged changes or tracked local files were found; the private HTML worksheet and inputs remain ignored. The nine shared files form one coherent F1-I commit candidate, including the previous uncommitted iteration and this update. No commit, index change, push or other Git mutation was performed.
+
+Next action: agree the scope/acceptance criteria of the next experiment before any F2 execution. Owner development review does not approve final split/absence parameters or satisfy independent test review. Stop after this update; no further semantic review, final split, reservation or baseline was run.
