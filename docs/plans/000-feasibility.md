@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 25
+- Revision: 27
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-11-18
-- Selected task: F1-S protocol approved; structural pool preparation is next
-- Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S allocation has not started.
+- Selected task: F1-S reservation frozen; stopped before annotation
+- Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S structural blocks allocated in revision 27.
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -698,3 +698,43 @@ Recommended next step after review of F2-D1 is to settle the remaining F1-S prot
 The owner accepted all four decisions in revision 24 with the following clarification. Define and record the preliminary eligibility criteria before ordering the blocks. N counts every unseen block passing those criteria before final annotation. Later unresolved judgments and exclusions remain visible in the original reservation inventory with their reasons and do not trigger replacement.
 
 Next task: prepare reproducible structural pool accounting under the approved rules. No allocation or annotation has occurred. Availability of an independent human verifier remains unconfirmed.
+
+## F1-S structural pool accounting (revision 26)
+
+**Preliminary inclusion rule.** Start with assigned records only. Use the complete F1-L connected blocks (source membership, shared locators and exact canonical payload duplicates). Exclude an entire block on any propagated exposure or active hold. Require at least one pair of different hosts with different payloads within the block, the minimum structural capacity for a reference and query. Two hosts and two distinct payloads suffice for such a pair to exist. Keep all locators when counting the block. The known development alias in group 122 is internal to an exposed block. The recorded scoped alias review supplies no further links into the unseen pool. A newly reported suspected alias requires joint handling or deferral before allocation. No semantic search of unseen offers was performed.
+
+| First applicable disposition | Blocks | Source groups | Distinct assigned records |
+| --- | ---: | ---: | ---: |
+| Prior semantic exposure | 124 | 124 | 1,484 |
+| Active hold among unseen blocks (054/063 shared membership) | 1 | 2 | 10 |
+| Single host | 46 | 46 | 225 |
+| Multiple hosts with only one distinct payload | 0 | 0 | 0 |
+| Included | 60 | 60 | 554 |
+| Total | 231 | 232 | 2,273 |
+
+Nine exposed blocks also have holds. After exposure and holds, 106 blocks contain 779 records. The preliminary denominator **N = 60** spans 26 hosts. The 14,389 unassigned archive records fall outside the inventory. Identity, D15 eligibility, reference suitability and usable query counts await annotation. Preserve subsequent attrition against the original inventory.
+
+**Reproduction and checks.** Generate the private ledger with the [F1-L replay command](../../README.md#replay-the-f1-annotation-ledger), then run the following from the repository root. The script verifies the LF-normalized ledger checksum and emits aggregates only. Missing disposition keys denote zero.
+
+```powershell
+py -3.12 -m f1_pool "path/to/ledger.json"
+```
+
+Replayed the hash-verified original archive and three private CSVs offline and checked parsed equality with the pinned ledger. An independent calculation on the loaded objects directly tested cross-host pairs for unequal payloads and confirmed 60 qualifying blocks. No split ordering, allocation or annotation was performed. The next separately scoped action is reservation under revision 25 after checking for new exposure, holds or alias links. Independent verifier availability remains open.
+
+## F1-S reservation (revision 27)
+
+The owner authorized reservation through manifest freeze. Replay of the original inputs matched the revision 26 ledger and pool. Project records contained no intervening exposure, hold or alias updates. This check covers recorded events only.
+
+| Partition of previously unseen pool | Blocks | Assigned records | Distinct hosts |
+| --- | ---: | ---: | ---: |
+| Test | 20 | 194 | 26 |
+| Development | 40 | 360 | 26 |
+
+The private manifest binds sorted group IDs and original record locators to their partitions and pins the input ledger. SHA-256 of its exact UTF-8/LF bytes is `8e9f58890bad8661608f47f6e655b278e440f908199ae636d113f733da2ad3d8`. To reproduce from the revision 26 input, supply a fresh private output path:
+
+```powershell
+py -3.12 -m f1_pool "path/to/ledger.json" --reservation "path/to/reservation-copy.json"
+```
+
+A second computation reproduced the frozen bytes. Independently checked digest order, cutoff, unique blocks, disjoint record sets and complete coverage of 554 locators. Identity and query counts await annotation. Preserve this inventory and record subsequent attrition without replacement. Next action is to arrange custodian access and independent verification before test target preparation.
