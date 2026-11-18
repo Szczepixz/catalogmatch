@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 23
+- Revision: 25
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-11-18
-- Selected task: F2-D1 complete and ready for review
-- Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. The broader evaluation protocol remains pending.
+- Selected task: F1-S protocol approved; structural pool preparation is next
+- Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S allocation has not started.
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -679,3 +679,22 @@ There were 0/255 complete identifier agreements and 0/17 rankings changed by I+T
 - The release is small, purposive, exposed and positive-only. The annotations are AI-assisted with a scoped nonblinded owner review. Recall@15 checks inventory integrity. The diagnostic cannot establish performance for unseen products or suppliers, absent products or live automation. `decision_policy` is `not_evaluated`, and O05 remains open. Full local reports stay private. The scope used no additional datasets, providers, paid calls, final split or test reservation.
 
 Recommended next step after review of F2-D1 is to settle the remaining F1-S protocol and independent reference-review requirements before any final split or full F2 evaluation. A later development-only ranking revision could test a targeted title feature against the observed ordering errors under its own frozen configuration. F1 is still in progress, and full F2 remains draft.
+
+## F1-S protocol for approval (revision 24, 2026-11-18)
+
+**Status: proposed.** Revision 23 used 17 exposed positive queries and 15 original references. Its ranking results supply no basis for choosing a test fraction, absence prevalence or automation threshold. The following sequence makes the earlier F1-S design actionable if approved.
+
+1. **Establish the reservation pool.** Apply the F1-S leakage-block, exposure and hold rules above before assigning any partition. Keep source groups, shared locators, duplicate payloads and established aliases together. Jointly reserve suspected aliases or defer the affected blocks. Propagate development exposure across the entire block. A custodian separate from matcher development handles any semantic screening of unseen records and logs access. The earlier 106 unreviewed groups are a structural upper bound on candidate blocks. Record exclusions and structural capacity before reservation.
+2. **Reserve once.** Use the exact `f1-split-v1` ordering specified above. Of N unseen releasable blocks, reserve the first floor(N / 3) for test and assign the rest to development. Freeze the reservation manifest before final annotation. Report realized counts by block, identity, query and host, including review attrition. Keep empty or unusable reservations visible. Subsequent cross-partition aliases or developer exposure invalidate the affected test blocks. Log and retire them without replacement.
+3. **Construct targets consistently.** For this proposed release, extend the approved development rule `capacity-information-hash-v2` to both partitions, superseding the earlier draft's capacity/hash tie-break. Use one original reference per established identity and nonduplicate cross-host queries against the full partition catalog. Keep D15 exclusions auditable and apply D17 v1.1. Keep unresolved eligible requests in coverage and review denominators. Separate their unsupported automatic decisions from correctness metrics.
+4. **Verify every test target independently.** Before predictions, a human checker independent of target preparation and matcher development records an initial judgment from the original offer fields and frozen policies. Hide AI assessments, proposed labels, source cluster IDs, scores and rankings. Use opaque locators. Verify eligibility, reference/query membership, complete identifiers, material qualifiers and separation from other catalog identities. Record pair judgments as `same_variant`, `different_variant` or `insufficient_evidence`, with field locators, rationale, reviewer role, date and policy version. The custodian then compares the sealed judgments with the proposals and checks reference selection against the reviewed inputs. Preserve both versions. Refer disagreements to a second independent human for evidence-based adjudication where available. Otherwise retain unresolved targets and report their count. The prior nonblinded owner review covers development only.
+5. **Check controlled absence separately.** After identity freeze, use the specified `f1-absence-v1` ordering within each partition to remove the first floor(M / 5) of M releasable identities. The checker verifies complete removal and alias separation against the reduced catalog. Uncertain absence remains unresolved. Report the realized count and catalog size, and mark the scenario unavailable for zero removals. Report paired present and absence outcomes separately. The 20% parameter describes a constructed stress test.
+6. **Release gate.** Freeze the F1-S inputs, policies, manifests, independent judgments and adjudications by hash before evaluation. Keep detailed test evidence private and outside developer tuning. Report exclusions, disagreements, unresolved targets and independently verified counts with their denominators. If an independent checker is unavailable, label any subsequent holdout provisional and AI-assisted. Final quality claims require independent review and adequate realized capacity. O05 remains open for the separate decision-policy experiment.
+
+**Decision requested.** Approve or amend the one-third block reservation, one-fifth controlled removal, common v2 reference selector and independent human review gate. Reviewer availability remains unconfirmed. This revision proposes rules only. Implementation and data allocation are separate tasks.
+
+## F1-S approval (revision 25)
+
+The owner accepted all four decisions in revision 24 with the following clarification. Define and record the preliminary eligibility criteria before ordering the blocks. N counts every unseen block passing those criteria before final annotation. Later unresolved judgments and exclusions remain visible in the original reservation inventory with their reasons and do not trigger replacement.
+
+Next task: prepare reproducible structural pool accounting under the approved rules. No allocation or annotation has occurred. Availability of an independent human verifier remains unconfirmed.
