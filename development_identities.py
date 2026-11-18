@@ -219,6 +219,23 @@ def validate(manifest, dataset, ledger):
     return counts
 
 
+def load_validated_manifest(path, dataset, ledger):
+    """Apply the CLI checks, including the checksum-bound v1 owner-review snapshot."""
+    payload = read_input(path, normalize_lf=True)
+    manifest = read_json(payload)
+    hashes = {"current": digest(payload)}
+    if manifest["schema_version"] == 2:
+        prior_payload = read_input(DATA / "alaska-monitor-development-v1.json",
+                                   manifest["owner_review"]["reviewed_manifest_sha256"], normalize_lf=True)
+        prior = read_json(prior_payload)
+        validate(prior, dataset, ledger)
+        require(manifest["owner_review"]["membership"] ==
+                {i["identity_id"]: sorted(i["members"]) for i in prior["identities"]},
+                "owner review differs from reviewed snapshot")
+        hashes["owner_review_snapshot_v1"] = digest(prior_payload)
+    return manifest, validate(manifest, dataset, ledger), hashes
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("archive", "first_review", "second_review", "key"):
@@ -227,17 +244,8 @@ def main():
     args = parser.parse_args()
     try:
         dataset, ledger = replay(args.archive, args.first_review, args.second_review, args.key)
-        payload = read_input(args.manifest, normalize_lf=True)
-        manifest = read_json(payload)
-        if manifest["schema_version"] == 2:
-            prior = read_json(read_input(DATA / "alaska-monitor-development-v1.json",
-                                        manifest["owner_review"]["reviewed_manifest_sha256"], normalize_lf=True))
-            validate(prior, dataset, ledger)
-            require(manifest["owner_review"]["membership"] ==
-                    {i["identity_id"]: sorted(i["members"]) for i in prior["identities"]},
-                    "owner review differs from reviewed snapshot")
-        counts = validate(manifest, dataset, ledger)
-        print(json.dumps({"status": "ok", "manifest_sha256": digest(payload), "counts": counts,
+        _, counts, hashes = load_validated_manifest(args.manifest, dataset, ledger)
+        print(json.dumps({"status": "ok", "manifest_sha256": hashes["current"], "counts": counts,
                           "policy": POLICY, "origin": "AI-assisted", "human_verified": False}, indent=2))
         return 0
     except (OSError, EOFError, tarfile.TarError, zlib.error, ValueError, KeyError, TypeError, csv.Error) as exc:

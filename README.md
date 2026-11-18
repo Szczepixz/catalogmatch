@@ -2,7 +2,7 @@
 
 Supplier product matching with measured automation risk.
 
-**Status: data feasibility.** The offline ALASKA Monitor validator, diagnostic annotation ledger and bounded development identity proposal are implemented. Matching quality has yet to be evaluated.
+**Status: data feasibility.** The offline ALASKA Monitor validator, diagnostic annotation ledger and bounded development catalog are implemented. A deterministic development ranking diagnostic has been run.
 
 CatalogMatch will map inconsistent supplier offers to exact variants in a reference catalog. It will compare inexpensive deterministic methods with retrieval and LLM approaches, automate decisions supported by evidence, and send ambiguous cases to human review.
 
@@ -14,7 +14,7 @@ The first stage checks data fitness and compares lexical/rule matching with a cu
 
 ## Demo and evaluation
 
-The audited archive yields 16,662 records and 2,246 candidate source assignments after quarantine. These assignments still need identity review. The [evaluation contract](docs/EVALUATION.md) defines the planned protocol. Future results must identify the dataset/split, model and configuration, sample sizes, automatic-match error rate, coverage, runtime/cost and limitations.
+The audited archive yields 16,662 records and 2,246 candidate source assignments after quarantine. These assignments still need identity review. In the bounded F2-D1 diagnostic, both variants ranked the annotated target first for 9/17 cross-host development queries and in the top three for 16/17, using the full 15-reference catalog. The identifier rule had no qualifying agreements across the 255 comparisons. The exposed, AI-assisted development pool contains queries for products present in the catalog. Automation policy remains unevaluated. See the [F2-D1 results](docs/plans/000-feasibility.md#f2-d1-development-ranking-results-revision-23-2026-11-18) and the [evaluation contract](docs/EVALUATION.md).
 
 ## Run locally
 
@@ -67,7 +67,17 @@ Reference selection uses the owner-approved `capacity-information-hash-v2` rule:
 
 The owner confirmed membership within the 15 displayed sections and reported no noticed aliases between them. This separate event is bound to the [preserved revision-20 snapshot](docs/data/alaska-monitor-development-v1.json); no per-field rationale or approval of individual references was supplied. The original AI annotations remain intact. `human_verified: false` means full independent verification is not claimed; the scoped human assessment is recorded in `owner_review`. Completeness annotations remain AI-assisted, with one point per explicit usable category and field locators, without rewarding repetition. See the [reference rule](docs/EVALUATION.md#development-reference-selection).
 
-All 11 holds, D099 and other unresolved judgments remain unchanged. Independent test checking, broader alias coverage and protocol agreement remain separate work; no F2, final-test reservation or absence experiment has been run. See [revision 20](docs/plans/000-feasibility.md#bounded-f1-i-development-identities-revision-20-2026-11-13) for scope and validation evidence.
+The validator preserves all 11 holds, D099 and other unresolved judgments. Independent test checking, broader alias coverage and protocol agreement remain separate work. See [revision 20](docs/plans/000-feasibility.md#bounded-f1-i-development-identities-revision-20-2026-11-13) for scope and validation evidence.
+
+### Run the F2-D1 development ranking diagnostic
+
+Use the original private archive, review CSVs and mapping from the validator command. The CLI checks the accepted development manifest and the owner-review snapshot against a freshly rebuilt ledger. Supply an existing private output directory and a new report filename.
+
+```powershell
+py -3.12 -m development_baseline "path/to/monitor.tar.gz" "path/to/first-review.csv" "path/to/second-review.csv" "path/to/private-key.csv" --manifest "docs/data/alaska-monitor-development.json" --output "path/to/private-report.json"
+```
+
+Exit 0 writes a deterministic UTF-8 JSON report with both rankings, target outcomes, aggregates and provenance. The output uses exclusive creation to protect existing files. Exit 1 emits a sanitized JSON error for invalid inputs or a failed write. Treat the report as private because it contains source locators and per-query results. To compare report bytes, rerun with a second new filename and the same inputs, working source files, Git provenance and Python/platform.
 
 ## Project context
 
@@ -91,5 +101,5 @@ Start locally with one category and text input. Prove data fitness and useful ba
 
 ## Development and AI assistance
 
-AI assistance was used to prepare the initial project documentation. The intended development process also uses AI for implementation drafts, tests and review. Generated output is not evidence of correctness: accepted changes and reported results require appropriate validation. Record actual experiments and meaningful failures, and update this description as work progresses. AI assistance also contributed to the loader, annotation ledger, bounded identity review/validator and their synthetic tests.
+AI assistance was used to prepare the initial project documentation. The intended development process also uses AI for implementation drafts, tests and review. Generated output is not evidence of correctness: accepted changes and reported results require appropriate validation. Record actual experiments and meaningful failures, and update this description as work progresses. AI assistance also contributed to the loader, annotation ledger, bounded identity review and validator, deterministic ranking implementation and synthetic tests.
 

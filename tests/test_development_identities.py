@@ -3,10 +3,13 @@
 from copy import deepcopy
 import hashlib
 import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
+from unittest.mock import patch
 
 from alaska_monitor import Dataset, InvalidInput
-from development_identities import (duplicate_groups, object_hash, select_reference,
+from development_identities import (duplicate_groups, load_validated_manifest, object_hash, select_reference,
                                     template_overlaps, validate)
 
 
@@ -154,7 +157,7 @@ class IdentityTests(unittest.TestCase):
         information = {"a//1": {str(n): ["v"] for n in range(10)}}
         self.assertEqual(select_reference(list(records), records, information)[0], "b//1")
 
-    def test_v2_review_scope_and_information_evidence(self):
+    def v2_manifest(self):
         m = deepcopy(self.manifest)
         m.update(schema_version=2, reference_rule="capacity-information-hash-v2",
                  reference_information={r: {"identifier": ["model"]} for r in m["identities"][0]["members"]},
@@ -162,6 +165,10 @@ class IdentityTests(unittest.TestCase):
                                    membership={i["identity_id"]: sorted(i["members"]) for i in m["identities"]},
                                    decision="confirm_membership_no_alias_noticed", reference_approval="not_provided",
                                    field_rationales="not_provided"))
+        return m
+
+    def test_v2_review_scope_and_information_evidence(self):
+        m = self.v2_manifest()
         self.assertEqual(validate(m, self.dataset, self.ledger), m["counts"])
         for kind in ("field", "category", "membership", "claim"):
             bad = deepcopy(m)
@@ -175,6 +182,33 @@ class IdentityTests(unittest.TestCase):
                 bad["owner_review"]["independent_blinded"] = True
             with self.subTest(kind=kind), self.assertRaises(InvalidInput):
                 validate(bad, self.dataset, self.ledger)
+
+    def test_shared_loader_checks_snapshot_checksum_and_owner_membership_binding(self):
+        current = self.v2_manifest()
+        prior = deepcopy(self.manifest)
+        with TemporaryDirectory() as directory, patch("development_identities.DATA", Path(directory)):
+            prior_path = Path(directory) / "alaska-monitor-development-v1.json"
+            current_path = Path(directory) / "current.json"
+
+            def write_inputs():
+                payload = json.dumps(prior).encode("utf-8")
+                prior_path.write_bytes(payload)
+                current["owner_review"]["reviewed_manifest_sha256"] = hashlib.sha256(payload).hexdigest()
+                current_path.write_text(json.dumps(current), encoding="utf-8")
+
+            write_inputs()
+            loaded, counts, hashes = load_validated_manifest(current_path, self.dataset, self.ledger)
+            self.assertEqual(loaded, current)
+            self.assertEqual(counts, current["counts"])
+            self.assertEqual(hashes["owner_review_snapshot_v1"], current["owner_review"]["reviewed_manifest_sha256"])
+            prior_path.write_bytes(b"corrupted")
+            with self.assertRaisesRegex(InvalidInput, "checksum"):
+                load_validated_manifest(current_path, self.dataset, self.ledger)
+
+            prior["identities"][0]["identity_id"] = "invented-different-membership-key"
+            write_inputs()
+            with self.assertRaisesRegex(InvalidInput, "differs from reviewed snapshot"):
+                load_validated_manifest(current_path, self.dataset, self.ledger)
 
 
 if __name__ == "__main__":

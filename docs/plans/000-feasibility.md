@@ -1,12 +1,12 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 22
+- Revision: 23
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-11-18
-- Selected task: F2-P complete; F2-D1 scope accepted and ready for the next execution task (no baseline execution)
-- Execution: 30-pair pilot complete; ALASKA Monitor selected under D16/D17; F1 structural loader verified; diagnostic review and protocol pending
+- Selected task: F2-D1 complete and ready for review
+- Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. The broader evaluation protocol remains pending.
 
 ## Objective
 Determine whether one bounded product-matching task has usable data, defensible labels, and meaningful engineering trade-offs before building the application.
@@ -29,7 +29,7 @@ Do not initialize Git, install production dependencies, download large corpora/m
 | F0 | done | [Documentation-only audit](../data-audit.md) reviewed; `needs_targeted_followup` | Documentation-only acceptance; source rights unresolved |
 | F1 | in_progress | Reproducible ALASKA Monitor preparation, reviewed diagnostic subset and split design | D16/D17 and revision 9 handoff |
 | F2-P | done | Bounded development experiment design in revision 22; planning only | Completed bounded F1-I iteration and fresh input validation |
-| F2-D1 | ready | Owner-accepted bounded development ranking diagnostic; not implemented or run | Revision 22 scope accepted; revalidate inputs before execution |
+| F2-D1 | done | [Bounded development ranking diagnostic](#f2-d1-development-ranking-results-revision-23-2026-11-18) implemented, tested and run twice | Revision 22 scope accepted and inputs revalidated |
 | F2 | draft | Reproducible lexical/rule baseline and error report | F1; owner accepted the early development-only F2-D1 exception in revision 22 |
 | F3 | draft | Comparable LLM baseline with observed cost and failure analysis | F2; explicit API/model budget authorization |
 | F4 | draft | Continue, simplify, or change-domain decision; next product slice | F2/F3 evidence, or explicit incomplete-stage limitation |
@@ -641,3 +641,41 @@ A separate local structural inspection using `replay` confirmed 120 pairs, 149 o
 Owner accepted this bounded F2-D1 scope and the explicit development-only dependency clarification on 2026-11-18. This resolves the scope decision; do not request the same scope approval again. Next task: implement F2-D1 and run only its bounded local diagnostic when execution is requested. Routine algorithm, file, metric and test details are resolved above; no per-detail confirmation is needed. O05's acceptable error/coverage/review workload is deliberately deferred until evidence supports the discussion and is not a blocker for ranking diagnostics. Final allocation/absence parameters, independent test review, broader aliases and F3 provider/budget remain genuinely unresolved future-stage decisions; this task neither asks to settle nor approves them. Python 3.12 plus the standard library suffices for this slice without settling broader environment/deployment choices.
 
 Owner acceptance is recorded without changing the proposed algorithms or acceptance criteria above. Documentation-only follow-up: inspected Git status and the relevant diff; whitespace checks passed. No data validation or software tests were rerun for this status update. F1 remains in progress, full F2 remains draft, and F2-D1 is ready/unexecuted.
+
+## F2-D1 development ranking results (revision 23, 2026-11-18)
+
+F2-D1 is complete. [The offline CLI](../../development_baseline.py) rebuilds the ledger, validates the accepted manifest and its checksum-bound owner-review snapshot, and runs both fixed variants from [the same allowlisted features](../../deterministic_baseline.py). The starting HEAD was `34cd533` with a clean worktree and index. The existing validator passed before and after extraction of the shared validation function. The original hashes and annotations were preserved, including the 11 holds, the D013/D019 deferrals and insufficient D099. The catalog uses `capacity-information-hash-v2` with 15 identities, 32 members, 15 original references and 17 cross-host queries. Original AI assessments and the owner's separate nonblinded membership review continue to support only the scoped development use.
+
+### Measured ranking results
+
+Each variant grades 17 input, eligible and scored queries and all 15 references per query (255 comparisons). Both variants yielded identical rankings. Exact denominators and per-identity values are in the private reports. Fourteen identities contributed one query each, and one identity contributed three.
+
+| Slice and aggregation | Top-1 / Recall@1 | Recall@3 | Recall@5 | Recall@15 |
+| --- | ---: | ---: | ---: | ---: |
+| All queries, micro | 9/17 | 16/17 | 17/17 | 17/17 |
+| All 15 identities, macro | 5/9 | 14/15 | 1 | 1 |
+| D112 alone | 1/1 | 1/1 | 1/1 | 1/1 |
+| Without D112, micro | 8/16 | 15/16 | 16/16 | 16/16 |
+| Without D112, 14 identities, macro | 11/21 | 13/14 | 1 | 1 |
+
+D112 ranked first with title Jaccard 5/34. Its query and reference share 38 of 38 common non-title fields. Those specification fields were excluded from title similarity. The template review inventory remains available to the evaluator. Template and source dependence can still affect the scores.
+
+Target ranks 1 to 4 occurred 9, 5, 2 and 1 times respectively. Every query had a tied score somewhere in its ranking, and three had a tied target score. For seven top-1 misses the first reference shared more title tokens with the query than the annotated target. The other miss had an equal score and was ordered by handle. All titles yielded tokens, zero queries had all-zero rankings, and no comparison had an empty union.
+
+| Explicit identifier namespace | Query available / unavailable / ambiguous (17) | Reference available / unavailable / ambiguous (15) |
+| --- | ---: | ---: |
+| Manufacturer | 4 / 10 / 3 | 2 / 11 / 2 |
+| Model | 3 / 14 / 0 | 3 / 12 / 0 |
+| Part number | 3 / 14 / 0 | 2 / 13 / 0 |
+
+There were 0/255 complete identifier agreements and 0/17 rankings changed by I+T. Six comparisons had equal manufacturer values, one had equal model values and one had equal part numbers. None met the combined agreement rule. For all eight top-1 misses the target pair lacked comparable structured model evidence. This diagnostic used the fixed field allowlist and the full source values, including qualifiers. Title formatting differences and missing or ambiguous identifiers limit what the two scores can capture.
+
+### Execution and verification
+
+- The run pins the accepted normalized manifest hash and records the v1 snapshot, archive, private CSVs, public manifests, rebuilt ledger, ordered mapping, projected inputs and effective configuration hashes. Entry handles hash the projected payload with a version and occurrence number, so entries with identical or missing fields can still be ranked separately. Only those identical projections use locator order to assign occurrence numbers. The run also records Python/platform, HEAD, working source hashes and dirty status. The effective configuration SHA-256 is `04ac8848fb1c0f2cd6e44bcf1743478e12597eb1810af14f68d693add1b74232`.
+- The narrow suite passed 12 synthetic tests, and the full offline suite passed 38 tests on Python 3.12.4 for Windows. The tests cover feature isolation, suffixes, ambiguous identifiers, ties, missing inputs, complete inventories, grading and unequal identity weights, rejected inputs, owner-review snapshot binding and safe output. A synthetic write test exposed that the environment refused hard links. The implementation uses exclusive file creation with cleanup of failed writes, validated before measurement.
+- Two runs with identical inputs and configuration produced byte-identical private JSON reports of 354,433 bytes. Their SHA-256 is `1db323383c79b23a43b400649385b9adfb9933d311fe3a4e6f9f88671f4d68e9`. Each contains the complete rankings, evidence components, extraction statuses, target outcomes, per-identity metrics and sensitivity slice. Candidate inventories, order, metrics and provenance were checked separately against the reports. The working code and experiment inputs were held fixed after measurement. See the [verified reproduction command](../../README.md#run-the-f2-d1-development-ranking-diagnostic).
+- Reviewed the code and documentation changes, checked whitespace and new relative links, and confirmed that the shared additions contain no raw offers, review prose or private input paths. Both reports are ignored by Git. HEAD and the index remain at their starting state.
+- The release is small, purposive, exposed and positive-only. The annotations are AI-assisted with a scoped nonblinded owner review. Recall@15 checks inventory integrity. The diagnostic cannot establish performance for unseen products or suppliers, absent products or live automation. `decision_policy` is `not_evaluated`, and O05 remains open. Full local reports stay private. The scope used no additional datasets, providers, paid calls, final split or test reservation.
+
+Recommended next step after review of F2-D1 is to settle the remaining F1-S protocol and independent reference-review requirements before any final split or full F2 evaluation. A later development-only ranking revision could test a targeted title feature against the observed ordering errors under its own frozen configuration. F1 is still in progress, and full F2 remains draft.
