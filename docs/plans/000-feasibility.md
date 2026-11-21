@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 27
+- Revision: 29
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-11-18
-- Selected task: F1-S reservation frozen; stopped before annotation
+- Updated: 2026-11-21
+- Selected task: F1-S test present targets frozen; controlled absence pending
 - Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S structural blocks allocated in revision 27.
 
 ## Objective
@@ -738,3 +738,15 @@ py -3.12 -m f1_pool "path/to/ledger.json" --reservation "path/to/reservation-cop
 ```
 
 A second computation reproduced the frozen bytes. Independently checked digest order, cutoff, unique blocks, disjoint record sets and complete coverage of 554 locators. Identity and query counts await annotation. Preserve this inventory and record subsequent attrition without replacement. Next action is to arrange custodian access and independent verification before test target preparation.
+
+## F1-S reconciliation intake (revision 28)
+
+The owner supplied the 2026-11-21 private reconciliation. Aggregate CSV checks confirmed 20 reserved blocks, 194 offers, zero eligibility exclusions, 21 proposed variants and 74 proposed queries. Under the custodian's reconciliation criteria, 11 variants and 41 queries passed; 10 variants and 33 queries remain deferred. The report records explicit same-variant agreement on all 74 target pairs. Full membership disagreements affected 69 offer rows; the independent worksheet-based reference choices differed for four variants. The pair table contains 863 agreements and 161 unresolved disputes across 1,024 jointly assessed pairs, plus 153 assessed on one side only. No adjudication was reported.
+
+The private summary SHA-256 at intake was `10f2a606f2f8a4fe08df81d0737fe088aa4d22f0f82c4e0b749b31edb6c7cabd`. Original seal verification and selector replay are reported by the custodian. Intake checked aggregate tables only. Reviewer roles derive from the submitted materials; independent human provenance requires confirmation for release. Preserve the original inventory and deferred cases. Next confirm review provenance and freeze the accepted target inventory and supporting evidence before evaluation. Controlled absence requires separate verification.
+
+## F1-S present target freeze (revision 29)
+
+On 2026-11-21 the owner confirmed that the initial checker was an independent human blinded to the custodian proposal. The private present-scenario manifest binds 11 original references to 41 unique queries using the sealed offer inventory's opaque IDs. Its exact UTF-8/LF SHA-256 is `5eda9e706d3d376edccf2a0a1a100f8f8e6baf9022ff8bab8617e57e67ad47b6`. The manifest pins the reservation, offer inventory, reviewed policy, custodian and checker evidence, comparison tables, summary and comparison script. The pinned target comparison retains all 74 proposed links including the 33 deferred queries. No adjudications were supplied.
+
+Checked both sets of delivered seals, custodian archive member hashes, offer hash, and exact coverage of the reserved test locators. Every accepted query has an explicit positive judgment in both worksheets, a common chosen reference, a different source host and different payload. Reference and query sets are disjoint. Read back the new manifest and verified its contents. No matcher predictions or semantic reannotation were performed. Next separately construct and independently verify the controlled-absence scenario under revision 25, preserving the present inventory.
