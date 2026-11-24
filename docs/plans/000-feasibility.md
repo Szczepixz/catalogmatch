@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 35
+- Revision: 37
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-11-22
-- Selected task: F1-S controlled absence reconciliation complete
+- Updated: 2026-11-24
+- Selected task: F1-S effective present inputs and ranking configuration frozen
 - Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S structural blocks allocated in revision 27.
 
 ## Objective
@@ -780,3 +780,31 @@ The owner confirmed the assessment took place on 2026-11-21 at 23:58, with the r
 ## F1-S effective adjudication (revision 35)
 
 On 2026-11-22 the owner confirmed that the independent human evaluator reached the initial judgment before seeing earlier assessments, including the AI judgment. Accepted the clarified same-variant decision dated 2026-11-21 at 23:58. Rechecked sealed worksheet hashes, exact membership coverage, all 18 different-variant comparisons and consistency with both frozen scenarios. The adjudicated pair retains its original present target. Both removed variants now have confirmed absence for all 12 affected queries against nine retained references. The earlier observations and versioned decisions are preserved. Effective private verification SHA-256: `1b5f0a34acfb11b917953d70a2379465f4470c8f1e324d866cc3a5e4cfb0b2ed`. No predictions or scoring were performed.
+
+## F1-S test access audit (revision 36)
+
+The project coding chat displayed the two adjudication offers and compared their fields for human assessment. A verifier summary in that chat disclosed identity-bearing details for five opaque offer IDs, including the same pair. The private crosswalk maps these events to two of the 20 original test blocks. Both are retired without replacement under revisions 24–25. One block supplied two accepted references, including a retained reference in the absence scenario. The other supplied one accepted reference. Together they account for 19 reserved records and 13 accepted queries.
+
+| Frozen inventory | Before audit | Eligible after audit |
+| --- | ---: | ---: |
+| Reserved test blocks | 20 | 18 |
+| Blocks contributing accepted present targets | 9 | 7 |
+| Present catalog references | 11 | 8 |
+| Present queries | 41 | 28 |
+| Controlled-absence removed variants | 2 | 0 |
+| Controlled-absence queries | 12 | 0 |
+| Reduced catalog references | 9 | 8 |
+
+The eight-reference present catalog supports a bounded evaluation on 28 queries from seven blocks. Eleven other surviving reservations contribute no accepted targets. The original ten deferred variants and 33 deferred queries retain their recorded dispositions. The independent human adjudication remains `same_variant`. All 18 original separation judgments and all 12 effective absence memberships still apply to the original nine-reference scenario. Both removed variants lost independent eligibility, so controlled absence cannot be measured.
+
+The private audit v1 records all 20 block dispositions, the developer-visible events, and the effective catalog and query membership. Its exact SHA-256 is `7266d6ad59225da27bdd665d0e62690ba9bb3adbc49439885df465f0e0f40edd`. Matched the private crosswalk to all 194 reserved locators, checked the versioned evidence chain, replayed the audit byte for byte and cross-checked the surviving targets against the pinned target comparison. Hashes, counts, opaque inventory operations and role-scoped custodian access alone supply no evidence of further developer exposure. The audit covers recorded events; unlogged access remains unknown.
+
+Next freeze the effective present-only evaluation inputs and configuration against the audit before a separately scoped matcher run. Preserve the absent scenario as unavailable. No predictions, scoring, policy changes or new annotation took place.
+
+## F1-S present ranking freeze (revision 37)
+
+Froze the effective catalog and queries against the revision 36 audit and the original present manifest. The private package contains four JSON members. The inference input holds eight references and 28 queries keyed by projected-offer handles. A separate grading key binds each query handle to its expected reference. The configuration fixes the ranking and reporting rules. The manifest pins the package members, input evidence, builder, ranking sources at `38c840c` and runtime (CPython 3.12.4 on Windows). Exact package SHA-256 is `5277a9f03c6f6046aa57257cecebb5c50591a7512abbcc5eae8c5bd6d0a20ae6`.
+
+Use the existing development projection, handle construction and tie rules for both T and I+T. Rank all eight references for every query (224 comparisons per variant). Report top-1 and Recall@1/3/5/8 by query and as an unweighted mean across the eight identities. Recall@8 checks complete catalog coverage. Seven reservation blocks contribute. Controlled absence is unavailable and the decision policy remains unevaluated.
+
+A second build reproduced the frozen bytes. A separate archive check verified each member digest, reconstructed all 36 projected entries and matched all 28 grading links to the audited catalog. Original fields stayed out of tool output. No predictions were generated. Next run the two frozen rankers offline using the inference input alone, then grade the saved rankings separately.
