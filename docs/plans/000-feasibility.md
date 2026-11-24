@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 29
+- Revision: 35
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-11-21
-- Selected task: F1-S test present targets frozen; controlled absence pending
+- Updated: 2026-11-22
+- Selected task: F1-S controlled absence reconciliation complete
 - Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S structural blocks allocated in revision 27.
 
 ## Objective
@@ -750,3 +750,33 @@ The private summary SHA-256 at intake was `10f2a606f2f8a4fe08df81d0737fe088aa4d2
 On 2026-11-21 the owner confirmed that the initial checker was an independent human blinded to the custodian proposal. The private present-scenario manifest binds 11 original references to 41 unique queries using the sealed offer inventory's opaque IDs. Its exact UTF-8/LF SHA-256 is `5eda9e706d3d376edccf2a0a1a100f8f8e6baf9022ff8bab8617e57e67ad47b6`. The manifest pins the reservation, offer inventory, reviewed policy, custodian and checker evidence, comparison tables, summary and comparison script. The pinned target comparison retains all 74 proposed links including the 33 deferred queries. No adjudications were supplied.
 
 Checked both sets of delivered seals, custodian archive member hashes, offer hash, and exact coverage of the reserved test locators. Every accepted query has an explicit positive judgment in both worksheets, a common chosen reference, a different source host and different payload. Reference and query sets are disjoint. Read back the new manifest and verified its contents. No matcher predictions or semantic reannotation were performed. Next separately construct and independently verify the controlled-absence scenario under revision 25, preserving the present inventory.
+
+## F1-S controlled absence preparation (revision 30)
+
+For the frozen test inventory only, used the exact custodian identity strings from verified rows of the hash-pinned target comparison. Confirmed a one-to-one mapping to all 11 frozen references and equality of all query sets. Sorted by SHA-256 of UTF-8 `f1-absence-v1|identity|` plus that identity string, with the string as tie-breaker. Removed the first floor(11 / 5) = 2 references in a separate catalog. Nine references remain; 12 frozen queries belong to the two removed variants. Their absence judgments are pending.
+
+Private scenario manifest SHA-256: `965aabae2ea81507dcfb395275f3bdba289d611816bb9a3531d7e2895b774db1`. Private checker packet SHA-256: `397c00d2b1887bd99230f1ec87529a75ccbc5daa17f47ea589c62c998847f337`. Checked source hashes, unchanged present manifest, packet integrity and worksheet coverage of 18 removed/retained comparisons and 12 query memberships. Next obtain independent judgments and per-variant removal/alias conclusions before marking absence confirmed. No predictions were run.
+
+## F1-S controlled absence verification (revision 31)
+
+Matched both submitted worksheet SHA-256 digests to the checker seals and all 30 unique requested pairs to the pinned scenario. All rows include field references, rationale, reviewer role, date and policy. All 18 comparisons against the nine retained references were judged different. Of 12 query memberships, 11 were judged same and one insufficient. The checker confirmed absence for one removed variant (7 queries) and left the other unresolved (5 queries, including 4 positive memberships). Preserve the original two removals, all 12 queries and their dispositions; only 7 queries have a confirmed absence target.
+
+Private verification manifest SHA-256: `ebd88b1cfc46c7fbd5a8a78464d6ee4c7afdb9c5c461e5fd0c60251f57035184`. The new insufficient judgment conflicts with a frozen present-target membership. Preserve both observations and the original freeze; refer the case for independent adjudication before relying on that present target. No replacement, prediction or scoring was performed.
+
+## F1-S adjudication handoff (revision 32)
+
+Prepared a private blind packet for an independent human to assess the single disputed membership. The packet contains the two original field objects under fresh labels, the reviewed policy, instructions and one blank judgment row. The mapping is kept separately. Verified the source packet hash, archive integrity, exact field and policy equality, worksheet and file list. Packet SHA-256: `973a3f1cfc8e96f7ac2f26551df217a3b8287bdd19f4f8f4609b60a2a1054ca1`. Await the sealed judgment and checksum before reconciliation. Existing dispositions remain in effect.
+
+## F1-S supplementary assessment intake (revision 33)
+
+The returned single complete worksheet row gives insufficient evidence under D15 and D17 v1.1 and identifies its author as an independent AI reviewer. Verified the delivered SHA-256 (`f869cc937c16c2e44589cc928de9a2e3cd2791e7c275f102ae77bd7d5cbdb4d4`), packet hash and opaque pair mapping. Preserved the worksheet and seal privately as supplementary AI evidence. Human adjudication remains open. Keep the disputed present target flagged and the original freeze intact. The controlled absence inventory retains seven confirmed and five unresolved queries. A new independent human can use the original blind packet without access to this assessment; otherwise retain the unresolved disposition.
+
+## F1-S human assessment intake (revision 34)
+
+On 2026-11-22 the owner relayed the human reviewer's clarified same-variant judgment for the disputed pair. The reviewer considered the matching identification and display characteristics, the contrast discrepancy and the one-sided height-adjustment statement. Private assessment SHA-256: `228104058926a56b89edaa24e322fc3cc84b89749e95dbb1c3a2d0f2415e0feb`. Receipt date is recorded separately from assessment date. Confirm that this adjudicator was independent of target preparation, prior judgments and matcher development and assessed the blind material before seeing earlier decisions. Obtain the assessment date and role for the event record. Once confirmed, reconcile the five pending queries against the nine already-checked remaining references and version the effective result. No change to the original seals or release counts at intake.
+
+The owner confirmed the assessment took place on 2026-11-21 at 23:58, with the role of independent evaluator. This corrects the date in the previous private metadata version. Corrected record SHA-256: `5797cc1b40db956515bd177040cd56cbc0e5eb9a387160a3ba422ccaa93ea639`. The private metadata update binds the prior assessment by hash. Confirmation that the evaluator had not seen prior judgments before the initial decision remains outstanding.
+
+## F1-S effective adjudication (revision 35)
+
+On 2026-11-22 the owner confirmed that the independent human evaluator reached the initial judgment before seeing earlier assessments, including the AI judgment. Accepted the clarified same-variant decision dated 2026-11-21 at 23:58. Rechecked sealed worksheet hashes, exact membership coverage, all 18 different-variant comparisons and consistency with both frozen scenarios. The adjudicated pair retains its original present target. Both removed variants now have confirmed absence for all 12 affected queries against nine retained references. The earlier observations and versioned decisions are preserved. Effective private verification SHA-256: `1b5f0a34acfb11b917953d70a2379465f4470c8f1e324d866cc3a5e4cfb0b2ed`. No predictions or scoring were performed.
