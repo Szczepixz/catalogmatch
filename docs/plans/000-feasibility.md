@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 37
+- Revision: 38
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
 - Updated: 2026-11-24
-- Selected task: F1-S effective present inputs and ranking configuration frozen
+- Selected task: F1-S frozen present ranking measured and graded
 - Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S structural blocks allocated in revision 27.
 
 ## Objective
@@ -808,3 +808,18 @@ Froze the effective catalog and queries against the revision 36 audit and the or
 Use the existing development projection, handle construction and tie rules for both T and I+T. Rank all eight references for every query (224 comparisons per variant). Report top-1 and Recall@1/3/5/8 by query and as an unweighted mean across the eight identities. Recall@8 checks complete catalog coverage. Seven reservation blocks contribute. Controlled absence is unavailable and the decision policy remains unevaluated.
 
 A second build reproduced the frozen bytes. A separate archive check verified each member digest, reconstructed all 36 projected entries and matched all 28 grading links to the audited catalog. Original fields stayed out of tool output. No predictions were generated. Next run the two frozen rankers offline using the inference input alone, then grade the saved rankings separately.
+
+## F1-S present ranking results (revision 38)
+
+Starting at clean commit `9738d99`, checked the revision 37 package, inference input and configuration digests, frozen source hashes and CPython 3.12.4 runtime. Applied the existing normalization and ranking functions offline to all 28 queries against the eight references. Saved all eight ordered candidates per query and variant (224 comparisons per variant) before accessing the grading key. A second inference process reproduced the exact prediction bytes.
+
+| Metric for both T and I+T | Micro, 28 queries | Macro, eight identities |
+| --- | ---: | ---: |
+| Top-1 / Recall@1 | 18/28 | 61/80 |
+| Recall@3 | 28/28 | 1 |
+| Recall@5 | 28/28 | 1 |
+| Recall@8 (inventory check) | 28/28 | 1 |
+
+The target ranked first 18 times, second four times and third six times. The structured identifier agreement rule fired on 0/224 comparisons. Both variants produced the same complete ordering for every query. The grader verified the prediction digest and the frozen grading key before scoring. A separate check reconstructed the sort order from the saved score components and recomputed every aggregate from membership in each top-k prefix.
+
+Private SHA-256 digests are `cc34c67c94af2c25c1089f56a4dbcd6c6286a46e016ebc7562a7ac93a16d1a89` for predictions and `26ebec4faf9fb9d0e30327693480e2d7b73d688e766a178d998969b367223356` for grading. The result covers accepted present targets from seven blocks. Controlled absence is unavailable and automation remains unevaluated under O05. No thresholds or matcher changes were made. Next review feasibility against the development evidence and the outstanding evaluation gaps before selecting further work. Reserve future matcher tuning for development data.
