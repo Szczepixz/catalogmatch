@@ -1,11 +1,11 @@
 # Stage 000: data and baseline feasibility
 
-- Revision: 38
+- Revision: 43
 - Status: in_progress (source selection closed; F0 done; F1 in progress; F2-F4 draft)
 - Created: 2026-10-27
 - Owner role: planning chat, then implementation chat per selected task
-- Updated: 2026-11-24
-- Selected task: F1-S frozen present ranking measured and graded
+- Updated: 2026-11-25
+- Selected task: F3 development comparison scoped; local runtime feasibility pending
 - Execution: ALASKA Monitor selected under D16/D17. F1 loader, diagnostic ledger and bounded development catalog validated. F2-D1 run locally. F1-S structural blocks allocated in revision 27.
 
 ## Objective
@@ -823,3 +823,56 @@ Starting at clean commit `9738d99`, checked the revision 37 package, inference i
 The target ranked first 18 times, second four times and third six times. The structured identifier agreement rule fired on 0/224 comparisons. Both variants produced the same complete ordering for every query. The grader verified the prediction digest and the frozen grading key before scoring. A separate check reconstructed the sort order from the saved score components and recomputed every aggregate from membership in each top-k prefix.
 
 Private SHA-256 digests are `cc34c67c94af2c25c1089f56a4dbcd6c6286a46e016ebc7562a7ac93a16d1a89` for predictions and `26ebec4faf9fb9d0e30327693480e2d7b73d688e766a178d998969b367223356` for grading. The result covers accepted present targets from seven blocks. Controlled absence is unavailable and automation remains unevaluated under O05. No thresholds or matcher changes were made. Next review feasibility against the development evidence and the outstanding evaluation gaps before selecting further work. Reserve future matcher tuning for development data.
+
+## Feasibility review and next experiment (revision 39)
+
+Continue with a bounded operator-assistance experiment. Title ranking placed the target in the first three for 16/17 development queries (15 references) and 28/28 accepted frozen test queries (eight references). Choosing the first suggestion would have missed eight and ten targets respectively. Both runs gave identical orderings with the identifier rule enabled. Use T as the simpler fixed baseline for the pilot. The catalogs, query populations and review provenance differ, so the two fractions cannot establish improvement or be pooled into a live accuracy estimate.
+
+The development results distinguish two costs of using a shortlist. Seven targets were visible in positions two or three, where the reviewer would have to override the first suggestion. One target was fourth, where a reviewer limited to three candidates could never select it. A full-catalog fallback is therefore part of the experiment. Neither run measured reviewer time, erroneous acceptance or unresolved decisions. All accepted targets were present. Controlled absence remains unavailable, O05 is open, and the required F3 comparison still needs a permitted data path and an authorized model/run budget. The evidence supports continuing feasibility work; F4 remains open.
+
+**Next experiment.** Does offering the top three first reduce time to a correct exact-variant decision compared with searching the full catalog? Use the saved revision 23 development rankings, all 17 queries and all 15 references. Keep the measured test set closed to tuning. Prepare two local review conditions with identical offer fields and controls: an unranked full catalog, and the T shortlist with the option to open that same catalog. Both allow an unresolved response. Keep targets, prior assessments and scores hidden. Use only material permitted for the reviewers' access.
+
+For a paired pilot, recruit two reviewers unfamiliar with the development answers. Assign each query to both conditions across different reviewers, balance the conditions within reviewer (8/9), and vary presentation order. Each reviewer sees each query once. Before collecting responses, freeze assignments, candidate order and timing rules. Record elapsed decision time, selected reference or unresolved response, and full-catalog openings. Report paired time differences on jointly correct cases with their denominator, plus correct, wrong and unresolved counts and total time across all 17 attempts per condition. Treat the development targets as the existing reviewed comparison key. Report disagreements for inspection. This small pilot can guide a later operator study; a speed claim requires actual timed decisions and an explicit assessment of errors.
+
+First prepare and validate the private pilot packets and response sheet offline. Verify coverage, concealment of the key, availability of every reference through fallback and the rank-four case. Reviewer availability is unconfirmed. The review checked both saved report digests against revisions 23 and 38; it used existing aggregate results and collected no new decisions.
+
+## Development pilot packet freeze (revision 40)
+
+Two private, self-contained offline forms are ready for authorized local use. The saved revision 23 report matched its recorded SHA-256. Only the 32 mapped development source records were read from the checksum-verified archive. Their original title and allowlisted manufacturer, model and part-number fields reproduced the report's projected-input digest. Both conditions show these same fields and use the same reference-or-unresolved response control. The narrower display can omit specifications present in the source offers. No ranking was recomputed and no F1-S test artifacts were opened.
+
+Each reviewer has all 17 queries once. A has eight shortlist and nine catalog tasks; B has nine shortlist and eight catalog tasks. Every query changes condition and ordinal position across reviewers. The shared full catalog uses a fixed shuffle independent of T and neutral display letters. Only shortlist tasks include the three suggested letters. A private organizer manifest freezes both task sequences, conditions, candidate order, timing and analysis rules. The comparison key is separate. A private SHA-256 inventory binds both participant files, manifest and key.
+
+The timer starts when Start reveals the offer and stops on valid Save decision submission. It includes catalog expansion and records monotonic elapsed milliseconds, the selected letter or unresolved decision, and whether the reviewer opened the catalog from suggestions. Completed decisions lock and persist in local browser storage, with JSON export between tasks or at completion. An interrupted active task stops the session for organizer review. Breaks belong between tasks. Use one fresh browser profile per reviewer and keep the same file, path and profile for the session.
+
+Validation covered all 34 assignments, all 17 ordered T triples, the common 15-reference inventory, projection hashes and all four frozen file hashes. Inspection covered complete participant directories, embedded data and form source. Each directory contains only its form, with no scoring key, raw locators, ranking handles, scores or previous assessments. On isolated copies, offline Chrome exercised 34 synthetic submissions and both exports. Checks covered initially empty selections, unresolved and selected responses, fallback use and non-use, persisted progress, interruption handling and the rank-four target selected from the expanded catalog. Released forms contain no response rows.
+
+Pack preparation ends before recruitment, distribution or collection. Before a session, confirm permitted access to the source content and two available reviewers unfamiliar with the answers, verify frozen checksums and use a clean browser profile with local saving and downloads available. Give each reviewer access only to their assigned form. Later report paired time differences for jointly correct queries with the denominator, alongside all-attempt time and correct, wrong and unresolved counts per condition; disclose interruptions and inspect disagreements. The existing AI-assisted, nonblinded development key, small positive-only catalog and repeated exposure to the catalog limit interpretation. There are no human timings or measured time savings.
+
+## Timed development pilot results (revision 41)
+
+The owner supplied two complete exports and reported that the reviewers worked independently without access to previous answers. Verified the four frozen file hashes, packet names, all 34 task positions and conditions, available choices, fallback flags and positive integer durations. Paired responses by original query across reviewers. Exact copies of both exports remain private.
+
+| Condition | Attempts | Correct against frozen key | Wrong | Unresolved | Total elapsed time | Median task time |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Three suggestions with fallback | 17 | 17 | 0 | 0 | 1635.336 s | 25.211 s |
+| Full catalog | 17 | 17 | 0 | 0 | 728.040 s | 35.392 s |
+
+All 17 pairs were jointly correct. Shortlist minus catalog time was negative in 10 pairs and positive in seven. The median paired difference was −13.158 s and the mean was +53.370 s. Reviewers opened the catalog in five of 17 shortlist attempts. The only target outside the first three was correctly selected after fallback. That attempt took 944.237 s versus 49.597 s in the catalog condition, accounting for 894.640 s of the total 907.296 s difference. The export measures elapsed time and cannot establish whether that task was interrupted. Retain it in the primary results and ask about interruptions before interpreting its duration.
+
+A reported possible duplicate was checked against both displayed reference titles and their corresponding query titles. The two references have different complete model codes, and each reviewer selected the frozen target on both queries. The observation does not warrant merging references or revising the key. The paired median favors suggestions in this small positive-only pilot, while total elapsed time favors the full catalog. Two reviewers and different people timing each side of each pair limit attribution and generalization.
+
+## Pilot interruption follow-up (revision 42)
+
+The owner reports intermittent distractions for both reviewers and that reviewer B left the computer during task 9. The duration away is unknown. Retain all original decisions and elapsed times in the primary analysis. All 34 decisions agree with the frozen key.
+
+As a secondary sensitivity check, omitting both attempts for the interrupted query leaves 16 jointly correct pairs. Suggestions were faster in 10/16, with a median paired difference of -16.181 s (shortlist minus catalog, rounded). Total elapsed time was 691.099 s with suggestions and 678.443 s with the full catalog. This subset omits the only rank-four target and may include other distractions. It cannot estimate uninterrupted performance for the full pilot.
+
+Repeating these tasks with the same reviewers would introduce familiarity. A future estimate of focused decision time calls for fresh reviewers unfamiliar with the tasks, dedicated sessions, breaks between tasks and a rule fixed in advance for flagging and analyzing interruptions.
+
+## F3 data path and development comparison protocol (revision 43)
+
+Rechecked the [publisher README](https://raw.githubusercontent.com/merialdo/research.alaska/main/README.md) and [license](https://raw.githubusercontent.com/merialdo/research.alaska/main/LICENSE). The publisher describes web-source specifications; the MIT text names software and associated documentation. Neither source expressly addresses sending merchant offer text to an inference provider. D16 records project acceptance of bounded local feasibility and unresolved underlying-content rights. External inference has no established permission or approved spend. Plan for inference on this machine with network access disabled, private inputs and outputs, and no remote fallback. This is a project processing boundary, not a finding of ownership or a general license.
+
+Proposed development diagnostic: one independent request per revision 23 query, all 15 references in the frozen rank-independent catalog order. Supply the same title and identifier projection, opaque candidate labels and exact-variant instructions. Withhold T order, scores, targets and participant responses. Request up to three distinct candidate labels in descending preference or an empty list for insufficient evidence. Reject unknown or duplicate labels and malformed responses. Score top-1 and top-3 hits against the frozen development key over all 17 attempts, with invalid, failed and abstained attempts counted as misses and reported separately. Compare query by query with saved T (9/17 and 16/17). Report disagreements, elapsed runtime and actual cost. Positive-only, exposed development results cannot establish absence handling or automation quality.
+
+Before measurement, inventory available memory, hardware and local model files, choose a current model that fits, review its license, then pin weights, runtime, prompt, schema, input hashes and decoding settings. Check offline operation with a synthetic request. Limit the measured run to 17 requests with no retries or paid calls. Neither ollama nor llama-cli was found on PATH in this check; other installations and model weights remain unverified. No model was installed or run, no offers were sent, and no held-out data were accessed.
